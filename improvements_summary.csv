@@ -1,0 +1,6 @@
+Metric,Before,After,Improvement
+Cycle Time,201.7 min,75.6 min,62.5%
+Error Rate,21.0%,13.0%,38.1%
+Rework Rate,11.0%,6.0%,45.5%
+Daily Throughput,2 orders,6 orders,166.9%
+Monthly Throughput,52 orders,140 orders,166.9%
