@@ -33,26 +33,26 @@ These charts show the transformation better than any table.
 
 ### 1. Business Impact at a Glance
 
-![Business Impact Summary](visualizations/visualization_business_impact.png)
+![Business Impact Summary](Visualizations/visualization_business_impact.png)
 
 The high-level wins: 62.5% faster, 167% more throughput, huge labor savings.
 
 ### 2. Process Step Times – Before vs After
 
-![Process Steps Comparison](visualizations/visualization_process_steps.png)
+![Process Steps Comparison](Visualizations/visualization_process_steps.png)
 
 The biggest wins were in picking (55 → 28 min) and eliminating the redundant QC step entirely.
 
 ### 3. Cycle Time Distribution
 
-![Cycle Time Before vs After](visualizations/visualization_distribution.png)
+![Cycle Time Before vs After](Visualizations/visualization_distribution.png)
 
 Before: Wide spread, lots of 250+ min disasters.  
 After: Tight cluster around 75 min. Much more predictable.
 
 ### 4. KPI Comparison Dashboard
 
-![KPI Before vs After](visualizations/visualization_comparison.png)
+![KPI Before vs After](Visualizations/visualization_comparison.png)
 
 Side-by-side bars that scream "this worked".
 
