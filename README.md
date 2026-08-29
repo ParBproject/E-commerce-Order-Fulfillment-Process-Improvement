@@ -1,87 +1,64 @@
 # E-commerce Order Fulfillment Process Improvement
 
-**How I turned a slow, error-prone order process into a fast, efficient machine using Lean Six Sigma**
+[![SQL](https://img.shields.io/badge/SQL-Process_Analysis-336791?logo=postgresql&logoColor=white)](SQL_Analysis_Queries.sql)
+[![Method](https://img.shields.io/badge/Method-Lean_Six_Sigma_DMAIC-2ea44f)](#methodology)
+[![Data](https://img.shields.io/badge/Sample-200_Orders-1f6feb)](Data/)
 
-Hey 👋
+A process-improvement case study showing how operational data and Lean Six Sigma can be used to identify fulfillment bottlenecks, test a redesigned workflow, and quantify business impact.
 
-This project was born from a simple question: "Why does it take 3+ hours to fulfill an online order when it should take 1?"  
-I analyzed a real-world e-commerce fulfillment workflow, applied classic Lean Six Sigma (DMAIC), fixed the biggest bottlenecks, and proved the impact with data from 200 orders (100 before + 100 after).
+## Business Impact
 
-The result?  
-- Cycle time down **62.5%** (from ~202 min to 76 min)  
-- Throughput up **167%** (from 2.4 to 6.4 orders/day)  
-- Errors down **38%**, rework down **45%**  
-- **$36,000+ annual savings** with a 4-month payback
+| Metric | Before | After | Change |
+|---|---:|---:|---:|
+| Average cycle time | 201.7 min | 75.6 min | **−62.5%** |
+| Daily throughput | 2.4 orders | 6.4 orders | **+166.9%** |
+| Error rate | 21.0% | 13.0% | **−38.1%** |
+| Rework rate | 11.0% | 6.0% | **−45.5%** |
+| Monthly capacity | 52 orders | 140 orders | **+166.9%** |
 
-It’s the kind of project that makes operations managers smile and CFOs ask for more.
+The illustrative improvement scenario produces more than $36,000 in estimated annual savings with an estimated four-month payback.
 
-## The Story in Numbers
+## Methodology
 
-| Metric                  | Before      | After       | Improvement    |
-|-------------------------|-------------|-------------|----------------|
-| **Average Cycle Time**  | 201.7 min   | 75.6 min    | **-62.5%**     |
-| **Daily Throughput**    | 2.4 orders  | 6.4 orders  | **+166.9%**    |
-| **Error Rate**          | 21.0%       | 13.0%       | **-38.1%**     |
-| **Rework Rate**         | 11.0%       | 6.0%        | **-45.5%**     |
-| **Monthly Orders**      | 52          | 140         | **+166.9%**    |
+The analysis follows the DMAIC framework:
 
-**Bottom line**: Same team, same warehouse → **2.7x more orders processed**, way fewer mistakes, and real money saved.
+1. **Define** the fulfillment-delay problem and operational KPIs.
+2. **Measure** cycle time, errors, rework, and throughput across 100 baseline orders.
+3. **Analyze** delay patterns and step-level bottlenecks with SQL.
+4. **Improve** the workflow by reducing picking time and removing redundant handling.
+5. **Control** performance using repeatable KPI definitions and after-state data.
 
-## Visuals That Make the Point
+## Visual Results
 
-These charts show the transformation better than any table.
+### Business Impact
 
-### 1. Business Impact at a Glance
+![Business impact summary](Visualizations/visualization_business_impact.png)
 
-![Business Impact Summary](Visualizations/visualization_business_impact.png)
+### Process-Step Comparison
 
-The high-level wins: 62.5% faster, 167% more throughput, huge labor savings.
+![Process step times before and after](Visualizations/visualization_process_steps.png)
 
-### 2. Process Step Times – Before vs After
+### Cycle-Time Distribution
 
-![Process Steps Comparison](Visualizations/visualization_process_steps.png)
+![Cycle time distribution before and after](Visualizations/visualization_distribution.png)
 
-The biggest wins were in picking (55 → 28 min) and eliminating the redundant QC step entirely.
+### KPI Dashboard
 
-### 3. Cycle Time Distribution
+![KPI comparison dashboard](Visualizations/visualization_comparison.png)
 
-![Cycle Time Before vs After](Visualizations/visualization_distribution.png)
+## Repository Contents
 
-Before: Wide spread, lots of 250+ min disasters.  
-After: Tight cluster around 75 min. Much more predictable.
+| Path | Purpose |
+|---|---|
+| [SQL_Analysis_Queries.sql](SQL_Analysis_Queries.sql) | KPI, bottleneck, and comparison queries |
+| [Data/](Data/) | Organized before/after datasets and summaries |
+| [Visualizations/](Visualizations/) | Decision-ready charts |
+| [improvements_summary.csv](improvements_summary.csv) | Compact impact summary |
 
-### 4. KPI Comparison Dashboard
+## Skills Demonstrated
 
-![KPI Before vs After](Visualizations/visualization_comparison.png)
+SQL, operational analytics, KPI design, before/after comparison, Lean Six Sigma, root-cause analysis, data visualization, financial impact estimation, and executive communication.
 
-Side-by-side bars that scream "this worked".
+## Interpretation Note
 
-*(All images are in the `visualizations/` folder — drag them into issues if they don't load.)*
-
-## Code Snippets I Actually Ran
-
-Here are the most useful pieces of code from the analysis. They’re simple, readable, and show exactly how I pulled the insights.
-
-### 1. Loading & Comparing the Data
-
-```python
-import pandas as pd
-
-# Load both states
-before = pd.read_csv("before_state_data.csv")
-after = pd.read_csv("after_state_data.csv")
-
-print("Before shape:", before.shape)
-print("After shape:", after.shape)
-
-# Key metrics
-print("\nCycle Time:")
-print(f"  Before: {before['total_cycle_time_minutes'].mean():.1f} min")
-print(f"  After:  {after['total_cycle_time_minutes'].mean():.1f} min")
-print(f"  Reduction: {((before['total_cycle_time_minutes'].mean() - after['total_cycle_time_minutes'].mean()) / before['total_cycle_time_minutes'].mean() * 100):.1f}%")
-
-print("\nError & Rework Rates:")
-print(f"  Error Rate Before: {before['total_errors'].mean() * 100:.1f}%")
-print(f"  Error Rate After:  {after['total_errors'].mean() * 100:.1f}%")
-print(f"  Rework Rate Before: {before['rework_required'].mean() * 100:.1f}%")
-print(f"  Rework Rate After:  {after['rework_required'].mean() * 100:.1f}%")
+The datasets represent an illustrative 200-order improvement scenario. Results demonstrate the analytical method and should be validated against controlled production data before operational decisions are made.
