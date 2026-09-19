@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import os
 from pathlib import Path
 
 import duckdb
@@ -14,12 +15,8 @@ OUTPUT_DIR = ROOT / "outputs"
 
 def main() -> None:
     OUTPUT_DIR.mkdir(exist_ok=True)
+    os.chdir(ROOT)
     connection = duckdb.connect(database=":memory:")
-    connection.execute(f"SET home_directory='{ROOT.as_posix()}'")
-
-    # DuckDB read_csv_auto resolves relative paths from the current process.
-    # Change into the repository directory through explicit absolute view inputs
-    # by executing the SQL with the process launched from the repo root.
     connection.execute(SQL_PATH.read_text(encoding="utf-8"))
 
     exports = {
