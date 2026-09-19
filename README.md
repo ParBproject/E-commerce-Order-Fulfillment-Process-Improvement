@@ -42,6 +42,25 @@ These values are based on an illustrative process-improvement dataset and are pr
 
 ## Analytical workflow
 
+### Analytics architecture
+
+```mermaid
+flowchart LR
+    A[Before / After CSVs] --> B[Data Quality Controls]
+    B --> C[Unified Order Model]
+    C --> D[DuckDB Analytical Views]
+    D --> E[KPI Scorecard]
+    D --> F[Process-Step Model]
+    F --> G[Pareto Bottlenecks]
+    D --> H[Rolling Trends]
+    D --> I[Exception Ranking]
+    E --> J[Executive Dashboard]
+    G --> J
+    H --> J
+    I --> J
+```
+
+
 ```text
 Raw before / after order CSVs
         ↓
