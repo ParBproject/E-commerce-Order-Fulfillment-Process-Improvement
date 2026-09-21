@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bayline — Dock-to-stage control</title>
+  <meta name="description" content="Fulfillment control board for a three-DC same-day network. Baseline vs zone-pick pilot." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <header class="mast">
+    <div class="brand">
+      <img src="assets/mark.svg" alt="" width="36" height="36" />
+      <div>
+        <div class="wordmark">Bayline</div>
+        <div class="submark">Dock-to-stage control</div>
+      </div>
+    </div>
+    <div class="mast-meta">
+      <span class="pill">AUS-01 · EWR-07 · FNT-12</span>
+      <span class="pill warn">SLA 120 min</span>
+      <span class="pill" id="orderCount">— cartons</span>
+    </div>
+    <form class="filters" id="filters">
+      <label>Building
+        <select name="dc">
+          <option value="all">Network</option>
+          <option value="AUS-01">Austin Gateway</option>
+          <option value="EWR-07">Newark Hub</option>
+          <option value="FNT-12">Fontana West</option>
+        </select>
+      </label>
+      <label>Shift
+        <select name="shift">
+          <option value="all">All shifts</option>
+          <option value="Days">Days</option>
+          <option value="Swing">Swing</option>
+          <option value="Night">Night</option>
+        </select>
+      </label>
+    </form>
+  </header>
+
+  <main>
+    <section class="tickets" id="tickets" aria-label="Period scorecard"></section>
+
+    <section class="line-block" id="line">
+      <div class="section-head">
+        <h2>Sortation line</h2>
+        <p>Average dwell by station. Pick is the recovered bottleneck — the door that still owns the most minutes.</p>
+      </div>
+      <div class="docks" id="docks"></div>
+    </section>
+
+    <section class="split">
+      <article class="panel" id="dwell">
+        <div class="section-head">
+          <h2>Dwell shape</h2>
+          <p>Cycle-time density. The white post is the 120-minute dock gate.</p>
+        </div>
+        <svg id="density" viewBox="0 0 640 220" role="img" aria-label="Cycle time density before and after the pilot"></svg>
+        <div class="legend">
+          <span class="swatch base"></span> Baseline 8 weeks
+          <span class="swatch pilot"></span> Pilot 8 weeks
+        </div>
+      </article>
+      <article class="panel" id="tape">
+        <div class="section-head">
+          <h2>Week tape</h2>
+          <p>Network median by week. Cutover week of 3–9 Mar is not in the sample.</p>
+        </div>
+        <svg id="weekTape" viewBox="0 0 640 220" role="img" aria-label="Weekly median cycle time"></svg>
+      </article>
+    </section>
+
+    <section class="floor-block" id="floor">
+      <div class="section-head">
+        <h2>Three buildings, nine bays</h2>
+        <p>Median dock-to-stage by facility and shift. Fontana night was the cell that broke the trailer plan.</p>
+      </div>
+      <div class="yards" id="yards"></div>
+    </section>
+
+    <section class="board-block" id="board">
+      <div class="section-head">
+        <h2>Live exception board</h2>
+        <p>Pilot cartons still over the gate, ranked like a departure screen — not a chart.</p>
+      </div>
+      <div class="fids" id="fids"></div>
+    </section>
+
+    <section class="close-block">
+      <article class="brief panel">
+        <div class="section-head">
+          <h2>Analyst note</h2>
+          <p>Every sentence below is generated from the DuckDB marts, not written by hand.</p>
+        </div>
+        <div class="brief-copy" id="brief"></div>
+      </article>
+      <article class="tariff panel">
+        <div class="section-head">
+          <h2>Labor tariff</h2>
+          <p>Touch-time only (locate, pick, pack, QC). Wave queue is occupancy, not wages.</p>
+        </div>
+        <table id="tariff">
+          <thead>
+            <tr>
+              <th>Monthly cartons</th>
+              <th>Hours back</th>
+              <th>$ / month</th>
+              <th>Payback</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <p class="footnote" id="moneyFoot"></p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <span>Illustrative network · seed 42 · not a live warehouse feed</span>
+    <span>Bayline control · same-day dock geometry</span>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

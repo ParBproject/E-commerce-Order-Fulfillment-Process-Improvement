@@ -1,0 +1,5 @@
+assumption_id,description,unit,value
+hourly_loaded_labor,Loaded warehouse labor including fringe,USD_per_hour,
+sla_minutes,Dock-to-stage same-day target,minutes,120.0
+pilot_implementation_cost,"Zone-pick slotting, rack relabel, skip-lane training",USD,72000.0
+working_days_month,Network operating days used in capacity math,days,26.0
