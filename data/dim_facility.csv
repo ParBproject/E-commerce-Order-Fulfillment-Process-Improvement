@@ -1,0 +1,4 @@
+facility_id,name,region,metro,labor_rate,layout_penalty,night_penalty,congestion
+AUS-01,Austin Gateway,South Central,Austin,24.5,1.0,1.03,1.0
+EWR-07,Newark Hub,Northeast,Newark,31.2,1.05,1.06,1.1
+FNT-12,Fontana West,West,Inland Empire,28.4,1.16,1.2,1.04

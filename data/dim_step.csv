@@ -1,0 +1,7 @@
+step_id,step_name,step_seq,baseline_mean_minutes
+wave_release,Wave release,1,5.0
+slot_locate,Slot locate,2,7.4
+pick,Pick,3,31.0
+pack,Pack,4,12.8
+qc,QC gate,5,14.2
+stage_ship,Stage & ship,6,8.4
