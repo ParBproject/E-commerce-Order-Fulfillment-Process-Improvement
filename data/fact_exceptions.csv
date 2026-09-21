@@ -1,0 +1,1768 @@
+order_id,step_id,exception_code,exception_label,minutes_added,rework_flag
+BL-10001,pack,damaged_carton,Damaged carton,12.7,0
+BL-10001,stage_ship,missed_sla,Missed same-day dock,0.6,0
+BL-10018,stage_ship,label_mismatch,Label mismatch,4.6,1
+BL-10018,stage_ship,missed_sla,Missed same-day dock,0.8,0
+BL-10019,qc,label_mismatch,Label mismatch,10.3,1
+BL-10022,stage_ship,missed_sla,Missed same-day dock,21.8,0
+BL-10027,pick,short_pick,Short pick / slot empty,12.0,1
+BL-10031,qc,label_mismatch,Label mismatch,11.7,1
+BL-10031,stage_ship,missed_sla,Missed same-day dock,45.4,0
+BL-10033,pick,short_pick,Short pick / slot empty,4.0,1
+BL-10033,stage_ship,missed_sla,Missed same-day dock,11.4,0
+BL-10034,stage_ship,missed_sla,Missed same-day dock,4.8,0
+BL-10035,slot_locate,label_mismatch,Label mismatch,14.2,1
+BL-10036,stage_ship,missed_sla,Missed same-day dock,27.0,0
+BL-10037,stage_ship,weight_fail,In-line weight fail,15.2,1
+BL-10039,stage_ship,missed_sla,Missed same-day dock,59.7,0
+BL-10042,stage_ship,missed_sla,Missed same-day dock,6.7,0
+BL-10043,stage_ship,missed_sla,Missed same-day dock,0.4,0
+BL-10045,stage_ship,missed_sla,Missed same-day dock,25.3,0
+BL-10046,stage_ship,missed_sla,Missed same-day dock,16.7,0
+BL-10047,wave_release,label_mismatch,Label mismatch,16.8,1
+BL-10048,stage_ship,missed_sla,Missed same-day dock,15.3,0
+BL-10049,pack,damaged_carton,Damaged carton,6.7,0
+BL-10049,stage_ship,missed_sla,Missed same-day dock,9.3,0
+BL-10051,stage_ship,missed_sla,Missed same-day dock,36.4,0
+BL-10052,stage_ship,missed_sla,Missed same-day dock,10.7,0
+BL-10053,stage_ship,missed_sla,Missed same-day dock,50.4,0
+BL-10054,stage_ship,missed_sla,Missed same-day dock,13.3,0
+BL-10056,pack,damaged_carton,Damaged carton,13.1,0
+BL-10056,stage_ship,missed_sla,Missed same-day dock,8.6,0
+BL-10059,qc,weight_fail,In-line weight fail,5.7,1
+BL-10062,stage_ship,missed_sla,Missed same-day dock,23.5,0
+BL-10064,pick,short_pick,Short pick / slot empty,12.8,1
+BL-10064,stage_ship,missed_sla,Missed same-day dock,14.6,0
+BL-10070,pick,short_pick,Short pick / slot empty,4.0,1
+BL-10070,stage_ship,missed_sla,Missed same-day dock,36.9,0
+BL-10072,qc,weight_fail,In-line weight fail,4.0,1
+BL-10075,stage_ship,missed_sla,Missed same-day dock,2.9,0
+BL-10077,qc,label_mismatch,Label mismatch,14.5,1
+BL-10077,stage_ship,missed_sla,Missed same-day dock,2.8,0
+BL-10082,pack,damaged_carton,Damaged carton,12.1,0
+BL-10090,stage_ship,missed_sla,Missed same-day dock,8.1,0
+BL-10092,slot_locate,label_mismatch,Label mismatch,15.8,1
+BL-10092,stage_ship,missed_sla,Missed same-day dock,48.5,0
+BL-10096,stage_ship,missed_sla,Missed same-day dock,4.5,0
+BL-10098,stage_ship,missed_sla,Missed same-day dock,11.3,0
+BL-10102,stage_ship,missed_sla,Missed same-day dock,13.1,0
+BL-10103,pack,damaged_carton,Damaged carton,15.7,0
+BL-10103,stage_ship,missed_sla,Missed same-day dock,12.4,0
+BL-10104,qc,label_mismatch,Label mismatch,13.5,1
+BL-10104,stage_ship,missed_sla,Missed same-day dock,11.4,0
+BL-10105,stage_ship,missed_sla,Missed same-day dock,27.0,0
+BL-10112,pick,short_pick,Short pick / slot empty,9.2,1
+BL-10112,qc,weight_fail,In-line weight fail,7.7,1
+BL-10112,stage_ship,missed_sla,Missed same-day dock,64.9,0
+BL-10116,slot_locate,label_mismatch,Label mismatch,15.3,1
+BL-10118,stage_ship,missed_sla,Missed same-day dock,41.9,0
+BL-10121,pack,damaged_carton,Damaged carton,7.2,0
+BL-10121,stage_ship,missed_sla,Missed same-day dock,23.3,0
+BL-10123,stage_ship,missed_sla,Missed same-day dock,6.0,0
+BL-10124,stage_ship,missed_sla,Missed same-day dock,13.1,0
+BL-10128,pack,damaged_carton,Damaged carton,17.9,0
+BL-10128,qc,label_mismatch,Label mismatch,8.7,1
+BL-10128,stage_ship,missed_sla,Missed same-day dock,6.1,0
+BL-10130,stage_ship,missed_sla,Missed same-day dock,3.2,0
+BL-10131,qc,weight_fail,In-line weight fail,5.7,1
+BL-10131,stage_ship,missed_sla,Missed same-day dock,5.2,0
+BL-10132,stage_ship,missed_sla,Missed same-day dock,2.0,0
+BL-10133,stage_ship,missed_sla,Missed same-day dock,3.2,0
+BL-10137,qc,weight_fail,In-line weight fail,13.8,1
+BL-10140,qc,weight_fail,In-line weight fail,11.8,1
+BL-10141,stage_ship,missed_sla,Missed same-day dock,12.3,0
+BL-10142,stage_ship,missed_sla,Missed same-day dock,58.8,0
+BL-10143,pack,damaged_carton,Damaged carton,8.5,0
+BL-10143,stage_ship,missed_sla,Missed same-day dock,27.0,0
+BL-10144,stage_ship,missed_sla,Missed same-day dock,12.0,0
+BL-10148,qc,label_mismatch,Label mismatch,12.3,1
+BL-10151,stage_ship,missed_sla,Missed same-day dock,4.6,0
+BL-10154,stage_ship,label_mismatch,Label mismatch,13.5,1
+BL-10156,pick,short_pick,Short pick / slot empty,10.5,1
+BL-10156,stage_ship,missed_sla,Missed same-day dock,22.1,0
+BL-10157,pack,damaged_carton,Damaged carton,10.8,0
+BL-10157,stage_ship,missed_sla,Missed same-day dock,35.0,0
+BL-10159,stage_ship,missed_sla,Missed same-day dock,19.4,0
+BL-10160,stage_ship,label_mismatch,Label mismatch,4.7,1
+BL-10160,stage_ship,missed_sla,Missed same-day dock,29.5,0
+BL-10161,stage_ship,missed_sla,Missed same-day dock,26.5,0
+BL-10163,stage_ship,missed_sla,Missed same-day dock,19.2,0
+BL-10164,stage_ship,missed_sla,Missed same-day dock,28.6,0
+BL-10166,stage_ship,missed_sla,Missed same-day dock,69.7,0
+BL-10167,qc,weight_fail,In-line weight fail,11.3,1
+BL-10167,stage_ship,missed_sla,Missed same-day dock,15.4,0
+BL-10169,stage_ship,missed_sla,Missed same-day dock,4.1,0
+BL-10170,stage_ship,missed_sla,Missed same-day dock,40.9,0
+BL-10171,stage_ship,missed_sla,Missed same-day dock,4.7,0
+BL-10172,stage_ship,weight_fail,In-line weight fail,9.0,1
+BL-10173,stage_ship,missed_sla,Missed same-day dock,18.9,0
+BL-10176,stage_ship,missed_sla,Missed same-day dock,2.4,0
+BL-10183,stage_ship,missed_sla,Missed same-day dock,6.9,0
+BL-10184,pick,short_pick,Short pick / slot empty,11.2,1
+BL-10184,stage_ship,missed_sla,Missed same-day dock,2.1,0
+BL-10187,stage_ship,missed_sla,Missed same-day dock,29.4,0
+BL-10188,wave_release,label_mismatch,Label mismatch,9.8,1
+BL-10188,qc,weight_fail,In-line weight fail,11.8,1
+BL-10188,stage_ship,missed_sla,Missed same-day dock,26.4,0
+BL-10189,qc,label_mismatch,Label mismatch,5.7,1
+BL-10190,stage_ship,missed_sla,Missed same-day dock,27.7,0
+BL-10192,qc,weight_fail,In-line weight fail,8.3,1
+BL-10192,stage_ship,missed_sla,Missed same-day dock,21.9,0
+BL-10193,qc,weight_fail,In-line weight fail,4.0,1
+BL-10194,stage_ship,missed_sla,Missed same-day dock,27.2,0
+BL-10195,qc,label_mismatch,Label mismatch,15.4,1
+BL-10195,stage_ship,missed_sla,Missed same-day dock,5.4,0
+BL-10196,wave_release,label_mismatch,Label mismatch,10.8,1
+BL-10197,pick,short_pick,Short pick / slot empty,7.4,1
+BL-10198,stage_ship,missed_sla,Missed same-day dock,8.3,0
+BL-10199,stage_ship,missed_sla,Missed same-day dock,14.1,0
+BL-10200,stage_ship,missed_sla,Missed same-day dock,4.7,0
+BL-10201,qc,weight_fail,In-line weight fail,5.4,1
+BL-10201,stage_ship,missed_sla,Missed same-day dock,21.0,0
+BL-10202,stage_ship,missed_sla,Missed same-day dock,13.7,0
+BL-10203,stage_ship,missed_sla,Missed same-day dock,40.9,0
+BL-10207,pack,damaged_carton,Damaged carton,10.1,0
+BL-10211,stage_ship,label_mismatch,Label mismatch,11.3,1
+BL-10212,qc,label_mismatch,Label mismatch,16.3,1
+BL-10213,pick,short_pick,Short pick / slot empty,15.3,1
+BL-10215,pick,short_pick,Short pick / slot empty,10.6,1
+BL-10220,pick,short_pick,Short pick / slot empty,8.0,1
+BL-10222,stage_ship,missed_sla,Missed same-day dock,3.0,0
+BL-10223,stage_ship,missed_sla,Missed same-day dock,3.0,0
+BL-10224,stage_ship,missed_sla,Missed same-day dock,0.2,0
+BL-10230,slot_locate,weight_fail,In-line weight fail,14.2,1
+BL-10230,pick,short_pick,Short pick / slot empty,9.8,1
+BL-10236,qc,label_mismatch,Label mismatch,12.0,1
+BL-10236,stage_ship,missed_sla,Missed same-day dock,0.9,0
+BL-10237,pick,short_pick,Short pick / slot empty,15.8,1
+BL-10238,stage_ship,missed_sla,Missed same-day dock,39.9,0
+BL-10239,qc,weight_fail,In-line weight fail,4.0,1
+BL-10240,stage_ship,missed_sla,Missed same-day dock,40.5,0
+BL-10241,stage_ship,missed_sla,Missed same-day dock,28.8,0
+BL-10242,qc,weight_fail,In-line weight fail,16.7,1
+BL-10242,stage_ship,missed_sla,Missed same-day dock,8.1,0
+BL-10244,stage_ship,missed_sla,Missed same-day dock,10.1,0
+BL-10245,stage_ship,missed_sla,Missed same-day dock,1.1,0
+BL-10246,stage_ship,missed_sla,Missed same-day dock,46.9,0
+BL-10247,stage_ship,missed_sla,Missed same-day dock,4.1,0
+BL-10258,stage_ship,missed_sla,Missed same-day dock,7.5,0
+BL-10259,pack,damaged_carton,Damaged carton,11.0,0
+BL-10259,stage_ship,missed_sla,Missed same-day dock,17.3,0
+BL-10261,pick,short_pick,Short pick / slot empty,12.3,1
+BL-10262,stage_ship,missed_sla,Missed same-day dock,1.3,0
+BL-10264,pack,damaged_carton,Damaged carton,10.2,0
+BL-10267,stage_ship,missed_sla,Missed same-day dock,6.0,0
+BL-10268,pack,damaged_carton,Damaged carton,13.3,0
+BL-10268,stage_ship,missed_sla,Missed same-day dock,25.8,0
+BL-10271,pick,short_pick,Short pick / slot empty,9.4,1
+BL-10271,stage_ship,missed_sla,Missed same-day dock,1.3,0
+BL-10273,wave_release,weight_fail,In-line weight fail,7.1,1
+BL-10273,stage_ship,missed_sla,Missed same-day dock,18.0,0
+BL-10274,pack,damaged_carton,Damaged carton,10.4,0
+BL-10276,stage_ship,missed_sla,Missed same-day dock,20.7,0
+BL-10277,qc,label_mismatch,Label mismatch,15.0,1
+BL-10277,stage_ship,missed_sla,Missed same-day dock,7.5,0
+BL-10280,stage_ship,missed_sla,Missed same-day dock,31.9,0
+BL-10281,stage_ship,missed_sla,Missed same-day dock,0.7,0
+BL-10282,stage_ship,missed_sla,Missed same-day dock,49.4,0
+BL-10283,pick,short_pick,Short pick / slot empty,9.1,1
+BL-10283,stage_ship,missed_sla,Missed same-day dock,27.7,0
+BL-10285,stage_ship,missed_sla,Missed same-day dock,7.8,0
+BL-10286,stage_ship,weight_fail,In-line weight fail,10.5,1
+BL-10286,stage_ship,missed_sla,Missed same-day dock,32.2,0
+BL-10288,stage_ship,missed_sla,Missed same-day dock,13.3,0
+BL-10291,stage_ship,weight_fail,In-line weight fail,10.6,1
+BL-10291,stage_ship,missed_sla,Missed same-day dock,14.7,0
+BL-10294,stage_ship,missed_sla,Missed same-day dock,13.7,0
+BL-10299,stage_ship,missed_sla,Missed same-day dock,19.0,0
+BL-10301,stage_ship,weight_fail,In-line weight fail,4.0,1
+BL-10303,stage_ship,missed_sla,Missed same-day dock,1.3,0
+BL-10304,pack,damaged_carton,Damaged carton,18.3,0
+BL-10304,stage_ship,missed_sla,Missed same-day dock,4.9,0
+BL-10305,stage_ship,missed_sla,Missed same-day dock,35.4,0
+BL-10311,pick,short_pick,Short pick / slot empty,10.5,1
+BL-10312,stage_ship,missed_sla,Missed same-day dock,15.5,0
+BL-10313,wave_release,label_mismatch,Label mismatch,10.9,1
+BL-10313,pick,short_pick,Short pick / slot empty,11.8,1
+BL-10314,stage_ship,missed_sla,Missed same-day dock,19.8,0
+BL-10315,stage_ship,missed_sla,Missed same-day dock,22.7,0
+BL-10316,pack,damaged_carton,Damaged carton,11.1,0
+BL-10316,stage_ship,missed_sla,Missed same-day dock,1.3,0
+BL-10319,stage_ship,missed_sla,Missed same-day dock,23.9,0
+BL-10320,pick,short_pick,Short pick / slot empty,10.5,1
+BL-10320,stage_ship,missed_sla,Missed same-day dock,45.9,0
+BL-10323,pack,damaged_carton,Damaged carton,10.2,0
+BL-10326,pick,short_pick,Short pick / slot empty,6.5,1
+BL-10326,pack,damaged_carton,Damaged carton,7.2,0
+BL-10326,stage_ship,missed_sla,Missed same-day dock,1.1,0
+BL-10327,stage_ship,missed_sla,Missed same-day dock,1.4,0
+BL-10330,stage_ship,label_mismatch,Label mismatch,12.3,1
+BL-10330,stage_ship,missed_sla,Missed same-day dock,22.7,0
+BL-10333,pick,short_pick,Short pick / slot empty,15.9,1
+BL-10333,stage_ship,missed_sla,Missed same-day dock,47.5,0
+BL-10334,qc,weight_fail,In-line weight fail,10.6,1
+BL-10334,stage_ship,label_mismatch,Label mismatch,11.1,1
+BL-10334,stage_ship,missed_sla,Missed same-day dock,52.5,0
+BL-10336,qc,weight_fail,In-line weight fail,9.3,1
+BL-10340,stage_ship,missed_sla,Missed same-day dock,6.3,0
+BL-10342,stage_ship,weight_fail,In-line weight fail,10.9,1
+BL-10347,pack,damaged_carton,Damaged carton,10.5,0
+BL-10352,wave_release,weight_fail,In-line weight fail,10.1,1
+BL-10353,qc,weight_fail,In-line weight fail,7.3,1
+BL-10356,stage_ship,missed_sla,Missed same-day dock,14.1,0
+BL-10362,pack,damaged_carton,Damaged carton,4.0,0
+BL-10366,stage_ship,missed_sla,Missed same-day dock,24.9,0
+BL-10367,wave_release,label_mismatch,Label mismatch,16.0,1
+BL-10367,stage_ship,missed_sla,Missed same-day dock,2.0,0
+BL-10371,stage_ship,missed_sla,Missed same-day dock,24.6,0
+BL-10375,qc,label_mismatch,Label mismatch,12.6,1
+BL-10375,stage_ship,missed_sla,Missed same-day dock,47.7,0
+BL-10376,pack,damaged_carton,Damaged carton,8.9,0
+BL-10376,stage_ship,missed_sla,Missed same-day dock,1.2,0
+BL-10378,pack,damaged_carton,Damaged carton,4.8,0
+BL-10378,stage_ship,missed_sla,Missed same-day dock,14.0,0
+BL-10379,pick,short_pick,Short pick / slot empty,18.7,1
+BL-10379,stage_ship,missed_sla,Missed same-day dock,80.1,0
+BL-10380,qc,label_mismatch,Label mismatch,10.6,1
+BL-10380,stage_ship,missed_sla,Missed same-day dock,39.2,0
+BL-10384,pick,short_pick,Short pick / slot empty,8.3,1
+BL-10384,stage_ship,missed_sla,Missed same-day dock,7.2,0
+BL-10385,pick,short_pick,Short pick / slot empty,6.3,1
+BL-10386,qc,weight_fail,In-line weight fail,12.3,1
+BL-10386,stage_ship,missed_sla,Missed same-day dock,19.6,0
+BL-10387,stage_ship,missed_sla,Missed same-day dock,11.5,0
+BL-10390,stage_ship,missed_sla,Missed same-day dock,48.1,0
+BL-10391,stage_ship,missed_sla,Missed same-day dock,14.5,0
+BL-10392,stage_ship,missed_sla,Missed same-day dock,2.9,0
+BL-10393,stage_ship,missed_sla,Missed same-day dock,31.3,0
+BL-10394,pick,short_pick,Short pick / slot empty,8.0,1
+BL-10394,stage_ship,missed_sla,Missed same-day dock,26.8,0
+BL-10395,pick,short_pick,Short pick / slot empty,17.0,1
+BL-10395,stage_ship,missed_sla,Missed same-day dock,29.2,0
+BL-10397,stage_ship,missed_sla,Missed same-day dock,32.4,0
+BL-10398,stage_ship,missed_sla,Missed same-day dock,6.3,0
+BL-10399,stage_ship,missed_sla,Missed same-day dock,32.5,0
+BL-10400,stage_ship,missed_sla,Missed same-day dock,0.6,0
+BL-10401,qc,label_mismatch,Label mismatch,16.8,1
+BL-10401,stage_ship,missed_sla,Missed same-day dock,29.6,0
+BL-10405,qc,label_mismatch,Label mismatch,6.5,1
+BL-10405,stage_ship,missed_sla,Missed same-day dock,20.5,0
+BL-10409,pack,damaged_carton,Damaged carton,15.2,0
+BL-10409,stage_ship,missed_sla,Missed same-day dock,47.3,0
+BL-10412,qc,weight_fail,In-line weight fail,14.8,1
+BL-10414,stage_ship,missed_sla,Missed same-day dock,8.8,0
+BL-10425,stage_ship,missed_sla,Missed same-day dock,9.9,0
+BL-10428,pick,short_pick,Short pick / slot empty,6.8,1
+BL-10429,pack,damaged_carton,Damaged carton,18.4,0
+BL-10429,stage_ship,missed_sla,Missed same-day dock,29.4,0
+BL-10430,stage_ship,missed_sla,Missed same-day dock,17.4,0
+BL-10436,wave_release,weight_fail,In-line weight fail,8.7,1
+BL-10437,wave_release,weight_fail,In-line weight fail,8.9,1
+BL-10438,stage_ship,missed_sla,Missed same-day dock,1.0,0
+BL-10439,stage_ship,missed_sla,Missed same-day dock,49.5,0
+BL-10440,wave_release,label_mismatch,Label mismatch,22.3,1
+BL-10440,stage_ship,missed_sla,Missed same-day dock,44.8,0
+BL-10441,stage_ship,missed_sla,Missed same-day dock,15.6,0
+BL-10442,pack,damaged_carton,Damaged carton,12.1,0
+BL-10442,stage_ship,missed_sla,Missed same-day dock,7.1,0
+BL-10443,qc,label_mismatch,Label mismatch,5.0,1
+BL-10444,stage_ship,missed_sla,Missed same-day dock,6.0,0
+BL-10447,slot_locate,weight_fail,In-line weight fail,18.8,1
+BL-10447,stage_ship,missed_sla,Missed same-day dock,1.0,0
+BL-10448,stage_ship,missed_sla,Missed same-day dock,6.0,0
+BL-10451,slot_locate,label_mismatch,Label mismatch,10.9,1
+BL-10456,pack,damaged_carton,Damaged carton,4.0,0
+BL-10458,slot_locate,weight_fail,In-line weight fail,14.3,1
+BL-10460,qc,weight_fail,In-line weight fail,9.5,1
+BL-10465,stage_ship,missed_sla,Missed same-day dock,10.1,0
+BL-10469,stage_ship,missed_sla,Missed same-day dock,37.1,0
+BL-10473,stage_ship,missed_sla,Missed same-day dock,20.1,0
+BL-10474,pack,damaged_carton,Damaged carton,9.0,0
+BL-10475,stage_ship,missed_sla,Missed same-day dock,16.5,0
+BL-10481,pick,short_pick,Short pick / slot empty,16.5,1
+BL-10482,wave_release,weight_fail,In-line weight fail,9.2,1
+BL-10482,stage_ship,missed_sla,Missed same-day dock,15.6,0
+BL-10483,stage_ship,missed_sla,Missed same-day dock,26.5,0
+BL-10485,pick,short_pick,Short pick / slot empty,11.1,1
+BL-10487,stage_ship,missed_sla,Missed same-day dock,48.4,0
+BL-10490,stage_ship,missed_sla,Missed same-day dock,6.9,0
+BL-10491,stage_ship,missed_sla,Missed same-day dock,18.9,0
+BL-10493,pack,damaged_carton,Damaged carton,7.1,0
+BL-10499,qc,weight_fail,In-line weight fail,5.2,1
+BL-10505,pick,short_pick,Short pick / slot empty,9.9,1
+BL-10507,pack,damaged_carton,Damaged carton,12.9,0
+BL-10507,stage_ship,missed_sla,Missed same-day dock,33.5,0
+BL-10508,stage_ship,missed_sla,Missed same-day dock,0.9,0
+BL-10512,stage_ship,missed_sla,Missed same-day dock,18.7,0
+BL-10515,qc,label_mismatch,Label mismatch,6.8,1
+BL-10515,stage_ship,missed_sla,Missed same-day dock,10.2,0
+BL-10516,stage_ship,missed_sla,Missed same-day dock,9.9,0
+BL-10517,stage_ship,missed_sla,Missed same-day dock,16.3,0
+BL-10520,pack,damaged_carton,Damaged carton,11.2,0
+BL-10520,stage_ship,missed_sla,Missed same-day dock,11.8,0
+BL-10521,stage_ship,missed_sla,Missed same-day dock,5.4,0
+BL-10522,qc,weight_fail,In-line weight fail,14.0,1
+BL-10522,stage_ship,missed_sla,Missed same-day dock,20.9,0
+BL-10523,stage_ship,missed_sla,Missed same-day dock,82.3,0
+BL-10524,pick,short_pick,Short pick / slot empty,5.4,1
+BL-10529,stage_ship,missed_sla,Missed same-day dock,57.1,0
+BL-10530,stage_ship,missed_sla,Missed same-day dock,55.6,0
+BL-10531,pack,damaged_carton,Damaged carton,14.9,0
+BL-10531,qc,label_mismatch,Label mismatch,8.4,1
+BL-10531,stage_ship,missed_sla,Missed same-day dock,64.8,0
+BL-10534,qc,label_mismatch,Label mismatch,12.9,1
+BL-10534,stage_ship,missed_sla,Missed same-day dock,46.3,0
+BL-10536,pack,damaged_carton,Damaged carton,11.2,0
+BL-10536,stage_ship,missed_sla,Missed same-day dock,9.9,0
+BL-10537,pack,damaged_carton,Damaged carton,13.3,0
+BL-10537,stage_ship,missed_sla,Missed same-day dock,16.1,0
+BL-10546,wave_release,label_mismatch,Label mismatch,9.4,1
+BL-10548,slot_locate,label_mismatch,Label mismatch,11.4,1
+BL-10548,stage_ship,missed_sla,Missed same-day dock,18.8,0
+BL-10551,stage_ship,missed_sla,Missed same-day dock,3.7,0
+BL-10552,wave_release,label_mismatch,Label mismatch,11.5,1
+BL-10556,stage_ship,missed_sla,Missed same-day dock,19.0,0
+BL-10557,stage_ship,weight_fail,In-line weight fail,9.2,1
+BL-10557,stage_ship,missed_sla,Missed same-day dock,41.7,0
+BL-10559,stage_ship,missed_sla,Missed same-day dock,6.6,0
+BL-10569,stage_ship,missed_sla,Missed same-day dock,58.3,0
+BL-10570,stage_ship,missed_sla,Missed same-day dock,8.9,0
+BL-10577,pick,short_pick,Short pick / slot empty,12.0,1
+BL-10578,pack,damaged_carton,Damaged carton,7.9,0
+BL-10578,stage_ship,missed_sla,Missed same-day dock,10.5,0
+BL-10581,stage_ship,missed_sla,Missed same-day dock,4.1,0
+BL-10585,pack,damaged_carton,Damaged carton,8.4,0
+BL-10587,stage_ship,missed_sla,Missed same-day dock,16.5,0
+BL-10588,pick,short_pick,Short pick / slot empty,12.2,1
+BL-10591,stage_ship,missed_sla,Missed same-day dock,25.8,0
+BL-10594,stage_ship,missed_sla,Missed same-day dock,16.0,0
+BL-10598,qc,weight_fail,In-line weight fail,13.2,1
+BL-10598,stage_ship,missed_sla,Missed same-day dock,42.8,0
+BL-10600,qc,label_mismatch,Label mismatch,5.3,1
+BL-10600,stage_ship,missed_sla,Missed same-day dock,50.9,0
+BL-10601,pick,short_pick,Short pick / slot empty,19.4,1
+BL-10601,stage_ship,missed_sla,Missed same-day dock,57.8,0
+BL-10604,pick,short_pick,Short pick / slot empty,16.5,1
+BL-10604,stage_ship,missed_sla,Missed same-day dock,14.1,0
+BL-10605,stage_ship,missed_sla,Missed same-day dock,20.9,0
+BL-10606,slot_locate,weight_fail,In-line weight fail,5.7,1
+BL-10607,stage_ship,missed_sla,Missed same-day dock,11.3,0
+BL-10608,stage_ship,missed_sla,Missed same-day dock,2.9,0
+BL-10612,stage_ship,missed_sla,Missed same-day dock,8.4,0
+BL-10614,pick,short_pick,Short pick / slot empty,4.0,1
+BL-10622,pick,short_pick,Short pick / slot empty,10.9,1
+BL-10622,stage_ship,missed_sla,Missed same-day dock,27.9,0
+BL-10627,stage_ship,label_mismatch,Label mismatch,16.7,1
+BL-10627,stage_ship,missed_sla,Missed same-day dock,31.4,0
+BL-10628,qc,label_mismatch,Label mismatch,12.2,1
+BL-10628,stage_ship,missed_sla,Missed same-day dock,2.1,0
+BL-10629,pick,short_pick,Short pick / slot empty,21.4,1
+BL-10630,stage_ship,missed_sla,Missed same-day dock,50.3,0
+BL-10634,stage_ship,missed_sla,Missed same-day dock,4.6,0
+BL-10636,stage_ship,missed_sla,Missed same-day dock,0.9,0
+BL-10641,stage_ship,missed_sla,Missed same-day dock,34.5,0
+BL-10642,qc,weight_fail,In-line weight fail,10.0,1
+BL-10642,stage_ship,missed_sla,Missed same-day dock,32.4,0
+BL-10644,qc,label_mismatch,Label mismatch,9.7,1
+BL-10647,stage_ship,missed_sla,Missed same-day dock,26.2,0
+BL-10648,qc,label_mismatch,Label mismatch,9.0,1
+BL-10648,stage_ship,missed_sla,Missed same-day dock,19.9,0
+BL-10651,stage_ship,missed_sla,Missed same-day dock,12.8,0
+BL-10654,qc,label_mismatch,Label mismatch,14.3,1
+BL-10654,stage_ship,missed_sla,Missed same-day dock,6.0,0
+BL-10655,stage_ship,missed_sla,Missed same-day dock,2.0,0
+BL-10656,qc,weight_fail,In-line weight fail,9.2,1
+BL-10658,stage_ship,missed_sla,Missed same-day dock,17.3,0
+BL-10659,stage_ship,missed_sla,Missed same-day dock,6.4,0
+BL-10661,stage_ship,missed_sla,Missed same-day dock,35.9,0
+BL-10663,slot_locate,weight_fail,In-line weight fail,12.5,1
+BL-10664,stage_ship,missed_sla,Missed same-day dock,12.9,0
+BL-10666,stage_ship,missed_sla,Missed same-day dock,24.0,0
+BL-10667,pack,damaged_carton,Damaged carton,12.9,0
+BL-10668,pick,short_pick,Short pick / slot empty,19.8,1
+BL-10668,stage_ship,missed_sla,Missed same-day dock,38.3,0
+BL-10669,stage_ship,missed_sla,Missed same-day dock,10.0,0
+BL-10671,wave_release,weight_fail,In-line weight fail,14.2,1
+BL-10676,qc,weight_fail,In-line weight fail,7.6,1
+BL-10677,qc,label_mismatch,Label mismatch,9.7,1
+BL-10680,pick,short_pick,Short pick / slot empty,11.8,1
+BL-10685,pick,short_pick,Short pick / slot empty,15.3,1
+BL-10685,stage_ship,missed_sla,Missed same-day dock,10.4,0
+BL-10686,stage_ship,label_mismatch,Label mismatch,17.3,1
+BL-10686,stage_ship,missed_sla,Missed same-day dock,17.8,0
+BL-10687,stage_ship,weight_fail,In-line weight fail,20.7,1
+BL-10688,qc,weight_fail,In-line weight fail,11.0,1
+BL-10691,pick,short_pick,Short pick / slot empty,4.0,1
+BL-10691,qc,weight_fail,In-line weight fail,11.0,1
+BL-10692,qc,weight_fail,In-line weight fail,12.1,1
+BL-10695,stage_ship,weight_fail,In-line weight fail,4.0,1
+BL-10695,stage_ship,missed_sla,Missed same-day dock,51.4,0
+BL-10696,qc,label_mismatch,Label mismatch,12.0,1
+BL-10696,stage_ship,missed_sla,Missed same-day dock,49.0,0
+BL-10699,stage_ship,missed_sla,Missed same-day dock,3.4,0
+BL-10701,pick,short_pick,Short pick / slot empty,7.2,1
+BL-10702,stage_ship,label_mismatch,Label mismatch,5.2,1
+BL-10703,qc,weight_fail,In-line weight fail,9.4,1
+BL-10703,stage_ship,missed_sla,Missed same-day dock,14.9,0
+BL-10705,qc,weight_fail,In-line weight fail,14.5,1
+BL-10705,stage_ship,missed_sla,Missed same-day dock,24.5,0
+BL-10706,stage_ship,missed_sla,Missed same-day dock,76.3,0
+BL-10707,pick,short_pick,Short pick / slot empty,12.5,1
+BL-10707,stage_ship,missed_sla,Missed same-day dock,63.0,0
+BL-10708,slot_locate,weight_fail,In-line weight fail,12.8,1
+BL-10708,pack,damaged_carton,Damaged carton,8.3,0
+BL-10708,stage_ship,missed_sla,Missed same-day dock,14.7,0
+BL-10712,stage_ship,missed_sla,Missed same-day dock,2.3,0
+BL-10713,pick,short_pick,Short pick / slot empty,4.0,1
+BL-10718,stage_ship,missed_sla,Missed same-day dock,10.7,0
+BL-10730,wave_release,weight_fail,In-line weight fail,4.0,1
+BL-10730,stage_ship,missed_sla,Missed same-day dock,8.1,0
+BL-10731,pick,short_pick,Short pick / slot empty,5.2,1
+BL-10732,slot_locate,label_mismatch,Label mismatch,9.9,1
+BL-10732,stage_ship,missed_sla,Missed same-day dock,18.2,0
+BL-10733,stage_ship,missed_sla,Missed same-day dock,71.7,0
+BL-10737,stage_ship,missed_sla,Missed same-day dock,24.0,0
+BL-10738,pack,damaged_carton,Damaged carton,16.4,0
+BL-10738,qc,label_mismatch,Label mismatch,12.5,1
+BL-10738,stage_ship,missed_sla,Missed same-day dock,66.0,0
+BL-10739,stage_ship,missed_sla,Missed same-day dock,27.8,0
+BL-10740,stage_ship,missed_sla,Missed same-day dock,26.1,0
+BL-10742,pack,damaged_carton,Damaged carton,21.5,0
+BL-10742,stage_ship,missed_sla,Missed same-day dock,21.8,0
+BL-10743,pack,damaged_carton,Damaged carton,11.9,0
+BL-10744,stage_ship,missed_sla,Missed same-day dock,43.2,0
+BL-10745,stage_ship,missed_sla,Missed same-day dock,11.6,0
+BL-10746,stage_ship,missed_sla,Missed same-day dock,12.0,0
+BL-10747,pick,short_pick,Short pick / slot empty,6.6,1
+BL-10748,slot_locate,weight_fail,In-line weight fail,4.0,1
+BL-10748,pack,damaged_carton,Damaged carton,12.1,0
+BL-10748,stage_ship,missed_sla,Missed same-day dock,7.4,0
+BL-10749,pick,short_pick,Short pick / slot empty,9.9,1
+BL-10749,stage_ship,missed_sla,Missed same-day dock,16.7,0
+BL-10750,stage_ship,missed_sla,Missed same-day dock,17.5,0
+BL-10751,stage_ship,missed_sla,Missed same-day dock,7.5,0
+BL-10752,pick,short_pick,Short pick / slot empty,9.9,1
+BL-10752,qc,weight_fail,In-line weight fail,13.6,1
+BL-10752,stage_ship,missed_sla,Missed same-day dock,43.2,0
+BL-10753,stage_ship,missed_sla,Missed same-day dock,6.9,0
+BL-10754,stage_ship,missed_sla,Missed same-day dock,72.9,0
+BL-10755,stage_ship,missed_sla,Missed same-day dock,9.2,0
+BL-10756,stage_ship,missed_sla,Missed same-day dock,5.2,0
+BL-10757,stage_ship,label_mismatch,Label mismatch,4.0,1
+BL-10758,stage_ship,missed_sla,Missed same-day dock,19.8,0
+BL-10759,pack,damaged_carton,Damaged carton,14.0,0
+BL-10761,pick,short_pick,Short pick / slot empty,11.2,1
+BL-10761,stage_ship,missed_sla,Missed same-day dock,2.0,0
+BL-10762,pick,short_pick,Short pick / slot empty,12.3,1
+BL-10764,pack,damaged_carton,Damaged carton,15.7,0
+BL-10766,stage_ship,missed_sla,Missed same-day dock,7.6,0
+BL-10771,qc,weight_fail,In-line weight fail,12.1,1
+BL-10771,stage_ship,missed_sla,Missed same-day dock,29.0,0
+BL-10772,qc,weight_fail,In-line weight fail,9.0,1
+BL-10772,stage_ship,missed_sla,Missed same-day dock,10.2,0
+BL-10777,stage_ship,label_mismatch,Label mismatch,15.7,1
+BL-10778,qc,weight_fail,In-line weight fail,12.6,1
+BL-10778,stage_ship,missed_sla,Missed same-day dock,29.8,0
+BL-10783,stage_ship,label_mismatch,Label mismatch,7.0,1
+BL-10783,stage_ship,missed_sla,Missed same-day dock,23.9,0
+BL-10784,stage_ship,weight_fail,In-line weight fail,9.0,1
+BL-10784,stage_ship,missed_sla,Missed same-day dock,8.8,0
+BL-10785,stage_ship,missed_sla,Missed same-day dock,8.3,0
+BL-10789,stage_ship,missed_sla,Missed same-day dock,51.2,0
+BL-10790,stage_ship,missed_sla,Missed same-day dock,12.4,0
+BL-10792,stage_ship,missed_sla,Missed same-day dock,36.1,0
+BL-10794,stage_ship,missed_sla,Missed same-day dock,6.4,0
+BL-10795,stage_ship,missed_sla,Missed same-day dock,26.4,0
+BL-10797,pack,damaged_carton,Damaged carton,17.6,0
+BL-10797,stage_ship,missed_sla,Missed same-day dock,5.1,0
+BL-10800,pack,damaged_carton,Damaged carton,4.0,0
+BL-10800,stage_ship,missed_sla,Missed same-day dock,0.8,0
+BL-10802,stage_ship,missed_sla,Missed same-day dock,19.4,0
+BL-10803,stage_ship,missed_sla,Missed same-day dock,9.8,0
+BL-10804,qc,weight_fail,In-line weight fail,8.8,1
+BL-10804,stage_ship,missed_sla,Missed same-day dock,37.0,0
+BL-10805,stage_ship,missed_sla,Missed same-day dock,27.7,0
+BL-10806,slot_locate,label_mismatch,Label mismatch,4.0,1
+BL-10806,stage_ship,missed_sla,Missed same-day dock,5.2,0
+BL-10807,stage_ship,missed_sla,Missed same-day dock,14.6,0
+BL-10808,pack,damaged_carton,Damaged carton,11.0,0
+BL-10808,stage_ship,missed_sla,Missed same-day dock,37.3,0
+BL-10815,stage_ship,missed_sla,Missed same-day dock,17.2,0
+BL-10817,pack,damaged_carton,Damaged carton,4.9,0
+BL-10823,wave_release,label_mismatch,Label mismatch,5.8,1
+BL-10823,pick,short_pick,Short pick / slot empty,15.1,1
+BL-10825,stage_ship,weight_fail,In-line weight fail,14.5,1
+BL-10828,stage_ship,missed_sla,Missed same-day dock,7.3,0
+BL-10829,pack,damaged_carton,Damaged carton,4.6,0
+BL-10829,stage_ship,missed_sla,Missed same-day dock,3.7,0
+BL-10831,stage_ship,label_mismatch,Label mismatch,12.7,1
+BL-10831,stage_ship,missed_sla,Missed same-day dock,5.9,0
+BL-10833,pack,damaged_carton,Damaged carton,7.4,0
+BL-10833,stage_ship,missed_sla,Missed same-day dock,10.2,0
+BL-10834,qc,label_mismatch,Label mismatch,14.0,1
+BL-10835,pick,short_pick,Short pick / slot empty,8.6,1
+BL-10835,stage_ship,missed_sla,Missed same-day dock,20.4,0
+BL-10836,stage_ship,missed_sla,Missed same-day dock,3.5,0
+BL-10837,stage_ship,missed_sla,Missed same-day dock,21.1,0
+BL-10838,stage_ship,missed_sla,Missed same-day dock,38.5,0
+BL-10839,stage_ship,missed_sla,Missed same-day dock,25.0,0
+BL-10845,pick,short_pick,Short pick / slot empty,7.1,1
+BL-10846,wave_release,label_mismatch,Label mismatch,10.3,1
+BL-10849,pick,short_pick,Short pick / slot empty,13.0,1
+BL-10849,stage_ship,missed_sla,Missed same-day dock,30.8,0
+BL-10850,pack,damaged_carton,Damaged carton,15.4,0
+BL-10850,stage_ship,missed_sla,Missed same-day dock,22.7,0
+BL-10851,stage_ship,missed_sla,Missed same-day dock,37.1,0
+BL-10855,stage_ship,missed_sla,Missed same-day dock,15.2,0
+BL-10856,qc,weight_fail,In-line weight fail,14.4,1
+BL-10856,stage_ship,missed_sla,Missed same-day dock,30.1,0
+BL-10857,slot_locate,label_mismatch,Label mismatch,9.2,1
+BL-10857,pack,damaged_carton,Damaged carton,13.4,0
+BL-10857,stage_ship,missed_sla,Missed same-day dock,44.1,0
+BL-10858,qc,weight_fail,In-line weight fail,7.9,1
+BL-10859,stage_ship,missed_sla,Missed same-day dock,7.3,0
+BL-10861,stage_ship,label_mismatch,Label mismatch,5.3,1
+BL-10861,stage_ship,missed_sla,Missed same-day dock,10.1,0
+BL-10862,stage_ship,missed_sla,Missed same-day dock,40.7,0
+BL-10866,stage_ship,missed_sla,Missed same-day dock,8.3,0
+BL-10869,stage_ship,missed_sla,Missed same-day dock,11.2,0
+BL-10870,stage_ship,missed_sla,Missed same-day dock,48.5,0
+BL-10871,stage_ship,missed_sla,Missed same-day dock,15.1,0
+BL-10872,stage_ship,missed_sla,Missed same-day dock,18.2,0
+BL-10875,qc,weight_fail,In-line weight fail,7.7,1
+BL-10875,stage_ship,missed_sla,Missed same-day dock,32.3,0
+BL-10878,pack,damaged_carton,Damaged carton,4.7,0
+BL-10878,stage_ship,label_mismatch,Label mismatch,6.0,1
+BL-10878,stage_ship,missed_sla,Missed same-day dock,38.6,0
+BL-10880,pack,damaged_carton,Damaged carton,9.3,0
+BL-10880,stage_ship,missed_sla,Missed same-day dock,83.4,0
+BL-10881,stage_ship,missed_sla,Missed same-day dock,30.2,0
+BL-10882,stage_ship,weight_fail,In-line weight fail,4.7,1
+BL-10882,stage_ship,missed_sla,Missed same-day dock,8.7,0
+BL-10883,stage_ship,missed_sla,Missed same-day dock,21.0,0
+BL-10884,wave_release,weight_fail,In-line weight fail,6.6,1
+BL-10884,stage_ship,missed_sla,Missed same-day dock,0.8,0
+BL-10887,pick,short_pick,Short pick / slot empty,10.2,1
+BL-10887,stage_ship,missed_sla,Missed same-day dock,4.9,0
+BL-10893,stage_ship,missed_sla,Missed same-day dock,12.8,0
+BL-10895,stage_ship,missed_sla,Missed same-day dock,0.8,0
+BL-10896,stage_ship,missed_sla,Missed same-day dock,5.3,0
+BL-10899,stage_ship,missed_sla,Missed same-day dock,36.6,0
+BL-10900,wave_release,weight_fail,In-line weight fail,11.6,1
+BL-10900,stage_ship,missed_sla,Missed same-day dock,9.3,0
+BL-10904,slot_locate,weight_fail,In-line weight fail,18.1,1
+BL-10904,stage_ship,missed_sla,Missed same-day dock,16.1,0
+BL-10906,qc,label_mismatch,Label mismatch,4.0,1
+BL-10906,stage_ship,missed_sla,Missed same-day dock,0.9,0
+BL-10907,stage_ship,missed_sla,Missed same-day dock,39.9,0
+BL-10908,stage_ship,missed_sla,Missed same-day dock,12.3,0
+BL-10909,qc,label_mismatch,Label mismatch,4.4,1
+BL-10909,stage_ship,missed_sla,Missed same-day dock,42.3,0
+BL-10910,stage_ship,missed_sla,Missed same-day dock,8.8,0
+BL-10914,stage_ship,missed_sla,Missed same-day dock,6.4,0
+BL-10916,stage_ship,missed_sla,Missed same-day dock,14.4,0
+BL-10917,stage_ship,weight_fail,In-line weight fail,4.0,1
+BL-10920,stage_ship,missed_sla,Missed same-day dock,26.0,0
+BL-10922,stage_ship,missed_sla,Missed same-day dock,55.2,0
+BL-10925,stage_ship,missed_sla,Missed same-day dock,7.3,0
+BL-10927,stage_ship,missed_sla,Missed same-day dock,22.1,0
+BL-10931,qc,label_mismatch,Label mismatch,10.9,1
+BL-10942,stage_ship,missed_sla,Missed same-day dock,54.9,0
+BL-10948,pack,damaged_carton,Damaged carton,14.2,0
+BL-10953,stage_ship,missed_sla,Missed same-day dock,1.4,0
+BL-10958,pick,short_pick,Short pick / slot empty,6.6,1
+BL-10958,stage_ship,weight_fail,In-line weight fail,14.0,1
+BL-10961,pick,short_pick,Short pick / slot empty,6.5,1
+BL-10961,stage_ship,missed_sla,Missed same-day dock,3.8,0
+BL-10963,pack,damaged_carton,Damaged carton,10.4,0
+BL-10963,stage_ship,missed_sla,Missed same-day dock,3.4,0
+BL-10964,stage_ship,weight_fail,In-line weight fail,8.9,1
+BL-10964,stage_ship,missed_sla,Missed same-day dock,28.2,0
+BL-10965,pick,short_pick,Short pick / slot empty,4.0,1
+BL-10966,stage_ship,missed_sla,Missed same-day dock,5.1,0
+BL-10967,stage_ship,missed_sla,Missed same-day dock,13.7,0
+BL-10969,stage_ship,missed_sla,Missed same-day dock,18.8,0
+BL-10970,stage_ship,missed_sla,Missed same-day dock,58.1,0
+BL-10972,qc,weight_fail,In-line weight fail,14.8,1
+BL-10972,stage_ship,missed_sla,Missed same-day dock,6.6,0
+BL-10974,pack,damaged_carton,Damaged carton,12.1,0
+BL-10976,stage_ship,missed_sla,Missed same-day dock,4.9,0
+BL-10978,stage_ship,missed_sla,Missed same-day dock,16.2,0
+BL-10979,stage_ship,missed_sla,Missed same-day dock,46.5,0
+BL-10980,stage_ship,missed_sla,Missed same-day dock,22.2,0
+BL-10992,slot_locate,weight_fail,In-line weight fail,8.3,1
+BL-10992,pack,damaged_carton,Damaged carton,9.8,0
+BL-10997,stage_ship,missed_sla,Missed same-day dock,12.4,0
+BL-10999,wave_release,label_mismatch,Label mismatch,9.5,1
+BL-10999,stage_ship,missed_sla,Missed same-day dock,15.9,0
+BL-11003,slot_locate,weight_fail,In-line weight fail,6.3,1
+BL-11004,pack,damaged_carton,Damaged carton,8.1,0
+BL-11005,stage_ship,missed_sla,Missed same-day dock,17.8,0
+BL-11009,pack,damaged_carton,Damaged carton,7.9,0
+BL-11010,pack,damaged_carton,Damaged carton,15.9,0
+BL-11011,wave_release,weight_fail,In-line weight fail,4.6,1
+BL-11012,stage_ship,missed_sla,Missed same-day dock,27.5,0
+BL-11014,stage_ship,missed_sla,Missed same-day dock,6.8,0
+BL-11018,slot_locate,weight_fail,In-line weight fail,16.4,1
+BL-11018,qc,label_mismatch,Label mismatch,9.3,1
+BL-11018,stage_ship,missed_sla,Missed same-day dock,24.7,0
+BL-11019,stage_ship,missed_sla,Missed same-day dock,24.4,0
+BL-11020,stage_ship,missed_sla,Missed same-day dock,10.9,0
+BL-11021,stage_ship,missed_sla,Missed same-day dock,7.3,0
+BL-11022,wave_release,weight_fail,In-line weight fail,16.1,1
+BL-11022,stage_ship,missed_sla,Missed same-day dock,69.5,0
+BL-11023,stage_ship,missed_sla,Missed same-day dock,9.5,0
+BL-11024,pack,damaged_carton,Damaged carton,4.6,0
+BL-11024,stage_ship,missed_sla,Missed same-day dock,45.3,0
+BL-11025,pack,damaged_carton,Damaged carton,10.0,0
+BL-11025,stage_ship,missed_sla,Missed same-day dock,16.4,0
+BL-11027,qc,label_mismatch,Label mismatch,12.4,1
+BL-11027,stage_ship,missed_sla,Missed same-day dock,69.9,0
+BL-11028,slot_locate,weight_fail,In-line weight fail,10.9,1
+BL-11032,stage_ship,label_mismatch,Label mismatch,11.6,1
+BL-11033,stage_ship,missed_sla,Missed same-day dock,34.2,0
+BL-11034,pick,short_pick,Short pick / slot empty,20.5,1
+BL-11034,stage_ship,missed_sla,Missed same-day dock,16.9,0
+BL-11039,pack,damaged_carton,Damaged carton,8.6,0
+BL-11041,stage_ship,missed_sla,Missed same-day dock,6.6,0
+BL-11043,qc,label_mismatch,Label mismatch,12.1,1
+BL-11044,stage_ship,missed_sla,Missed same-day dock,3.4,0
+BL-11045,stage_ship,missed_sla,Missed same-day dock,2.3,0
+BL-11047,wave_release,label_mismatch,Label mismatch,16.3,1
+BL-11047,pick,short_pick,Short pick / slot empty,12.0,1
+BL-11048,stage_ship,missed_sla,Missed same-day dock,48.8,0
+BL-11050,stage_ship,missed_sla,Missed same-day dock,2.1,0
+BL-11052,stage_ship,missed_sla,Missed same-day dock,63.8,0
+BL-11054,stage_ship,missed_sla,Missed same-day dock,4.2,0
+BL-11055,stage_ship,missed_sla,Missed same-day dock,7.7,0
+BL-11056,pick,short_pick,Short pick / slot empty,11.4,1
+BL-11056,stage_ship,missed_sla,Missed same-day dock,7.2,0
+BL-11058,wave_release,weight_fail,In-line weight fail,18.0,1
+BL-11058,stage_ship,missed_sla,Missed same-day dock,15.7,0
+BL-11061,stage_ship,missed_sla,Missed same-day dock,3.5,0
+BL-11065,stage_ship,missed_sla,Missed same-day dock,1.3,0
+BL-11066,stage_ship,missed_sla,Missed same-day dock,19.6,0
+BL-11068,qc,weight_fail,In-line weight fail,8.0,1
+BL-11068,stage_ship,missed_sla,Missed same-day dock,21.5,0
+BL-11069,qc,label_mismatch,Label mismatch,16.5,1
+BL-11069,stage_ship,missed_sla,Missed same-day dock,26.9,0
+BL-11070,stage_ship,missed_sla,Missed same-day dock,8.9,0
+BL-11071,stage_ship,missed_sla,Missed same-day dock,12.9,0
+BL-11072,stage_ship,missed_sla,Missed same-day dock,0.3,0
+BL-11076,stage_ship,missed_sla,Missed same-day dock,7.1,0
+BL-11077,stage_ship,missed_sla,Missed same-day dock,27.2,0
+BL-11081,stage_ship,missed_sla,Missed same-day dock,12.1,0
+BL-11084,stage_ship,missed_sla,Missed same-day dock,28.1,0
+BL-11085,stage_ship,missed_sla,Missed same-day dock,30.1,0
+BL-11088,stage_ship,missed_sla,Missed same-day dock,48.1,0
+BL-11089,pack,damaged_carton,Damaged carton,15.1,0
+BL-11089,stage_ship,missed_sla,Missed same-day dock,29.9,0
+BL-11090,stage_ship,missed_sla,Missed same-day dock,38.2,0
+BL-11093,pack,damaged_carton,Damaged carton,9.3,0
+BL-11093,stage_ship,missed_sla,Missed same-day dock,9.9,0
+BL-11094,stage_ship,missed_sla,Missed same-day dock,5.8,0
+BL-11095,pick,short_pick,Short pick / slot empty,8.1,1
+BL-11098,qc,weight_fail,In-line weight fail,14.9,1
+BL-11098,stage_ship,missed_sla,Missed same-day dock,36.0,0
+BL-11099,qc,label_mismatch,Label mismatch,5.5,1
+BL-11103,stage_ship,missed_sla,Missed same-day dock,5.1,0
+BL-11104,qc,weight_fail,In-line weight fail,13.1,1
+BL-11104,stage_ship,missed_sla,Missed same-day dock,14.7,0
+BL-11105,pick,short_pick,Short pick / slot empty,17.3,1
+BL-11105,qc,label_mismatch,Label mismatch,5.7,1
+BL-11105,stage_ship,missed_sla,Missed same-day dock,28.0,0
+BL-11107,pack,damaged_carton,Damaged carton,7.5,0
+BL-11107,stage_ship,missed_sla,Missed same-day dock,19.3,0
+BL-11116,pick,short_pick,Short pick / slot empty,14.3,1
+BL-11116,stage_ship,missed_sla,Missed same-day dock,35.4,0
+BL-11117,pack,damaged_carton,Damaged carton,14.8,0
+BL-11117,qc,weight_fail,In-line weight fail,14.4,1
+BL-11119,pack,damaged_carton,Damaged carton,12.7,0
+BL-11124,qc,weight_fail,In-line weight fail,11.8,1
+BL-11128,stage_ship,missed_sla,Missed same-day dock,8.1,0
+BL-11131,pack,damaged_carton,Damaged carton,12.9,0
+BL-11131,qc,label_mismatch,Label mismatch,10.7,1
+BL-11131,stage_ship,missed_sla,Missed same-day dock,7.1,0
+BL-11132,pick,short_pick,Short pick / slot empty,13.1,1
+BL-11132,qc,weight_fail,In-line weight fail,8.6,1
+BL-11132,stage_ship,missed_sla,Missed same-day dock,21.0,0
+BL-11133,stage_ship,label_mismatch,Label mismatch,22.3,1
+BL-11133,stage_ship,missed_sla,Missed same-day dock,9.1,0
+BL-11135,pack,damaged_carton,Damaged carton,11.1,0
+BL-11135,stage_ship,missed_sla,Missed same-day dock,9.8,0
+BL-11140,pick,short_pick,Short pick / slot empty,12.8,1
+BL-11143,wave_release,label_mismatch,Label mismatch,8.5,1
+BL-11143,stage_ship,missed_sla,Missed same-day dock,20.1,0
+BL-11145,pick,short_pick,Short pick / slot empty,9.4,1
+BL-11146,stage_ship,weight_fail,In-line weight fail,12.9,1
+BL-11146,stage_ship,missed_sla,Missed same-day dock,12.9,0
+BL-11149,stage_ship,missed_sla,Missed same-day dock,77.2,0
+BL-11150,stage_ship,missed_sla,Missed same-day dock,35.9,0
+BL-11153,pack,damaged_carton,Damaged carton,5.7,0
+BL-11154,stage_ship,missed_sla,Missed same-day dock,45.7,0
+BL-11155,stage_ship,label_mismatch,Label mismatch,18.9,1
+BL-11159,stage_ship,missed_sla,Missed same-day dock,5.5,0
+BL-11163,stage_ship,missed_sla,Missed same-day dock,16.7,0
+BL-11167,pack,damaged_carton,Damaged carton,12.2,0
+BL-11168,pick,short_pick,Short pick / slot empty,10.0,1
+BL-11169,stage_ship,missed_sla,Missed same-day dock,12.8,0
+BL-11172,stage_ship,missed_sla,Missed same-day dock,4.9,0
+BL-11174,slot_locate,weight_fail,In-line weight fail,12.1,1
+BL-11177,pack,damaged_carton,Damaged carton,9.7,0
+BL-11177,stage_ship,missed_sla,Missed same-day dock,5.1,0
+BL-11178,pack,damaged_carton,Damaged carton,12.6,0
+BL-11178,stage_ship,missed_sla,Missed same-day dock,70.4,0
+BL-11179,stage_ship,missed_sla,Missed same-day dock,4.2,0
+BL-11181,stage_ship,missed_sla,Missed same-day dock,8.8,0
+BL-11182,stage_ship,missed_sla,Missed same-day dock,0.5,0
+BL-11183,stage_ship,missed_sla,Missed same-day dock,5.2,0
+BL-11187,stage_ship,missed_sla,Missed same-day dock,8.5,0
+BL-11189,stage_ship,missed_sla,Missed same-day dock,11.5,0
+BL-11193,pack,damaged_carton,Damaged carton,6.2,0
+BL-11193,stage_ship,missed_sla,Missed same-day dock,21.0,0
+BL-11197,stage_ship,missed_sla,Missed same-day dock,2.7,0
+BL-11199,stage_ship,missed_sla,Missed same-day dock,26.0,0
+BL-11201,stage_ship,missed_sla,Missed same-day dock,102.8,0
+BL-11202,qc,weight_fail,In-line weight fail,9.4,1
+BL-11203,pack,damaged_carton,Damaged carton,15.1,0
+BL-11203,stage_ship,missed_sla,Missed same-day dock,129.4,0
+BL-11206,stage_ship,missed_sla,Missed same-day dock,18.0,0
+BL-11207,stage_ship,missed_sla,Missed same-day dock,25.0,0
+BL-11212,stage_ship,missed_sla,Missed same-day dock,10.6,0
+BL-11214,stage_ship,missed_sla,Missed same-day dock,33.3,0
+BL-11215,stage_ship,missed_sla,Missed same-day dock,7.0,0
+BL-11216,stage_ship,missed_sla,Missed same-day dock,3.3,0
+BL-11219,wave_release,label_mismatch,Label mismatch,10.0,1
+BL-11221,pick,short_pick,Short pick / slot empty,10.8,1
+BL-11224,stage_ship,missed_sla,Missed same-day dock,3.2,0
+BL-11229,stage_ship,missed_sla,Missed same-day dock,42.4,0
+BL-11231,stage_ship,missed_sla,Missed same-day dock,26.1,0
+BL-11233,stage_ship,missed_sla,Missed same-day dock,46.5,0
+BL-11235,qc,label_mismatch,Label mismatch,10.1,1
+BL-11237,stage_ship,missed_sla,Missed same-day dock,1.3,0
+BL-11238,pick,short_pick,Short pick / slot empty,9.2,1
+BL-11238,stage_ship,missed_sla,Missed same-day dock,2.6,0
+BL-11242,slot_locate,weight_fail,In-line weight fail,14.2,1
+BL-11244,stage_ship,missed_sla,Missed same-day dock,17.1,0
+BL-11245,stage_ship,missed_sla,Missed same-day dock,19.5,0
+BL-11248,stage_ship,missed_sla,Missed same-day dock,4.5,0
+BL-11250,stage_ship,missed_sla,Missed same-day dock,0.8,0
+BL-11252,pack,damaged_carton,Damaged carton,7.2,0
+BL-11253,stage_ship,missed_sla,Missed same-day dock,10.0,0
+BL-11254,stage_ship,missed_sla,Missed same-day dock,41.8,0
+BL-11255,stage_ship,missed_sla,Missed same-day dock,49.8,0
+BL-11256,qc,weight_fail,In-line weight fail,5.8,1
+BL-11257,stage_ship,missed_sla,Missed same-day dock,41.4,0
+BL-11265,qc,label_mismatch,Label mismatch,11.4,1
+BL-11266,slot_locate,weight_fail,In-line weight fail,14.0,1
+BL-11267,slot_locate,weight_fail,In-line weight fail,14.3,1
+BL-11272,stage_ship,missed_sla,Missed same-day dock,12.0,0
+BL-11275,pick,short_pick,Short pick / slot empty,12.9,1
+BL-11276,qc,weight_fail,In-line weight fail,4.1,1
+BL-11281,stage_ship,missed_sla,Missed same-day dock,12.1,0
+BL-11282,stage_ship,missed_sla,Missed same-day dock,50.1,0
+BL-11286,qc,label_mismatch,Label mismatch,8.8,1
+BL-11286,stage_ship,weight_fail,In-line weight fail,10.4,1
+BL-11286,stage_ship,missed_sla,Missed same-day dock,7.4,0
+BL-11289,stage_ship,missed_sla,Missed same-day dock,18.0,0
+BL-11290,stage_ship,missed_sla,Missed same-day dock,21.8,0
+BL-11296,stage_ship,missed_sla,Missed same-day dock,0.2,0
+BL-11297,stage_ship,label_mismatch,Label mismatch,7.0,1
+BL-11297,stage_ship,missed_sla,Missed same-day dock,27.3,0
+BL-11298,stage_ship,missed_sla,Missed same-day dock,43.0,0
+BL-11300,stage_ship,weight_fail,In-line weight fail,19.3,1
+BL-11303,slot_locate,label_mismatch,Label mismatch,11.7,1
+BL-11303,pick,short_pick,Short pick / slot empty,9.6,1
+BL-11307,qc,weight_fail,In-line weight fail,7.4,1
+BL-11309,stage_ship,missed_sla,Missed same-day dock,7.6,0
+BL-11310,pick,short_pick,Short pick / slot empty,11.0,1
+BL-11310,stage_ship,missed_sla,Missed same-day dock,1.8,0
+BL-11315,pack,damaged_carton,Damaged carton,10.2,0
+BL-11320,qc,label_mismatch,Label mismatch,12.0,1
+BL-11320,stage_ship,missed_sla,Missed same-day dock,7.9,0
+BL-11323,stage_ship,missed_sla,Missed same-day dock,59.0,0
+BL-11324,stage_ship,missed_sla,Missed same-day dock,16.1,0
+BL-11325,stage_ship,missed_sla,Missed same-day dock,17.9,0
+BL-11326,slot_locate,label_mismatch,Label mismatch,15.6,1
+BL-11326,stage_ship,missed_sla,Missed same-day dock,46.9,0
+BL-11327,pick,short_pick,Short pick / slot empty,10.4,1
+BL-11328,stage_ship,missed_sla,Missed same-day dock,10.2,0
+BL-11330,pack,damaged_carton,Damaged carton,13.4,0
+BL-11332,stage_ship,missed_sla,Missed same-day dock,36.6,0
+BL-11333,stage_ship,missed_sla,Missed same-day dock,37.3,0
+BL-11337,stage_ship,weight_fail,In-line weight fail,13.0,1
+BL-11343,wave_release,label_mismatch,Label mismatch,6.1,1
+BL-11343,stage_ship,missed_sla,Missed same-day dock,44.9,0
+BL-11348,stage_ship,missed_sla,Missed same-day dock,22.5,0
+BL-11349,stage_ship,missed_sla,Missed same-day dock,3.2,0
+BL-11350,stage_ship,missed_sla,Missed same-day dock,35.5,0
+BL-11352,stage_ship,missed_sla,Missed same-day dock,1.1,0
+BL-11356,slot_locate,label_mismatch,Label mismatch,10.8,1
+BL-11357,stage_ship,missed_sla,Missed same-day dock,7.0,0
+BL-11359,qc,weight_fail,In-line weight fail,12.0,1
+BL-11359,stage_ship,missed_sla,Missed same-day dock,23.0,0
+BL-11363,stage_ship,missed_sla,Missed same-day dock,53.9,0
+BL-11367,qc,label_mismatch,Label mismatch,7.1,1
+BL-11369,wave_release,label_mismatch,Label mismatch,11.9,1
+BL-11369,stage_ship,missed_sla,Missed same-day dock,62.6,0
+BL-11371,stage_ship,missed_sla,Missed same-day dock,17.6,0
+BL-11373,pack,damaged_carton,Damaged carton,11.4,0
+BL-11375,stage_ship,missed_sla,Missed same-day dock,8.4,0
+BL-11377,stage_ship,missed_sla,Missed same-day dock,13.5,0
+BL-11378,qc,weight_fail,In-line weight fail,8.8,1
+BL-11379,stage_ship,missed_sla,Missed same-day dock,26.8,0
+BL-11380,stage_ship,missed_sla,Missed same-day dock,12.0,0
+BL-11382,stage_ship,missed_sla,Missed same-day dock,52.4,0
+BL-11383,stage_ship,missed_sla,Missed same-day dock,12.3,0
+BL-11384,stage_ship,missed_sla,Missed same-day dock,5.6,0
+BL-11385,qc,label_mismatch,Label mismatch,10.6,1
+BL-11385,stage_ship,missed_sla,Missed same-day dock,53.9,0
+BL-11386,qc,weight_fail,In-line weight fail,12.9,1
+BL-11386,stage_ship,missed_sla,Missed same-day dock,22.3,0
+BL-11387,stage_ship,missed_sla,Missed same-day dock,23.6,0
+BL-11388,stage_ship,missed_sla,Missed same-day dock,28.4,0
+BL-11391,pack,damaged_carton,Damaged carton,17.7,0
+BL-11391,stage_ship,missed_sla,Missed same-day dock,17.3,0
+BL-11394,stage_ship,missed_sla,Missed same-day dock,8.5,0
+BL-11395,slot_locate,label_mismatch,Label mismatch,13.2,1
+BL-11398,pack,damaged_carton,Damaged carton,13.0,0
+BL-11399,qc,label_mismatch,Label mismatch,6.4,1
+BL-11402,stage_ship,missed_sla,Missed same-day dock,5.9,0
+BL-11405,stage_ship,missed_sla,Missed same-day dock,21.2,0
+BL-11406,slot_locate,label_mismatch,Label mismatch,11.8,1
+BL-11406,stage_ship,missed_sla,Missed same-day dock,4.2,0
+BL-11412,stage_ship,missed_sla,Missed same-day dock,6.9,0
+BL-11414,pack,damaged_carton,Damaged carton,12.0,0
+BL-11416,pack,damaged_carton,Damaged carton,17.5,0
+BL-11416,stage_ship,missed_sla,Missed same-day dock,43.1,0
+BL-11418,pack,damaged_carton,Damaged carton,10.1,0
+BL-11418,stage_ship,missed_sla,Missed same-day dock,14.4,0
+BL-11419,stage_ship,missed_sla,Missed same-day dock,7.9,0
+BL-11421,stage_ship,missed_sla,Missed same-day dock,0.5,0
+BL-11422,stage_ship,missed_sla,Missed same-day dock,7.1,0
+BL-11423,wave_release,weight_fail,In-line weight fail,10.7,1
+BL-11424,stage_ship,missed_sla,Missed same-day dock,18.5,0
+BL-11427,qc,label_mismatch,Label mismatch,11.4,1
+BL-11428,pack,damaged_carton,Damaged carton,4.0,0
+BL-11429,pack,damaged_carton,Damaged carton,9.8,0
+BL-11429,stage_ship,missed_sla,Missed same-day dock,14.8,0
+BL-11430,stage_ship,missed_sla,Missed same-day dock,69.1,0
+BL-11431,slot_locate,label_mismatch,Label mismatch,4.0,1
+BL-11431,pack,damaged_carton,Damaged carton,11.2,0
+BL-11431,stage_ship,missed_sla,Missed same-day dock,60.9,0
+BL-11433,stage_ship,missed_sla,Missed same-day dock,41.2,0
+BL-11435,qc,label_mismatch,Label mismatch,4.0,1
+BL-11436,stage_ship,missed_sla,Missed same-day dock,21.4,0
+BL-11445,stage_ship,missed_sla,Missed same-day dock,24.9,0
+BL-11448,pack,damaged_carton,Damaged carton,6.8,0
+BL-11449,stage_ship,weight_fail,In-line weight fail,10.6,1
+BL-11451,pick,short_pick,Short pick / slot empty,9.5,1
+BL-11452,stage_ship,missed_sla,Missed same-day dock,0.7,0
+BL-11455,slot_locate,label_mismatch,Label mismatch,9.1,1
+BL-11455,stage_ship,missed_sla,Missed same-day dock,2.5,0
+BL-11457,stage_ship,missed_sla,Missed same-day dock,61.8,0
+BL-11458,stage_ship,missed_sla,Missed same-day dock,25.2,0
+BL-11459,wave_release,weight_fail,In-line weight fail,13.9,1
+BL-11461,stage_ship,missed_sla,Missed same-day dock,10.4,0
+BL-11462,stage_ship,missed_sla,Missed same-day dock,23.1,0
+BL-11467,pack,damaged_carton,Damaged carton,8.1,0
+BL-11467,stage_ship,missed_sla,Missed same-day dock,12.0,0
+BL-11468,stage_ship,missed_sla,Missed same-day dock,9.9,0
+BL-11473,pick,short_pick,Short pick / slot empty,14.4,1
+BL-11474,stage_ship,label_mismatch,Label mismatch,13.4,1
+BL-11474,stage_ship,missed_sla,Missed same-day dock,14.3,0
+BL-11475,pick,short_pick,Short pick / slot empty,13.9,1
+BL-11479,stage_ship,missed_sla,Missed same-day dock,4.0,0
+BL-11480,stage_ship,missed_sla,Missed same-day dock,5.9,0
+BL-11481,stage_ship,missed_sla,Missed same-day dock,22.9,0
+BL-11482,pack,damaged_carton,Damaged carton,11.2,0
+BL-11485,stage_ship,missed_sla,Missed same-day dock,0.8,0
+BL-11487,pick,short_pick,Short pick / slot empty,8.3,1
+BL-11487,stage_ship,missed_sla,Missed same-day dock,53.3,0
+BL-11488,stage_ship,missed_sla,Missed same-day dock,41.0,0
+BL-11489,qc,label_mismatch,Label mismatch,12.2,1
+BL-11489,stage_ship,missed_sla,Missed same-day dock,78.9,0
+BL-11495,stage_ship,label_mismatch,Label mismatch,5.1,1
+BL-11498,pick,short_pick,Short pick / slot empty,7.0,1
+BL-11503,stage_ship,weight_fail,In-line weight fail,9.8,1
+BL-11503,stage_ship,missed_sla,Missed same-day dock,26.9,0
+BL-11507,stage_ship,missed_sla,Missed same-day dock,3.1,0
+BL-11509,stage_ship,missed_sla,Missed same-day dock,8.3,0
+BL-11511,stage_ship,missed_sla,Missed same-day dock,2.0,0
+BL-11514,pack,damaged_carton,Damaged carton,12.9,0
+BL-11517,stage_ship,missed_sla,Missed same-day dock,20.8,0
+BL-11521,slot_locate,weight_fail,In-line weight fail,9.7,1
+BL-11521,pick,short_pick,Short pick / slot empty,13.2,1
+BL-11521,stage_ship,missed_sla,Missed same-day dock,48.4,0
+BL-11522,stage_ship,missed_sla,Missed same-day dock,10.3,0
+BL-11524,pack,damaged_carton,Damaged carton,9.9,0
+BL-11524,stage_ship,missed_sla,Missed same-day dock,14.7,0
+BL-11525,slot_locate,weight_fail,In-line weight fail,12.7,1
+BL-11526,qc,weight_fail,In-line weight fail,12.2,1
+BL-11526,stage_ship,missed_sla,Missed same-day dock,30.7,0
+BL-11532,stage_ship,missed_sla,Missed same-day dock,10.1,0
+BL-11537,pick,short_pick,Short pick / slot empty,8.8,1
+BL-11537,stage_ship,missed_sla,Missed same-day dock,104.5,0
+BL-11538,stage_ship,missed_sla,Missed same-day dock,23.4,0
+BL-11539,stage_ship,missed_sla,Missed same-day dock,13.5,0
+BL-11540,stage_ship,missed_sla,Missed same-day dock,1.5,0
+BL-11541,qc,weight_fail,In-line weight fail,6.2,1
+BL-11542,pack,damaged_carton,Damaged carton,11.0,0
+BL-11542,stage_ship,missed_sla,Missed same-day dock,14.9,0
+BL-11545,pick,short_pick,Short pick / slot empty,13.6,1
+BL-11549,stage_ship,missed_sla,Missed same-day dock,5.7,0
+BL-11553,qc,label_mismatch,Label mismatch,12.9,1
+BL-11554,qc,label_mismatch,Label mismatch,6.6,1
+BL-11555,stage_ship,missed_sla,Missed same-day dock,0.7,0
+BL-11559,stage_ship,missed_sla,Missed same-day dock,7.3,0
+BL-11563,stage_ship,missed_sla,Missed same-day dock,9.1,0
+BL-11564,pick,short_pick,Short pick / slot empty,15.3,1
+BL-11564,stage_ship,missed_sla,Missed same-day dock,38.3,0
+BL-11566,pick,short_pick,Short pick / slot empty,11.7,1
+BL-11566,stage_ship,missed_sla,Missed same-day dock,46.4,0
+BL-11568,stage_ship,missed_sla,Missed same-day dock,17.8,0
+BL-11569,stage_ship,missed_sla,Missed same-day dock,34.8,0
+BL-11571,stage_ship,weight_fail,In-line weight fail,10.4,1
+BL-11573,pick,short_pick,Short pick / slot empty,14.2,1
+BL-11573,stage_ship,missed_sla,Missed same-day dock,8.9,0
+BL-11575,slot_locate,label_mismatch,Label mismatch,10.8,1
+BL-11575,qc,weight_fail,In-line weight fail,12.1,1
+BL-11575,stage_ship,missed_sla,Missed same-day dock,23.9,0
+BL-11576,stage_ship,missed_sla,Missed same-day dock,6.9,0
+BL-11579,qc,weight_fail,In-line weight fail,7.8,1
+BL-11579,stage_ship,missed_sla,Missed same-day dock,4.4,0
+BL-11580,stage_ship,missed_sla,Missed same-day dock,12.3,0
+BL-11581,stage_ship,missed_sla,Missed same-day dock,48.7,0
+BL-11582,stage_ship,missed_sla,Missed same-day dock,10.6,0
+BL-11586,qc,label_mismatch,Label mismatch,8.5,1
+BL-11590,stage_ship,missed_sla,Missed same-day dock,20.0,0
+BL-11591,qc,label_mismatch,Label mismatch,5.3,1
+BL-11593,pick,short_pick,Short pick / slot empty,12.7,1
+BL-11593,stage_ship,missed_sla,Missed same-day dock,1.8,0
+BL-11596,stage_ship,weight_fail,In-line weight fail,14.3,1
+BL-11600,pick,short_pick,Short pick / slot empty,9.7,1
+BL-11603,qc,weight_fail,In-line weight fail,8.1,1
+BL-11603,stage_ship,missed_sla,Missed same-day dock,31.2,0
+BL-11604,stage_ship,missed_sla,Missed same-day dock,7.2,0
+BL-11605,stage_ship,missed_sla,Missed same-day dock,34.8,0
+BL-11606,stage_ship,missed_sla,Missed same-day dock,46.9,0
+BL-11607,stage_ship,weight_fail,In-line weight fail,9.5,1
+BL-11607,stage_ship,missed_sla,Missed same-day dock,29.2,0
+BL-11608,stage_ship,missed_sla,Missed same-day dock,15.5,0
+BL-11609,slot_locate,label_mismatch,Label mismatch,9.5,1
+BL-11609,stage_ship,missed_sla,Missed same-day dock,22.6,0
+BL-11610,qc,weight_fail,In-line weight fail,10.6,1
+BL-11610,stage_ship,missed_sla,Missed same-day dock,9.4,0
+BL-11613,stage_ship,missed_sla,Missed same-day dock,53.0,0
+BL-11614,stage_ship,missed_sla,Missed same-day dock,4.8,0
+BL-11616,stage_ship,missed_sla,Missed same-day dock,6.2,0
+BL-11618,pack,damaged_carton,Damaged carton,17.0,0
+BL-11623,stage_ship,missed_sla,Missed same-day dock,44.9,0
+BL-11625,stage_ship,missed_sla,Missed same-day dock,28.0,0
+BL-11627,stage_ship,missed_sla,Missed same-day dock,12.2,0
+BL-11629,stage_ship,missed_sla,Missed same-day dock,8.0,0
+BL-11631,stage_ship,missed_sla,Missed same-day dock,9.8,0
+BL-11632,stage_ship,weight_fail,In-line weight fail,8.7,1
+BL-11632,stage_ship,missed_sla,Missed same-day dock,6.2,0
+BL-11633,stage_ship,missed_sla,Missed same-day dock,4.3,0
+BL-11635,stage_ship,missed_sla,Missed same-day dock,58.9,0
+BL-11640,pack,damaged_carton,Damaged carton,5.1,0
+BL-11642,slot_locate,weight_fail,In-line weight fail,14.8,1
+BL-11643,stage_ship,missed_sla,Missed same-day dock,1.3,0
+BL-11650,qc,label_mismatch,Label mismatch,15.0,1
+BL-11650,stage_ship,missed_sla,Missed same-day dock,2.8,0
+BL-11651,slot_locate,weight_fail,In-line weight fail,5.9,1
+BL-11652,pick,short_pick,Short pick / slot empty,11.9,1
+BL-11654,stage_ship,missed_sla,Missed same-day dock,36.4,0
+BL-11655,stage_ship,missed_sla,Missed same-day dock,40.3,0
+BL-11659,stage_ship,missed_sla,Missed same-day dock,43.0,0
+BL-11660,stage_ship,missed_sla,Missed same-day dock,11.2,0
+BL-11664,stage_ship,missed_sla,Missed same-day dock,12.6,0
+BL-11667,pack,damaged_carton,Damaged carton,4.0,0
+BL-11667,stage_ship,missed_sla,Missed same-day dock,45.8,0
+BL-11668,stage_ship,missed_sla,Missed same-day dock,30.0,0
+BL-11669,stage_ship,missed_sla,Missed same-day dock,1.6,0
+BL-11676,stage_ship,missed_sla,Missed same-day dock,2.8,0
+BL-11684,stage_ship,missed_sla,Missed same-day dock,6.3,0
+BL-11686,stage_ship,missed_sla,Missed same-day dock,5.2,0
+BL-11687,stage_ship,missed_sla,Missed same-day dock,10.3,0
+BL-11689,pick,short_pick,Short pick / slot empty,15.7,1
+BL-11689,stage_ship,missed_sla,Missed same-day dock,6.0,0
+BL-11690,stage_ship,missed_sla,Missed same-day dock,3.0,0
+BL-11691,pack,damaged_carton,Damaged carton,17.3,0
+BL-11691,stage_ship,label_mismatch,Label mismatch,15.8,1
+BL-11691,stage_ship,missed_sla,Missed same-day dock,8.5,0
+BL-11693,qc,label_mismatch,Label mismatch,20.3,1
+BL-11696,qc,label_mismatch,Label mismatch,14.9,1
+BL-11696,stage_ship,missed_sla,Missed same-day dock,33.1,0
+BL-11697,stage_ship,missed_sla,Missed same-day dock,18.4,0
+BL-11698,slot_locate,label_mismatch,Label mismatch,12.2,1
+BL-11698,stage_ship,missed_sla,Missed same-day dock,1.1,0
+BL-11704,wave_release,weight_fail,In-line weight fail,17.5,1
+BL-11704,slot_locate,weight_fail,In-line weight fail,12.8,1
+BL-11704,stage_ship,missed_sla,Missed same-day dock,26.9,0
+BL-11706,stage_ship,missed_sla,Missed same-day dock,10.0,0
+BL-11707,qc,label_mismatch,Label mismatch,7.4,1
+BL-11709,pick,short_pick,Short pick / slot empty,13.1,1
+BL-11709,stage_ship,missed_sla,Missed same-day dock,98.6,0
+BL-11710,pick,short_pick,Short pick / slot empty,17.0,1
+BL-11710,stage_ship,missed_sla,Missed same-day dock,17.5,0
+BL-11711,stage_ship,missed_sla,Missed same-day dock,68.1,0
+BL-11712,pick,short_pick,Short pick / slot empty,10.2,1
+BL-11712,stage_ship,missed_sla,Missed same-day dock,13.9,0
+BL-11713,stage_ship,missed_sla,Missed same-day dock,54.1,0
+BL-11714,stage_ship,missed_sla,Missed same-day dock,35.9,0
+BL-11715,stage_ship,missed_sla,Missed same-day dock,15.0,0
+BL-11718,stage_ship,missed_sla,Missed same-day dock,1.5,0
+BL-11720,pack,damaged_carton,Damaged carton,16.9,0
+BL-11720,stage_ship,missed_sla,Missed same-day dock,52.2,0
+BL-11725,slot_locate,label_mismatch,Label mismatch,9.1,1
+BL-11729,stage_ship,missed_sla,Missed same-day dock,9.1,0
+BL-11730,slot_locate,label_mismatch,Label mismatch,14.2,1
+BL-11730,stage_ship,missed_sla,Missed same-day dock,1.5,0
+BL-11732,wave_release,weight_fail,In-line weight fail,11.5,1
+BL-11732,slot_locate,weight_fail,In-line weight fail,7.4,1
+BL-11732,stage_ship,missed_sla,Missed same-day dock,31.4,0
+BL-11735,slot_locate,weight_fail,In-line weight fail,5.3,1
+BL-11735,stage_ship,missed_sla,Missed same-day dock,15.2,0
+BL-11736,stage_ship,missed_sla,Missed same-day dock,68.6,0
+BL-11741,stage_ship,missed_sla,Missed same-day dock,18.4,0
+BL-11744,pick,short_pick,Short pick / slot empty,10.1,1
+BL-11744,qc,weight_fail,In-line weight fail,5.5,1
+BL-11744,stage_ship,missed_sla,Missed same-day dock,23.1,0
+BL-11745,stage_ship,missed_sla,Missed same-day dock,40.3,0
+BL-11746,stage_ship,missed_sla,Missed same-day dock,2.6,0
+BL-11750,qc,weight_fail,In-line weight fail,8.5,1
+BL-11755,pick,short_pick,Short pick / slot empty,10.8,1
+BL-11755,stage_ship,missed_sla,Missed same-day dock,25.8,0
+BL-11756,qc,label_mismatch,Label mismatch,8.1,1
+BL-11757,stage_ship,missed_sla,Missed same-day dock,9.4,0
+BL-11762,stage_ship,missed_sla,Missed same-day dock,28.9,0
+BL-11763,stage_ship,missed_sla,Missed same-day dock,1.4,0
+BL-11764,qc,weight_fail,In-line weight fail,14.7,1
+BL-11764,stage_ship,missed_sla,Missed same-day dock,19.3,0
+BL-11765,stage_ship,missed_sla,Missed same-day dock,64.2,0
+BL-11766,stage_ship,missed_sla,Missed same-day dock,44.3,0
+BL-11767,stage_ship,missed_sla,Missed same-day dock,35.7,0
+BL-11770,stage_ship,missed_sla,Missed same-day dock,16.3,0
+BL-11774,stage_ship,missed_sla,Missed same-day dock,8.2,0
+BL-11779,wave_release,weight_fail,In-line weight fail,15.0,1
+BL-11783,stage_ship,missed_sla,Missed same-day dock,5.3,0
+BL-11786,pick,short_pick,Short pick / slot empty,11.5,1
+BL-11786,stage_ship,missed_sla,Missed same-day dock,53.2,0
+BL-11788,stage_ship,missed_sla,Missed same-day dock,1.9,0
+BL-11791,qc,weight_fail,In-line weight fail,18.1,1
+BL-11792,wave_release,weight_fail,In-line weight fail,4.0,1
+BL-11792,pick,short_pick,Short pick / slot empty,13.4,1
+BL-11796,stage_ship,missed_sla,Missed same-day dock,29.0,0
+BL-11800,stage_ship,missed_sla,Missed same-day dock,3.3,0
+BL-11803,pick,short_pick,Short pick / slot empty,9.3,1
+BL-11803,stage_ship,missed_sla,Missed same-day dock,10.1,0
+BL-11805,stage_ship,weight_fail,In-line weight fail,21.3,1
+BL-11805,stage_ship,missed_sla,Missed same-day dock,12.5,0
+BL-11806,stage_ship,missed_sla,Missed same-day dock,4.5,0
+BL-11807,stage_ship,label_mismatch,Label mismatch,5.2,1
+BL-11810,pick,short_pick,Short pick / slot empty,11.5,1
+BL-11811,stage_ship,missed_sla,Missed same-day dock,10.2,0
+BL-11815,stage_ship,missed_sla,Missed same-day dock,8.0,0
+BL-11820,pack,damaged_carton,Damaged carton,8.9,0
+BL-11822,stage_ship,missed_sla,Missed same-day dock,19.0,0
+BL-11824,stage_ship,missed_sla,Missed same-day dock,8.7,0
+BL-11828,stage_ship,missed_sla,Missed same-day dock,10.5,0
+BL-11831,stage_ship,missed_sla,Missed same-day dock,11.7,0
+BL-11837,stage_ship,missed_sla,Missed same-day dock,16.6,0
+BL-11839,stage_ship,missed_sla,Missed same-day dock,16.8,0
+BL-11841,slot_locate,weight_fail,In-line weight fail,14.4,1
+BL-11841,stage_ship,missed_sla,Missed same-day dock,37.4,0
+BL-11842,pick,short_pick,Short pick / slot empty,8.8,1
+BL-11842,pack,damaged_carton,Damaged carton,18.0,0
+BL-11842,stage_ship,missed_sla,Missed same-day dock,10.2,0
+BL-11844,stage_ship,missed_sla,Missed same-day dock,23.0,0
+BL-11845,stage_ship,missed_sla,Missed same-day dock,11.5,0
+BL-11846,pick,short_pick,Short pick / slot empty,9.4,1
+BL-11846,stage_ship,missed_sla,Missed same-day dock,16.8,0
+BL-11847,wave_release,weight_fail,In-line weight fail,6.5,1
+BL-11853,wave_release,weight_fail,In-line weight fail,12.8,1
+BL-11853,stage_ship,missed_sla,Missed same-day dock,68.6,0
+BL-11854,stage_ship,missed_sla,Missed same-day dock,40.4,0
+BL-11855,qc,label_mismatch,Label mismatch,15.1,1
+BL-11855,stage_ship,missed_sla,Missed same-day dock,10.6,0
+BL-11856,slot_locate,label_mismatch,Label mismatch,10.9,1
+BL-11856,stage_ship,missed_sla,Missed same-day dock,17.2,0
+BL-11857,stage_ship,missed_sla,Missed same-day dock,17.6,0
+BL-11858,slot_locate,label_mismatch,Label mismatch,12.7,1
+BL-11858,stage_ship,missed_sla,Missed same-day dock,1.6,0
+BL-11859,stage_ship,missed_sla,Missed same-day dock,33.2,0
+BL-11860,stage_ship,weight_fail,In-line weight fail,7.9,1
+BL-11860,stage_ship,missed_sla,Missed same-day dock,39.4,0
+BL-11861,pack,damaged_carton,Damaged carton,7.3,0
+BL-11870,stage_ship,missed_sla,Missed same-day dock,20.0,0
+BL-11876,pick,short_pick,Short pick / slot empty,20.7,1
+BL-11878,wave_release,weight_fail,In-line weight fail,20.0,1
+BL-11878,pack,damaged_carton,Damaged carton,8.1,0
+BL-11878,qc,label_mismatch,Label mismatch,4.8,1
+BL-11878,stage_ship,missed_sla,Missed same-day dock,46.7,0
+BL-11880,stage_ship,missed_sla,Missed same-day dock,3.8,0
+BL-11881,stage_ship,missed_sla,Missed same-day dock,0.9,0
+BL-11883,pack,damaged_carton,Damaged carton,13.5,0
+BL-11883,stage_ship,missed_sla,Missed same-day dock,19.2,0
+BL-11884,pack,damaged_carton,Damaged carton,15.3,0
+BL-11884,stage_ship,missed_sla,Missed same-day dock,37.8,0
+BL-11887,pack,damaged_carton,Damaged carton,15.7,0
+BL-11887,stage_ship,missed_sla,Missed same-day dock,8.2,0
+BL-11889,qc,weight_fail,In-line weight fail,10.2,1
+BL-11890,stage_ship,missed_sla,Missed same-day dock,4.9,0
+BL-11898,wave_release,weight_fail,In-line weight fail,8.3,1
+BL-11898,stage_ship,missed_sla,Missed same-day dock,3.3,0
+BL-11901,stage_ship,missed_sla,Missed same-day dock,22.5,0
+BL-11903,stage_ship,missed_sla,Missed same-day dock,0.2,0
+BL-11904,stage_ship,missed_sla,Missed same-day dock,20.2,0
+BL-11906,stage_ship,missed_sla,Missed same-day dock,34.2,0
+BL-11907,stage_ship,missed_sla,Missed same-day dock,21.3,0
+BL-11909,stage_ship,missed_sla,Missed same-day dock,5.5,0
+BL-11910,qc,label_mismatch,Label mismatch,10.9,1
+BL-11910,stage_ship,missed_sla,Missed same-day dock,19.3,0
+BL-11912,qc,label_mismatch,Label mismatch,8.5,1
+BL-11912,stage_ship,missed_sla,Missed same-day dock,6.5,0
+BL-11913,slot_locate,weight_fail,In-line weight fail,6.3,1
+BL-11919,stage_ship,missed_sla,Missed same-day dock,53.4,0
+BL-11922,slot_locate,label_mismatch,Label mismatch,10.0,1
+BL-11922,stage_ship,missed_sla,Missed same-day dock,18.4,0
+BL-11925,pack,damaged_carton,Damaged carton,8.7,0
+BL-11925,stage_ship,missed_sla,Missed same-day dock,2.6,0
+BL-11928,stage_ship,weight_fail,In-line weight fail,11.3,1
+BL-11928,stage_ship,missed_sla,Missed same-day dock,81.0,0
+BL-11930,stage_ship,missed_sla,Missed same-day dock,2.7,0
+BL-11932,qc,label_mismatch,Label mismatch,6.2,1
+BL-11933,pick,short_pick,Short pick / slot empty,12.4,1
+BL-11934,stage_ship,missed_sla,Missed same-day dock,0.6,0
+BL-11936,qc,weight_fail,In-line weight fail,13.1,1
+BL-11936,stage_ship,missed_sla,Missed same-day dock,2.0,0
+BL-11938,pick,short_pick,Short pick / slot empty,6.9,1
+BL-11942,stage_ship,missed_sla,Missed same-day dock,26.8,0
+BL-11943,stage_ship,missed_sla,Missed same-day dock,1.9,0
+BL-11944,stage_ship,missed_sla,Missed same-day dock,6.3,0
+BL-11951,stage_ship,missed_sla,Missed same-day dock,0.2,0
+BL-11954,pick,short_pick,Short pick / slot empty,4.0,1
+BL-11956,pack,damaged_carton,Damaged carton,17.7,0
+BL-11956,stage_ship,missed_sla,Missed same-day dock,6.3,0
+BL-11957,stage_ship,missed_sla,Missed same-day dock,4.2,0
+BL-11960,stage_ship,missed_sla,Missed same-day dock,6.8,0
+BL-11961,pick,short_pick,Short pick / slot empty,4.7,1
+BL-11961,stage_ship,missed_sla,Missed same-day dock,13.1,0
+BL-11962,stage_ship,missed_sla,Missed same-day dock,6.4,0
+BL-11965,pick,short_pick,Short pick / slot empty,12.8,1
+BL-11966,stage_ship,missed_sla,Missed same-day dock,20.5,0
+BL-11968,stage_ship,missed_sla,Missed same-day dock,13.6,0
+BL-11969,stage_ship,missed_sla,Missed same-day dock,19.1,0
+BL-11972,stage_ship,missed_sla,Missed same-day dock,35.4,0
+BL-11973,stage_ship,missed_sla,Missed same-day dock,5.2,0
+BL-11974,stage_ship,missed_sla,Missed same-day dock,3.0,0
+BL-11977,pick,short_pick,Short pick / slot empty,5.2,1
+BL-11977,stage_ship,missed_sla,Missed same-day dock,8.2,0
+BL-11984,stage_ship,missed_sla,Missed same-day dock,17.0,0
+BL-11986,stage_ship,missed_sla,Missed same-day dock,36.3,0
+BL-11988,wave_release,label_mismatch,Label mismatch,20.0,1
+BL-11988,stage_ship,missed_sla,Missed same-day dock,9.0,0
+BL-11989,pack,damaged_carton,Damaged carton,13.2,0
+BL-11989,stage_ship,missed_sla,Missed same-day dock,69.4,0
+BL-11990,stage_ship,missed_sla,Missed same-day dock,9.3,0
+BL-11991,pick,short_pick,Short pick / slot empty,15.3,1
+BL-11992,stage_ship,missed_sla,Missed same-day dock,4.7,0
+BL-11993,stage_ship,missed_sla,Missed same-day dock,69.8,0
+BL-11994,pick,short_pick,Short pick / slot empty,8.1,1
+BL-11994,stage_ship,missed_sla,Missed same-day dock,45.7,0
+BL-11996,pack,damaged_carton,Damaged carton,14.5,0
+BL-12000,stage_ship,missed_sla,Missed same-day dock,6.8,0
+BL-12004,pick,short_pick,Short pick / slot empty,13.5,1
+BL-12005,qc,label_mismatch,Label mismatch,8.8,1
+BL-12005,stage_ship,missed_sla,Missed same-day dock,0.5,0
+BL-12009,stage_ship,missed_sla,Missed same-day dock,3.8,0
+BL-12011,pick,short_pick,Short pick / slot empty,20.3,1
+BL-12012,stage_ship,missed_sla,Missed same-day dock,30.9,0
+BL-12015,pack,damaged_carton,Damaged carton,13.4,0
+BL-12015,stage_ship,missed_sla,Missed same-day dock,60.5,0
+BL-12018,pack,damaged_carton,Damaged carton,12.1,0
+BL-12018,stage_ship,missed_sla,Missed same-day dock,32.2,0
+BL-12019,qc,weight_fail,In-line weight fail,11.8,1
+BL-12019,stage_ship,missed_sla,Missed same-day dock,23.9,0
+BL-12022,stage_ship,missed_sla,Missed same-day dock,31.7,0
+BL-12023,stage_ship,missed_sla,Missed same-day dock,8.9,0
+BL-12024,stage_ship,label_mismatch,Label mismatch,19.8,1
+BL-12025,stage_ship,missed_sla,Missed same-day dock,9.5,0
+BL-12026,stage_ship,missed_sla,Missed same-day dock,50.5,0
+BL-12029,stage_ship,missed_sla,Missed same-day dock,19.0,0
+BL-12030,slot_locate,weight_fail,In-line weight fail,14.9,1
+BL-12030,stage_ship,label_mismatch,Label mismatch,16.3,1
+BL-12030,stage_ship,missed_sla,Missed same-day dock,37.8,0
+BL-12032,stage_ship,missed_sla,Missed same-day dock,23.6,0
+BL-12035,pick,short_pick,Short pick / slot empty,18.8,1
+BL-12035,stage_ship,missed_sla,Missed same-day dock,13.9,0
+BL-12036,stage_ship,missed_sla,Missed same-day dock,34.2,0
+BL-12038,stage_ship,missed_sla,Missed same-day dock,27.5,0
+BL-12039,stage_ship,weight_fail,In-line weight fail,13.4,1
+BL-12039,stage_ship,missed_sla,Missed same-day dock,38.0,0
+BL-12043,pick,short_pick,Short pick / slot empty,12.0,1
+BL-12049,stage_ship,missed_sla,Missed same-day dock,26.1,0
+BL-12053,stage_ship,missed_sla,Missed same-day dock,27.5,0
+BL-12057,stage_ship,missed_sla,Missed same-day dock,49.0,0
+BL-12058,stage_ship,missed_sla,Missed same-day dock,3.3,0
+BL-12062,slot_locate,label_mismatch,Label mismatch,12.6,1
+BL-12062,stage_ship,missed_sla,Missed same-day dock,1.1,0
+BL-12064,stage_ship,missed_sla,Missed same-day dock,17.3,0
+BL-12066,stage_ship,missed_sla,Missed same-day dock,65.9,0
+BL-12067,pack,damaged_carton,Damaged carton,7.7,0
+BL-12067,stage_ship,missed_sla,Missed same-day dock,24.5,0
+BL-12070,pack,damaged_carton,Damaged carton,14.1,0
+BL-12070,stage_ship,missed_sla,Missed same-day dock,32.9,0
+BL-12071,slot_locate,label_mismatch,Label mismatch,11.0,1
+BL-12071,stage_ship,missed_sla,Missed same-day dock,33.4,0
+BL-12073,stage_ship,missed_sla,Missed same-day dock,58.8,0
+BL-12074,stage_ship,missed_sla,Missed same-day dock,12.1,0
+BL-12075,stage_ship,missed_sla,Missed same-day dock,45.8,0
+BL-12077,pack,damaged_carton,Damaged carton,9.4,0
+BL-12077,stage_ship,missed_sla,Missed same-day dock,20.9,0
+BL-12095,stage_ship,missed_sla,Missed same-day dock,4.8,0
+BL-12097,stage_ship,weight_fail,In-line weight fail,14.0,1
+BL-12098,pack,damaged_carton,Damaged carton,19.2,0
+BL-12106,qc,label_mismatch,Label mismatch,20.9,1
+BL-12106,stage_ship,missed_sla,Missed same-day dock,8.9,0
+BL-12108,stage_ship,missed_sla,Missed same-day dock,37.0,0
+BL-12111,qc,label_mismatch,Label mismatch,14.4,1
+BL-12113,stage_ship,missed_sla,Missed same-day dock,14.3,0
+BL-12115,stage_ship,missed_sla,Missed same-day dock,4.8,0
+BL-12117,stage_ship,missed_sla,Missed same-day dock,13.4,0
+BL-12118,wave_release,weight_fail,In-line weight fail,7.2,1
+BL-12122,pick,short_pick,Short pick / slot empty,14.6,1
+BL-12123,stage_ship,missed_sla,Missed same-day dock,16.3,0
+BL-12124,qc,weight_fail,In-line weight fail,11.0,1
+BL-12124,stage_ship,missed_sla,Missed same-day dock,8.2,0
+BL-12126,stage_ship,missed_sla,Missed same-day dock,7.5,0
+BL-12128,pack,damaged_carton,Damaged carton,4.0,0
+BL-12128,stage_ship,missed_sla,Missed same-day dock,33.6,0
+BL-12129,qc,label_mismatch,Label mismatch,18.3,1
+BL-12129,stage_ship,missed_sla,Missed same-day dock,65.4,0
+BL-12132,pick,short_pick,Short pick / slot empty,13.2,1
+BL-12132,stage_ship,missed_sla,Missed same-day dock,0.2,0
+BL-12138,pack,damaged_carton,Damaged carton,11.6,0
+BL-12138,stage_ship,missed_sla,Missed same-day dock,6.9,0
+BL-12141,pack,damaged_carton,Damaged carton,7.9,0
+BL-12143,pack,damaged_carton,Damaged carton,8.5,0
+BL-12148,wave_release,label_mismatch,Label mismatch,17.9,1
+BL-12148,stage_ship,weight_fail,In-line weight fail,11.9,1
+BL-12148,stage_ship,missed_sla,Missed same-day dock,33.0,0
+BL-12151,pack,damaged_carton,Damaged carton,10.0,0
+BL-12151,stage_ship,missed_sla,Missed same-day dock,15.4,0
+BL-12154,pack,damaged_carton,Damaged carton,11.1,0
+BL-12154,stage_ship,missed_sla,Missed same-day dock,35.1,0
+BL-12156,stage_ship,missed_sla,Missed same-day dock,5.2,0
+BL-12157,qc,weight_fail,In-line weight fail,15.5,1
+BL-12159,stage_ship,missed_sla,Missed same-day dock,0.3,0
+BL-12161,qc,weight_fail,In-line weight fail,5.7,1
+BL-12164,stage_ship,missed_sla,Missed same-day dock,28.7,0
+BL-12165,pack,damaged_carton,Damaged carton,13.9,0
+BL-12167,qc,weight_fail,In-line weight fail,8.5,1
+BL-12167,stage_ship,missed_sla,Missed same-day dock,48.9,0
+BL-12171,stage_ship,missed_sla,Missed same-day dock,13.5,0
+BL-12173,pick,short_pick,Short pick / slot empty,7.9,1
+BL-12173,stage_ship,missed_sla,Missed same-day dock,4.0,0
+BL-12176,stage_ship,missed_sla,Missed same-day dock,22.7,0
+BL-12177,stage_ship,missed_sla,Missed same-day dock,23.2,0
+BL-12178,pack,damaged_carton,Damaged carton,8.4,0
+BL-12178,stage_ship,missed_sla,Missed same-day dock,6.9,0
+BL-12179,stage_ship,missed_sla,Missed same-day dock,3.3,0
+BL-12180,stage_ship,missed_sla,Missed same-day dock,59.4,0
+BL-12182,qc,weight_fail,In-line weight fail,11.0,1
+BL-12182,stage_ship,missed_sla,Missed same-day dock,9.9,0
+BL-12183,stage_ship,missed_sla,Missed same-day dock,8.1,0
+BL-12184,stage_ship,missed_sla,Missed same-day dock,7.5,0
+BL-12190,wave_release,label_mismatch,Label mismatch,10.9,1
+BL-12199,pack,damaged_carton,Damaged carton,13.5,0
+BL-12202,stage_ship,missed_sla,Missed same-day dock,9.3,0
+BL-12208,wave_release,weight_fail,In-line weight fail,5.4,1
+BL-12208,stage_ship,missed_sla,Missed same-day dock,4.6,0
+BL-12210,stage_ship,missed_sla,Missed same-day dock,11.8,0
+BL-12215,stage_ship,weight_fail,In-line weight fail,8.8,1
+BL-12215,stage_ship,missed_sla,Missed same-day dock,57.4,0
+BL-12217,stage_ship,weight_fail,In-line weight fail,10.6,1
+BL-12217,stage_ship,missed_sla,Missed same-day dock,27.1,0
+BL-12219,stage_ship,missed_sla,Missed same-day dock,33.4,0
+BL-12220,stage_ship,missed_sla,Missed same-day dock,18.8,0
+BL-12225,pack,damaged_carton,Damaged carton,5.0,0
+BL-12228,pack,damaged_carton,Damaged carton,7.8,0
+BL-12242,stage_ship,missed_sla,Missed same-day dock,4.7,0
+BL-12255,pick,short_pick,Short pick / slot empty,14.2,1
+BL-12258,pick,short_pick,Short pick / slot empty,9.9,1
+BL-12262,pick,short_pick,Short pick / slot empty,7.3,1
+BL-12263,pack,damaged_carton,Damaged carton,9.1,0
+BL-12264,slot_locate,label_mismatch,Label mismatch,9.1,1
+BL-12264,stage_ship,missed_sla,Missed same-day dock,0.2,0
+BL-12265,pick,short_pick,Short pick / slot empty,13.8,1
+BL-12265,stage_ship,missed_sla,Missed same-day dock,2.8,0
+BL-12268,slot_locate,weight_fail,In-line weight fail,10.1,1
+BL-12288,pack,damaged_carton,Damaged carton,10.1,0
+BL-12289,pick,short_pick,Short pick / slot empty,7.4,1
+BL-12291,pick,short_pick,Short pick / slot empty,11.5,1
+BL-12293,pack,damaged_carton,Damaged carton,8.5,0
+BL-12293,qc,label_mismatch,Label mismatch,17.0,1
+BL-12300,stage_ship,missed_sla,Missed same-day dock,2.0,0
+BL-12301,stage_ship,missed_sla,Missed same-day dock,15.0,0
+BL-12305,stage_ship,missed_sla,Missed same-day dock,15.6,0
+BL-12307,stage_ship,missed_sla,Missed same-day dock,17.8,0
+BL-12308,slot_locate,weight_fail,In-line weight fail,7.9,1
+BL-12317,pack,damaged_carton,Damaged carton,12.5,0
+BL-12317,stage_ship,missed_sla,Missed same-day dock,0.9,0
+BL-12322,stage_ship,weight_fail,In-line weight fail,7.1,1
+BL-12332,pick,short_pick,Short pick / slot empty,13.8,1
+BL-12334,pick,short_pick,Short pick / slot empty,6.8,1
+BL-12336,pack,damaged_carton,Damaged carton,8.0,0
+BL-12337,slot_locate,label_mismatch,Label mismatch,4.3,1
+BL-12342,slot_locate,label_mismatch,Label mismatch,13.1,1
+BL-12352,stage_ship,missed_sla,Missed same-day dock,11.7,0
+BL-12353,stage_ship,missed_sla,Missed same-day dock,3.5,0
+BL-12363,stage_ship,missed_sla,Missed same-day dock,17.1,0
+BL-12365,pick,short_pick,Short pick / slot empty,12.1,1
+BL-12366,pick,short_pick,Short pick / slot empty,8.5,1
+BL-12371,stage_ship,missed_sla,Missed same-day dock,4.5,0
+BL-12374,pack,damaged_carton,Damaged carton,9.0,0
+BL-12377,pick,short_pick,Short pick / slot empty,17.4,1
+BL-12378,qc,label_mismatch,Label mismatch,9.6,1
+BL-12379,stage_ship,label_mismatch,Label mismatch,10.2,1
+BL-12389,pack,damaged_carton,Damaged carton,10.0,0
+BL-12401,qc,label_mismatch,Label mismatch,17.0,1
+BL-12411,pick,short_pick,Short pick / slot empty,10.4,1
+BL-12412,qc,label_mismatch,Label mismatch,6.9,1
+BL-12414,qc,weight_fail,In-line weight fail,8.7,1
+BL-12418,pack,damaged_carton,Damaged carton,11.0,0
+BL-12420,qc,label_mismatch,Label mismatch,13.1,1
+BL-12422,qc,label_mismatch,Label mismatch,11.6,1
+BL-12428,pick,short_pick,Short pick / slot empty,8.7,1
+BL-12439,qc,weight_fail,In-line weight fail,11.3,1
+BL-12447,wave_release,weight_fail,In-line weight fail,6.9,1
+BL-12447,slot_locate,weight_fail,In-line weight fail,11.3,1
+BL-12452,pack,damaged_carton,Damaged carton,15.3,0
+BL-12453,qc,label_mismatch,Label mismatch,10.7,1
+BL-12463,qc,weight_fail,In-line weight fail,8.7,1
+BL-12463,stage_ship,missed_sla,Missed same-day dock,14.2,0
+BL-12475,qc,label_mismatch,Label mismatch,11.6,1
+BL-12478,qc,weight_fail,In-line weight fail,16.4,1
+BL-12484,pack,damaged_carton,Damaged carton,16.1,0
+BL-12488,qc,weight_fail,In-line weight fail,9.3,1
+BL-12489,stage_ship,missed_sla,Missed same-day dock,0.6,0
+BL-12492,stage_ship,missed_sla,Missed same-day dock,9.2,0
+BL-12501,pick,short_pick,Short pick / slot empty,11.7,1
+BL-12507,pick,short_pick,Short pick / slot empty,16.2,1
+BL-12516,slot_locate,weight_fail,In-line weight fail,12.2,1
+BL-12517,qc,label_mismatch,Label mismatch,11.4,1
+BL-12518,pack,damaged_carton,Damaged carton,11.5,0
+BL-12518,stage_ship,missed_sla,Missed same-day dock,6.0,0
+BL-12534,pick,short_pick,Short pick / slot empty,15.1,1
+BL-12539,qc,weight_fail,In-line weight fail,6.9,1
+BL-12547,stage_ship,missed_sla,Missed same-day dock,2.9,0
+BL-12553,qc,weight_fail,In-line weight fail,11.8,1
+BL-12553,stage_ship,label_mismatch,Label mismatch,5.0,1
+BL-12559,stage_ship,missed_sla,Missed same-day dock,41.7,0
+BL-12562,pack,damaged_carton,Damaged carton,9.3,0
+BL-12565,stage_ship,missed_sla,Missed same-day dock,7.7,0
+BL-12566,stage_ship,missed_sla,Missed same-day dock,0.6,0
+BL-12572,stage_ship,missed_sla,Missed same-day dock,3.3,0
+BL-12584,wave_release,weight_fail,In-line weight fail,9.5,1
+BL-12602,pack,damaged_carton,Damaged carton,13.2,0
+BL-12605,pack,damaged_carton,Damaged carton,10.9,0
+BL-12615,qc,weight_fail,In-line weight fail,14.1,1
+BL-12617,stage_ship,missed_sla,Missed same-day dock,27.8,0
+BL-12630,slot_locate,weight_fail,In-line weight fail,4.0,1
+BL-12630,stage_ship,missed_sla,Missed same-day dock,2.3,0
+BL-12633,stage_ship,missed_sla,Missed same-day dock,11.0,0
+BL-12634,slot_locate,label_mismatch,Label mismatch,7.3,1
+BL-12639,pack,damaged_carton,Damaged carton,14.2,0
+BL-12639,stage_ship,missed_sla,Missed same-day dock,7.5,0
+BL-12658,stage_ship,weight_fail,In-line weight fail,14.7,1
+BL-12660,pack,damaged_carton,Damaged carton,5.4,0
+BL-12661,stage_ship,missed_sla,Missed same-day dock,0.0,0
+BL-12662,stage_ship,label_mismatch,Label mismatch,10.2,1
+BL-12663,pack,damaged_carton,Damaged carton,20.3,0
+BL-12663,stage_ship,missed_sla,Missed same-day dock,31.4,0
+BL-12667,qc,label_mismatch,Label mismatch,4.6,1
+BL-12667,stage_ship,missed_sla,Missed same-day dock,3.5,0
+BL-12673,pack,damaged_carton,Damaged carton,11.3,0
+BL-12674,pack,damaged_carton,Damaged carton,10.0,0
+BL-12678,pick,short_pick,Short pick / slot empty,13.7,1
+BL-12680,pick,short_pick,Short pick / slot empty,7.4,1
+BL-12682,stage_ship,missed_sla,Missed same-day dock,8.1,0
+BL-12686,stage_ship,missed_sla,Missed same-day dock,2.5,0
+BL-12689,wave_release,label_mismatch,Label mismatch,7.2,1
+BL-12696,stage_ship,label_mismatch,Label mismatch,18.9,1
+BL-12696,stage_ship,missed_sla,Missed same-day dock,1.7,0
+BL-12701,stage_ship,missed_sla,Missed same-day dock,6.8,0
+BL-12702,pick,short_pick,Short pick / slot empty,15.4,1
+BL-12714,pack,damaged_carton,Damaged carton,6.3,0
+BL-12716,wave_release,weight_fail,In-line weight fail,11.6,1
+BL-12717,pick,short_pick,Short pick / slot empty,17.7,1
+BL-12718,slot_locate,label_mismatch,Label mismatch,12.8,1
+BL-12726,slot_locate,weight_fail,In-line weight fail,9.6,1
+BL-12726,qc,weight_fail,In-line weight fail,10.8,1
+BL-12726,stage_ship,missed_sla,Missed same-day dock,17.5,0
+BL-12728,pick,short_pick,Short pick / slot empty,13.2,1
+BL-12728,pack,damaged_carton,Damaged carton,15.0,0
+BL-12732,qc,weight_fail,In-line weight fail,13.0,1
+BL-12748,qc,weight_fail,In-line weight fail,9.4,1
+BL-12748,stage_ship,missed_sla,Missed same-day dock,2.5,0
+BL-12767,pack,damaged_carton,Damaged carton,16.5,0
+BL-12772,pick,short_pick,Short pick / slot empty,9.9,1
+BL-12774,wave_release,weight_fail,In-line weight fail,18.4,1
+BL-12774,pack,damaged_carton,Damaged carton,15.2,0
+BL-12781,pick,short_pick,Short pick / slot empty,12.0,1
+BL-12797,slot_locate,weight_fail,In-line weight fail,9.0,1
+BL-12800,stage_ship,label_mismatch,Label mismatch,10.1,1
+BL-12805,stage_ship,missed_sla,Missed same-day dock,0.6,0
+BL-12808,pack,damaged_carton,Damaged carton,15.1,0
+BL-12808,stage_ship,missed_sla,Missed same-day dock,42.5,0
+BL-12811,pick,short_pick,Short pick / slot empty,16.3,1
+BL-12811,pack,damaged_carton,Damaged carton,7.2,0
+BL-12811,stage_ship,missed_sla,Missed same-day dock,15.7,0
+BL-12812,pack,damaged_carton,Damaged carton,10.8,0
+BL-12813,pick,short_pick,Short pick / slot empty,11.3,1
+BL-12818,pack,damaged_carton,Damaged carton,10.7,0
+BL-12831,pick,short_pick,Short pick / slot empty,16.4,1
+BL-12840,stage_ship,missed_sla,Missed same-day dock,18.8,0
+BL-12843,qc,label_mismatch,Label mismatch,16.5,1
+BL-12845,pack,damaged_carton,Damaged carton,16.7,0
+BL-12850,slot_locate,label_mismatch,Label mismatch,15.4,1
+BL-12863,qc,weight_fail,In-line weight fail,12.4,1
+BL-12869,pack,damaged_carton,Damaged carton,15.7,0
+BL-12869,stage_ship,missed_sla,Missed same-day dock,4.4,0
+BL-12873,pick,short_pick,Short pick / slot empty,14.4,1
+BL-12876,wave_release,label_mismatch,Label mismatch,13.3,1
+BL-12895,pack,damaged_carton,Damaged carton,10.2,0
+BL-12904,qc,weight_fail,In-line weight fail,10.7,1
+BL-12906,pack,damaged_carton,Damaged carton,11.9,0
+BL-12907,qc,label_mismatch,Label mismatch,13.7,1
+BL-12911,pick,short_pick,Short pick / slot empty,6.4,1
+BL-12911,qc,label_mismatch,Label mismatch,11.6,1
+BL-12911,stage_ship,missed_sla,Missed same-day dock,13.4,0
+BL-12916,pick,short_pick,Short pick / slot empty,12.7,1
+BL-12917,stage_ship,missed_sla,Missed same-day dock,2.4,0
+BL-12923,pack,damaged_carton,Damaged carton,7.8,0
+BL-12928,slot_locate,label_mismatch,Label mismatch,12.7,1
+BL-12928,pack,damaged_carton,Damaged carton,9.8,0
+BL-12937,stage_ship,weight_fail,In-line weight fail,15.7,1
+BL-12939,stage_ship,missed_sla,Missed same-day dock,19.0,0
+BL-12942,slot_locate,label_mismatch,Label mismatch,16.5,1
+BL-12946,pack,damaged_carton,Damaged carton,10.2,0
+BL-12961,stage_ship,missed_sla,Missed same-day dock,1.4,0
+BL-12970,qc,label_mismatch,Label mismatch,8.0,1
+BL-12975,pack,damaged_carton,Damaged carton,12.1,0
+BL-12978,pick,short_pick,Short pick / slot empty,6.3,1
+BL-12980,pick,short_pick,Short pick / slot empty,9.6,1
+BL-12980,stage_ship,label_mismatch,Label mismatch,15.2,1
+BL-12983,pack,damaged_carton,Damaged carton,16.0,0
+BL-12984,stage_ship,missed_sla,Missed same-day dock,0.4,0
+BL-12987,wave_release,label_mismatch,Label mismatch,10.4,1
+BL-12988,stage_ship,label_mismatch,Label mismatch,13.2,1
+BL-13004,pick,short_pick,Short pick / slot empty,13.1,1
+BL-13016,pick,short_pick,Short pick / slot empty,9.7,1
+BL-13022,stage_ship,missed_sla,Missed same-day dock,10.4,0
+BL-13034,pack,damaged_carton,Damaged carton,17.4,0
+BL-13042,qc,label_mismatch,Label mismatch,9.4,1
+BL-13045,stage_ship,missed_sla,Missed same-day dock,7.2,0
+BL-13051,slot_locate,weight_fail,In-line weight fail,11.5,1
+BL-13055,qc,label_mismatch,Label mismatch,5.8,1
+BL-13069,qc,label_mismatch,Label mismatch,10.0,1
+BL-13069,stage_ship,missed_sla,Missed same-day dock,2.2,0
+BL-13074,qc,label_mismatch,Label mismatch,10.3,1
+BL-13074,stage_ship,missed_sla,Missed same-day dock,15.1,0
+BL-13083,qc,weight_fail,In-line weight fail,13.1,1
+BL-13096,qc,weight_fail,In-line weight fail,18.9,1
+BL-13096,stage_ship,missed_sla,Missed same-day dock,35.3,0
+BL-13106,slot_locate,weight_fail,In-line weight fail,7.9,1
+BL-13110,qc,weight_fail,In-line weight fail,8.9,1
+BL-13118,stage_ship,missed_sla,Missed same-day dock,2.5,0
+BL-13134,stage_ship,missed_sla,Missed same-day dock,3.2,0
+BL-13142,stage_ship,missed_sla,Missed same-day dock,6.0,0
+BL-13147,stage_ship,missed_sla,Missed same-day dock,5.9,0
+BL-13150,slot_locate,weight_fail,In-line weight fail,10.9,1
+BL-13153,wave_release,weight_fail,In-line weight fail,6.4,1
+BL-13170,stage_ship,missed_sla,Missed same-day dock,5.9,0
+BL-13179,slot_locate,label_mismatch,Label mismatch,7.9,1
+BL-13179,stage_ship,missed_sla,Missed same-day dock,43.3,0
+BL-13180,pack,damaged_carton,Damaged carton,12.3,0
+BL-13184,qc,weight_fail,In-line weight fail,7.2,1
+BL-13186,slot_locate,label_mismatch,Label mismatch,9.4,1
+BL-13190,stage_ship,missed_sla,Missed same-day dock,47.6,0
+BL-13199,stage_ship,label_mismatch,Label mismatch,8.3,1
+BL-13205,pack,damaged_carton,Damaged carton,7.1,0
+BL-13208,stage_ship,weight_fail,In-line weight fail,4.0,1
+BL-13211,stage_ship,missed_sla,Missed same-day dock,23.7,0
+BL-13212,stage_ship,missed_sla,Missed same-day dock,14.2,0
+BL-13213,stage_ship,missed_sla,Missed same-day dock,4.1,0
+BL-13216,qc,weight_fail,In-line weight fail,7.3,1
+BL-13218,qc,weight_fail,In-line weight fail,13.3,1
+BL-13225,pack,damaged_carton,Damaged carton,14.8,0
+BL-13234,wave_release,weight_fail,In-line weight fail,10.3,1
+BL-13243,pick,short_pick,Short pick / slot empty,14.3,1
+BL-13249,pick,short_pick,Short pick / slot empty,7.7,1
+BL-13250,slot_locate,weight_fail,In-line weight fail,4.0,1
+BL-13250,stage_ship,weight_fail,In-line weight fail,6.1,1
+BL-13250,stage_ship,missed_sla,Missed same-day dock,27.2,0
+BL-13262,pick,short_pick,Short pick / slot empty,8.3,1
+BL-13272,wave_release,label_mismatch,Label mismatch,8.7,1
+BL-13273,qc,weight_fail,In-line weight fail,4.5,1
+BL-13281,wave_release,label_mismatch,Label mismatch,10.0,1
+BL-13293,stage_ship,weight_fail,In-line weight fail,4.0,1
+BL-13307,pack,damaged_carton,Damaged carton,7.6,0
+BL-13309,stage_ship,missed_sla,Missed same-day dock,9.1,0
+BL-13310,pack,damaged_carton,Damaged carton,12.8,0
+BL-13311,qc,label_mismatch,Label mismatch,8.1,1
+BL-13312,qc,label_mismatch,Label mismatch,13.1,1
+BL-13314,pick,short_pick,Short pick / slot empty,16.5,1
+BL-13319,qc,label_mismatch,Label mismatch,13.0,1
+BL-13320,pack,damaged_carton,Damaged carton,10.4,0
+BL-13322,pick,short_pick,Short pick / slot empty,13.8,1
+BL-13327,pick,short_pick,Short pick / slot empty,10.4,1
+BL-13330,stage_ship,weight_fail,In-line weight fail,10.8,1
+BL-13332,stage_ship,missed_sla,Missed same-day dock,19.5,0
+BL-13334,pack,damaged_carton,Damaged carton,17.2,0
+BL-13342,pick,short_pick,Short pick / slot empty,16.7,1
+BL-13359,stage_ship,missed_sla,Missed same-day dock,1.1,0
+BL-13360,qc,weight_fail,In-line weight fail,17.3,1
+BL-13361,pick,short_pick,Short pick / slot empty,12.3,1
+BL-13361,stage_ship,missed_sla,Missed same-day dock,3.1,0
+BL-13362,pack,damaged_carton,Damaged carton,12.6,0
+BL-13362,stage_ship,missed_sla,Missed same-day dock,21.7,0
+BL-13369,qc,label_mismatch,Label mismatch,9.3,1
+BL-13372,pick,short_pick,Short pick / slot empty,9.5,1
+BL-13373,stage_ship,weight_fail,In-line weight fail,8.4,1
+BL-13380,stage_ship,missed_sla,Missed same-day dock,6.0,0
+BL-13385,wave_release,weight_fail,In-line weight fail,16.6,1
+BL-13395,qc,weight_fail,In-line weight fail,8.2,1
+BL-13396,qc,weight_fail,In-line weight fail,6.2,1
+BL-13396,stage_ship,weight_fail,In-line weight fail,12.2,1
+BL-13397,pack,damaged_carton,Damaged carton,8.0,0
+BL-13401,stage_ship,missed_sla,Missed same-day dock,11.6,0
+BL-13406,qc,label_mismatch,Label mismatch,10.9,1
+BL-13410,pick,short_pick,Short pick / slot empty,13.6,1
+BL-13411,qc,label_mismatch,Label mismatch,9.1,1
+BL-13420,pick,short_pick,Short pick / slot empty,15.1,1
+BL-13422,pack,damaged_carton,Damaged carton,13.8,0
+BL-13425,pack,damaged_carton,Damaged carton,17.1,0
+BL-13453,stage_ship,missed_sla,Missed same-day dock,6.7,0
+BL-13455,qc,label_mismatch,Label mismatch,13.5,1
+BL-13470,qc,label_mismatch,Label mismatch,14.2,1
+BL-13473,stage_ship,missed_sla,Missed same-day dock,15.5,0
+BL-13474,stage_ship,missed_sla,Missed same-day dock,9.9,0
+BL-13476,stage_ship,missed_sla,Missed same-day dock,11.1,0
+BL-13480,stage_ship,missed_sla,Missed same-day dock,11.4,0
+BL-13481,slot_locate,weight_fail,In-line weight fail,10.0,1
+BL-13481,stage_ship,missed_sla,Missed same-day dock,11.5,0
+BL-13482,stage_ship,missed_sla,Missed same-day dock,4.5,0
+BL-13483,slot_locate,weight_fail,In-line weight fail,4.2,1
+BL-13490,qc,weight_fail,In-line weight fail,8.4,1
+BL-13512,qc,weight_fail,In-line weight fail,18.9,1
+BL-13515,stage_ship,missed_sla,Missed same-day dock,0.4,0
+BL-13522,pick,short_pick,Short pick / slot empty,15.8,1
+BL-13530,pick,short_pick,Short pick / slot empty,8.5,1
+BL-13531,pack,damaged_carton,Damaged carton,7.6,0
+BL-13539,stage_ship,missed_sla,Missed same-day dock,0.1,0
+BL-13545,qc,weight_fail,In-line weight fail,9.3,1
+BL-13554,stage_ship,missed_sla,Missed same-day dock,3.1,0
+BL-13567,qc,label_mismatch,Label mismatch,14.6,1
+BL-13571,pick,short_pick,Short pick / slot empty,8.0,1
+BL-13576,pick,short_pick,Short pick / slot empty,16.1,1
+BL-13587,stage_ship,label_mismatch,Label mismatch,12.3,1
+BL-13590,pick,short_pick,Short pick / slot empty,11.2,1
+BL-13596,stage_ship,missed_sla,Missed same-day dock,9.4,0
+BL-13598,stage_ship,missed_sla,Missed same-day dock,10.5,0
+BL-13599,stage_ship,weight_fail,In-line weight fail,8.1,1
+BL-13608,pack,damaged_carton,Damaged carton,10.2,0
+BL-13610,pack,damaged_carton,Damaged carton,15.0,0
+BL-13615,pick,short_pick,Short pick / slot empty,16.6,1
+BL-13623,pick,short_pick,Short pick / slot empty,9.5,1
+BL-13626,qc,weight_fail,In-line weight fail,13.4,1
+BL-13626,stage_ship,missed_sla,Missed same-day dock,26.3,0
+BL-13628,pack,damaged_carton,Damaged carton,7.8,0
+BL-13631,slot_locate,weight_fail,In-line weight fail,12.5,1
+BL-13643,slot_locate,weight_fail,In-line weight fail,8.8,1
+BL-13645,pick,short_pick,Short pick / slot empty,16.8,1
+BL-13657,pack,damaged_carton,Damaged carton,16.3,0
+BL-13657,stage_ship,missed_sla,Missed same-day dock,24.7,0
+BL-13658,pick,short_pick,Short pick / slot empty,12.6,1
+BL-13662,wave_release,label_mismatch,Label mismatch,10.8,1
+BL-13672,pick,short_pick,Short pick / slot empty,13.4,1
+BL-13672,stage_ship,missed_sla,Missed same-day dock,0.8,0
+BL-13677,stage_ship,missed_sla,Missed same-day dock,22.9,0
+BL-13684,pick,short_pick,Short pick / slot empty,13.3,1
+BL-13705,stage_ship,missed_sla,Missed same-day dock,2.8,0
+BL-13708,pick,short_pick,Short pick / slot empty,10.7,1
+BL-13713,stage_ship,missed_sla,Missed same-day dock,13.2,0
+BL-13716,stage_ship,missed_sla,Missed same-day dock,14.0,0
+BL-13718,pick,short_pick,Short pick / slot empty,8.2,1
+BL-13722,wave_release,label_mismatch,Label mismatch,15.1,1
+BL-13728,pick,short_pick,Short pick / slot empty,15.1,1
+BL-13728,stage_ship,missed_sla,Missed same-day dock,4.3,0
+BL-13729,stage_ship,missed_sla,Missed same-day dock,11.5,0
+BL-13740,pick,short_pick,Short pick / slot empty,11.2,1
+BL-13750,pack,damaged_carton,Damaged carton,7.0,0
+BL-13750,stage_ship,missed_sla,Missed same-day dock,14.1,0
+BL-13754,pack,damaged_carton,Damaged carton,13.5,0
+BL-13755,stage_ship,label_mismatch,Label mismatch,11.2,1
+BL-13756,stage_ship,missed_sla,Missed same-day dock,5.4,0
+BL-13764,qc,label_mismatch,Label mismatch,7.4,1
+BL-13767,pack,damaged_carton,Damaged carton,16.2,0
+BL-13768,pick,short_pick,Short pick / slot empty,13.5,1
+BL-13776,stage_ship,missed_sla,Missed same-day dock,2.7,0
+BL-13781,qc,weight_fail,In-line weight fail,8.2,1
+BL-13784,stage_ship,weight_fail,In-line weight fail,10.5,1
+BL-13794,stage_ship,missed_sla,Missed same-day dock,1.5,0
+BL-13799,stage_ship,missed_sla,Missed same-day dock,6.5,0
+BL-13803,slot_locate,weight_fail,In-line weight fail,10.8,1
+BL-13803,qc,weight_fail,In-line weight fail,10.4,1
+BL-13804,slot_locate,weight_fail,In-line weight fail,11.6,1
+BL-13804,stage_ship,missed_sla,Missed same-day dock,22.0,0
+BL-13809,qc,label_mismatch,Label mismatch,10.0,1
+BL-13811,pick,short_pick,Short pick / slot empty,19.1,1
+BL-13816,pick,short_pick,Short pick / slot empty,12.6,1
+BL-13837,qc,label_mismatch,Label mismatch,8.3,1
+BL-13839,wave_release,weight_fail,In-line weight fail,12.6,1
+BL-13839,stage_ship,missed_sla,Missed same-day dock,21.9,0
+BL-13843,pick,short_pick,Short pick / slot empty,7.2,1
+BL-13844,qc,weight_fail,In-line weight fail,8.2,1
+BL-13844,stage_ship,missed_sla,Missed same-day dock,7.8,0
+BL-13859,qc,label_mismatch,Label mismatch,11.3,1
+BL-13860,pack,damaged_carton,Damaged carton,6.3,0
+BL-13864,pick,short_pick,Short pick / slot empty,13.4,1
+BL-13865,pack,damaged_carton,Damaged carton,12.6,0
+BL-13866,stage_ship,missed_sla,Missed same-day dock,6.9,0
+BL-13870,qc,weight_fail,In-line weight fail,4.0,1
+BL-13874,pack,damaged_carton,Damaged carton,6.2,0
+BL-13878,stage_ship,missed_sla,Missed same-day dock,4.0,0
+BL-13887,pick,short_pick,Short pick / slot empty,5.1,1
+BL-13889,pack,damaged_carton,Damaged carton,10.9,0
+BL-13892,stage_ship,missed_sla,Missed same-day dock,0.1,0
+BL-13895,qc,label_mismatch,Label mismatch,11.7,1
+BL-13896,stage_ship,missed_sla,Missed same-day dock,20.6,0
+BL-13903,slot_locate,weight_fail,In-line weight fail,6.8,1
+BL-13906,pack,damaged_carton,Damaged carton,9.6,0
+BL-13906,stage_ship,missed_sla,Missed same-day dock,6.5,0
+BL-13914,slot_locate,weight_fail,In-line weight fail,17.9,1
+BL-13919,qc,weight_fail,In-line weight fail,13.1,1
+BL-13920,wave_release,label_mismatch,Label mismatch,8.2,1
+BL-13938,stage_ship,missed_sla,Missed same-day dock,6.2,0
+BL-13942,qc,label_mismatch,Label mismatch,16.0,1
+BL-13942,stage_ship,missed_sla,Missed same-day dock,28.9,0
+BL-13950,wave_release,weight_fail,In-line weight fail,12.4,1
+BL-13952,pick,short_pick,Short pick / slot empty,10.8,1
+BL-13955,stage_ship,label_mismatch,Label mismatch,4.5,1
+BL-13962,pick,short_pick,Short pick / slot empty,6.2,1
+BL-13962,stage_ship,label_mismatch,Label mismatch,8.4,1
+BL-13967,qc,label_mismatch,Label mismatch,13.8,1
+BL-13967,stage_ship,missed_sla,Missed same-day dock,20.3,0
+BL-13971,stage_ship,missed_sla,Missed same-day dock,4.2,0
+BL-13973,stage_ship,missed_sla,Missed same-day dock,9.2,0
+BL-13974,stage_ship,missed_sla,Missed same-day dock,6.4,0
+BL-13975,pick,short_pick,Short pick / slot empty,6.9,1
+BL-13990,pick,short_pick,Short pick / slot empty,6.7,1
+BL-13991,pack,damaged_carton,Damaged carton,9.2,0
+BL-13994,qc,weight_fail,In-line weight fail,13.5,1
+BL-13996,pick,short_pick,Short pick / slot empty,9.6,1
+BL-13996,stage_ship,missed_sla,Missed same-day dock,0.2,0
+BL-13997,qc,label_mismatch,Label mismatch,11.1,1
+BL-13998,pack,damaged_carton,Damaged carton,10.2,0
+BL-14007,pack,damaged_carton,Damaged carton,9.2,0
+BL-14009,qc,label_mismatch,Label mismatch,14.4,1
+BL-14013,qc,weight_fail,In-line weight fail,5.9,1
+BL-14018,pick,short_pick,Short pick / slot empty,5.8,1
+BL-14019,qc,label_mismatch,Label mismatch,4.0,1
+BL-14021,qc,weight_fail,In-line weight fail,16.3,1
+BL-14030,qc,weight_fail,In-line weight fail,17.5,1
+BL-14031,pick,short_pick,Short pick / slot empty,15.2,1
+BL-14032,pick,short_pick,Short pick / slot empty,14.2,1
+BL-14032,stage_ship,missed_sla,Missed same-day dock,19.7,0
+BL-14033,stage_ship,weight_fail,In-line weight fail,11.7,1
+BL-14039,pick,short_pick,Short pick / slot empty,4.9,1
+BL-14054,pack,damaged_carton,Damaged carton,12.4,0
+BL-14059,qc,label_mismatch,Label mismatch,13.5,1
+BL-14060,stage_ship,missed_sla,Missed same-day dock,13.9,0
+BL-14070,pack,damaged_carton,Damaged carton,9.2,0
+BL-14076,slot_locate,weight_fail,In-line weight fail,7.3,1
+BL-14081,qc,label_mismatch,Label mismatch,8.8,1
+BL-14084,slot_locate,label_mismatch,Label mismatch,9.5,1
+BL-14097,qc,label_mismatch,Label mismatch,8.2,1
+BL-14097,stage_ship,missed_sla,Missed same-day dock,17.6,0
+BL-14107,pack,damaged_carton,Damaged carton,14.2,0
+BL-14110,pack,damaged_carton,Damaged carton,14.3,0
+BL-14110,stage_ship,missed_sla,Missed same-day dock,33.0,0
+BL-14124,qc,label_mismatch,Label mismatch,6.0,1
+BL-14128,pack,damaged_carton,Damaged carton,18.2,0
+BL-14134,qc,weight_fail,In-line weight fail,9.2,1
+BL-14134,stage_ship,label_mismatch,Label mismatch,9.8,1
+BL-14148,stage_ship,missed_sla,Missed same-day dock,4.9,0
+BL-14152,qc,weight_fail,In-line weight fail,10.8,1
+BL-14154,stage_ship,missed_sla,Missed same-day dock,19.1,0
+BL-14159,slot_locate,weight_fail,In-line weight fail,4.0,1
+BL-14160,qc,weight_fail,In-line weight fail,10.4,1
+BL-14168,pack,damaged_carton,Damaged carton,12.0,0
+BL-14168,qc,label_mismatch,Label mismatch,8.0,1
+BL-14168,stage_ship,missed_sla,Missed same-day dock,31.8,0
+BL-14170,slot_locate,label_mismatch,Label mismatch,12.4,1
+BL-14200,pick,short_pick,Short pick / slot empty,18.7,1
+BL-14200,stage_ship,label_mismatch,Label mismatch,11.8,1
+BL-14203,qc,label_mismatch,Label mismatch,11.7,1
+BL-14205,qc,label_mismatch,Label mismatch,6.9,1
+BL-14217,stage_ship,missed_sla,Missed same-day dock,4.3,0
+BL-14233,slot_locate,label_mismatch,Label mismatch,8.9,1
+BL-14237,pack,damaged_carton,Damaged carton,5.5,0
+BL-14238,stage_ship,missed_sla,Missed same-day dock,1.0,0
+BL-14241,pick,short_pick,Short pick / slot empty,12.7,1
+BL-14246,qc,weight_fail,In-line weight fail,10.3,1
+BL-14255,pack,damaged_carton,Damaged carton,12.8,0
+BL-14260,stage_ship,missed_sla,Missed same-day dock,7.2,0
+BL-14267,pack,damaged_carton,Damaged carton,8.8,0
+BL-14282,pick,short_pick,Short pick / slot empty,11.7,1
+BL-14284,wave_release,weight_fail,In-line weight fail,12.0,1
+BL-14286,stage_ship,missed_sla,Missed same-day dock,3.3,0
+BL-14302,pack,damaged_carton,Damaged carton,12.9,0
+BL-14302,stage_ship,missed_sla,Missed same-day dock,5.0,0
+BL-14305,slot_locate,weight_fail,In-line weight fail,9.9,1
+BL-14310,qc,label_mismatch,Label mismatch,7.2,1
+BL-14313,pack,damaged_carton,Damaged carton,17.8,0
+BL-14314,qc,weight_fail,In-line weight fail,7.2,1
+BL-14320,pack,damaged_carton,Damaged carton,13.5,0
+BL-14329,pack,damaged_carton,Damaged carton,8.1,0
+BL-14333,pack,damaged_carton,Damaged carton,5.0,0
+BL-14334,pack,damaged_carton,Damaged carton,10.8,0
+BL-14349,stage_ship,missed_sla,Missed same-day dock,1.3,0
+BL-14350,stage_ship,missed_sla,Missed same-day dock,11.4,0
+BL-14355,pick,short_pick,Short pick / slot empty,14.5,1
+BL-14360,qc,label_mismatch,Label mismatch,12.2,1
+BL-14361,qc,label_mismatch,Label mismatch,17.8,1
+BL-14362,pick,short_pick,Short pick / slot empty,13.4,1
+BL-14368,pick,short_pick,Short pick / slot empty,8.5,1
+BL-14376,pack,damaged_carton,Damaged carton,9.3,0
+BL-14377,qc,label_mismatch,Label mismatch,4.0,1
+BL-14381,qc,label_mismatch,Label mismatch,5.4,1
+BL-14385,stage_ship,missed_sla,Missed same-day dock,14.2,0
+BL-14391,pick,short_pick,Short pick / slot empty,11.1,1
+BL-14396,pack,damaged_carton,Damaged carton,11.8,0
+BL-14396,qc,weight_fail,In-line weight fail,14.3,1
+BL-14396,stage_ship,missed_sla,Missed same-day dock,2.7,0
+BL-14402,pack,damaged_carton,Damaged carton,9.5,0
+BL-14405,pack,damaged_carton,Damaged carton,12.2,0
+BL-14435,pack,damaged_carton,Damaged carton,16.3,0
+BL-14436,pack,damaged_carton,Damaged carton,12.9,0
+BL-14438,stage_ship,weight_fail,In-line weight fail,13.1,1
+BL-14445,pick,short_pick,Short pick / slot empty,9.7,1
+BL-14447,wave_release,label_mismatch,Label mismatch,8.1,1
+BL-14459,pack,damaged_carton,Damaged carton,11.7,0
+BL-14463,pack,damaged_carton,Damaged carton,15.4,0
+BL-14464,wave_release,label_mismatch,Label mismatch,12.4,1
+BL-14466,qc,label_mismatch,Label mismatch,10.2,1
+BL-14474,pick,short_pick,Short pick / slot empty,15.6,1
+BL-14480,pack,damaged_carton,Damaged carton,9.9,0
+BL-14494,wave_release,label_mismatch,Label mismatch,10.4,1
+BL-14495,stage_ship,missed_sla,Missed same-day dock,2.3,0
+BL-14504,slot_locate,label_mismatch,Label mismatch,15.6,1
+BL-14506,slot_locate,weight_fail,In-line weight fail,7.8,1
+BL-14520,pack,damaged_carton,Damaged carton,8.5,0
+BL-14524,pack,damaged_carton,Damaged carton,7.7,0
+BL-14524,stage_ship,missed_sla,Missed same-day dock,1.5,0
