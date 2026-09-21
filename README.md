@@ -1,5 +1,7 @@
 # Bayline — same-day fulfillment control
 
+**Lead project for a data analyst application.** Open the control board below, then the SQL in `sql/analysis.sql`. The interview story is a bottleneck, a before/after, and a labor dollar figure — not a chart template.
+
 A three-building dock-to-stage case study. Not a red-vs-green KPI poster: a **control board** for Austin Gateway, Newark Hub, and Fontana West, with SQL marts, a Mann–Whitney test, and a labor tariff that a warehouse manager could argue with.
 
 The question is operational, not decorative: **why did Fontana night miss the 120-minute trailer, and did zone-pick plus skip-lane QC actually move the gate?**
