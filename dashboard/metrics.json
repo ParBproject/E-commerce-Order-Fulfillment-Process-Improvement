@@ -13,8 +13,8 @@
       "sla_miss_pct": 34.2,
       "error_rate_pct": 22.1,
       "rework_rate_pct": 17.2,
-      "labor_hours": 4187.1,
-      "loaded_labor_usd": 118352.0
+      "labor_hours": 3495.6,
+      "loaded_labor_usd": 99356.0
     },
     {
       "period": "pilot",
@@ -27,8 +27,8 @@
       "sla_miss_pct": 5.4,
       "error_rate_pct": 14.5,
       "rework_rate_pct": 10.8,
-      "labor_hours": 3310.6,
-      "loaded_labor_usd": 93625.0
+      "labor_hours": 2688.2,
+      "loaded_labor_usd": 76471.0
     }
   ],
   "step_profile": [
@@ -301,44 +301,34 @@
   ],
   "heterogeneity": [
     {
-      "cut": "shift",
-      "slice": "Swing",
-      "baseline_n": 785,
-      "pilot_n": 839,
-      "baseline_median": 107.7,
-      "pilot_median": 84.0,
-      "recovered_minutes": 23.7,
-      "recovered_pct": 22.0
+      "cut": "channel",
+      "slice": "DTC web",
+      "baseline_n": 1266,
+      "pilot_n": 1324,
+      "baseline_median": 108.2,
+      "pilot_median": 83.6,
+      "recovered_minutes": 24.6,
+      "recovered_pct": 22.7
     },
     {
-      "cut": "shift",
-      "slice": "Days",
-      "baseline_n": 760,
-      "pilot_n": 818,
-      "baseline_median": 105.6,
-      "pilot_median": 82.8,
-      "recovered_minutes": 22.8,
-      "recovered_pct": 21.6
+      "cut": "channel",
+      "slice": "Marketplace",
+      "baseline_n": 592,
+      "pilot_n": 653,
+      "baseline_median": 109.1,
+      "pilot_median": 84.7,
+      "recovered_minutes": 24.4,
+      "recovered_pct": 22.4
     },
     {
-      "cut": "shift",
-      "slice": "Night",
-      "baseline_n": 675,
-      "pilot_n": 647,
-      "baseline_median": 117.7,
-      "pilot_median": 87.7,
-      "recovered_minutes": 30.0,
-      "recovered_pct": 25.5
-    },
-    {
-      "cut": "facility",
-      "slice": "EWR-07",
-      "baseline_n": 816,
-      "pilot_n": 863,
-      "baseline_median": 110.3,
-      "pilot_median": 88.1,
-      "recovered_minutes": 22.2,
-      "recovered_pct": 20.1
+      "cut": "channel",
+      "slice": "Store replen",
+      "baseline_n": 362,
+      "pilot_n": 327,
+      "baseline_median": 115.1,
+      "pilot_median": 88.2,
+      "recovered_minutes": 26.9,
+      "recovered_pct": 23.4
     },
     {
       "cut": "facility",
@@ -349,6 +339,16 @@
       "pilot_median": 77.8,
       "recovered_minutes": 18.4,
       "recovered_pct": 19.1
+    },
+    {
+      "cut": "facility",
+      "slice": "EWR-07",
+      "baseline_n": 816,
+      "pilot_n": 863,
+      "baseline_median": 110.3,
+      "pilot_median": 88.1,
+      "recovered_minutes": 22.2,
+      "recovered_pct": 20.1
     },
     {
       "cut": "facility",
@@ -372,13 +372,13 @@
     },
     {
       "cut": "line_band",
-      "slice": "7+ lines",
-      "baseline_n": 336,
-      "pilot_n": 315,
-      "baseline_median": 146.5,
-      "pilot_median": 105.9,
-      "recovered_minutes": 40.6,
-      "recovered_pct": 27.7
+      "slice": "2-3 lines",
+      "baseline_n": 851,
+      "pilot_n": 853,
+      "baseline_median": 102.3,
+      "pilot_median": 79.5,
+      "recovered_minutes": 22.8,
+      "recovered_pct": 22.3
     },
     {
       "cut": "line_band",
@@ -392,48 +392,48 @@
     },
     {
       "cut": "line_band",
-      "slice": "2-3 lines",
-      "baseline_n": 851,
-      "pilot_n": 853,
-      "baseline_median": 102.3,
-      "pilot_median": 79.5,
+      "slice": "7+ lines",
+      "baseline_n": 336,
+      "pilot_n": 315,
+      "baseline_median": 146.5,
+      "pilot_median": 105.9,
+      "recovered_minutes": 40.6,
+      "recovered_pct": 27.7
+    },
+    {
+      "cut": "shift",
+      "slice": "Days",
+      "baseline_n": 760,
+      "pilot_n": 818,
+      "baseline_median": 105.6,
+      "pilot_median": 82.8,
       "recovered_minutes": 22.8,
-      "recovered_pct": 22.3
+      "recovered_pct": 21.6
     },
     {
-      "cut": "channel",
-      "slice": "Marketplace",
-      "baseline_n": 592,
-      "pilot_n": 653,
-      "baseline_median": 109.1,
-      "pilot_median": 84.7,
-      "recovered_minutes": 24.4,
-      "recovered_pct": 22.4
+      "cut": "shift",
+      "slice": "Night",
+      "baseline_n": 675,
+      "pilot_n": 647,
+      "baseline_median": 117.7,
+      "pilot_median": 87.7,
+      "recovered_minutes": 30.0,
+      "recovered_pct": 25.5
     },
     {
-      "cut": "channel",
-      "slice": "DTC web",
-      "baseline_n": 1266,
-      "pilot_n": 1324,
-      "baseline_median": 108.2,
-      "pilot_median": 83.6,
-      "recovered_minutes": 24.6,
-      "recovered_pct": 22.7
-    },
-    {
-      "cut": "channel",
-      "slice": "Store replen",
-      "baseline_n": 362,
-      "pilot_n": 327,
-      "baseline_median": 115.1,
-      "pilot_median": 88.2,
-      "recovered_minutes": 26.9,
-      "recovered_pct": 23.4
+      "cut": "shift",
+      "slice": "Swing",
+      "baseline_n": 785,
+      "pilot_n": 839,
+      "baseline_median": 107.7,
+      "pilot_median": 84.0,
+      "recovered_minutes": 23.7,
+      "recovered_pct": 22.0
     }
   ],
   "weekly_network": [
     {
-      "week_start": "2025-01-06T00:00:00.000",
+      "week_start": "2025-01-06",
       "period": "baseline",
       "orders": 283,
       "median_cycle": 108.5,
@@ -442,7 +442,7 @@
       "prior_median": null
     },
     {
-      "week_start": "2025-01-13T00:00:00.000",
+      "week_start": "2025-01-13",
       "period": "baseline",
       "orders": 287,
       "median_cycle": 108.2,
@@ -451,7 +451,7 @@
       "prior_median": 108.5
     },
     {
-      "week_start": "2025-01-20T00:00:00.000",
+      "week_start": "2025-01-20",
       "period": "baseline",
       "orders": 270,
       "median_cycle": 110.2,
@@ -460,7 +460,7 @@
       "prior_median": 108.2
     },
     {
-      "week_start": "2025-01-27T00:00:00.000",
+      "week_start": "2025-01-27",
       "period": "baseline",
       "orders": 265,
       "median_cycle": 110.4,
@@ -469,7 +469,7 @@
       "prior_median": 110.2
     },
     {
-      "week_start": "2025-02-03T00:00:00.000",
+      "week_start": "2025-02-03",
       "period": "baseline",
       "orders": 283,
       "median_cycle": 110.5,
@@ -478,7 +478,7 @@
       "prior_median": 110.4
     },
     {
-      "week_start": "2025-02-10T00:00:00.000",
+      "week_start": "2025-02-10",
       "period": "baseline",
       "orders": 281,
       "median_cycle": 109.8,
@@ -487,7 +487,7 @@
       "prior_median": 110.5
     },
     {
-      "week_start": "2025-02-17T00:00:00.000",
+      "week_start": "2025-02-17",
       "period": "baseline",
       "orders": 269,
       "median_cycle": 112.2,
@@ -496,7 +496,7 @@
       "prior_median": 109.8
     },
     {
-      "week_start": "2025-02-24T00:00:00.000",
+      "week_start": "2025-02-24",
       "period": "baseline",
       "orders": 282,
       "median_cycle": 105.5,
@@ -505,7 +505,7 @@
       "prior_median": 112.2
     },
     {
-      "week_start": "2025-03-10T00:00:00.000",
+      "week_start": "2025-03-10",
       "period": "pilot",
       "orders": 299,
       "median_cycle": 83.2,
@@ -514,7 +514,7 @@
       "prior_median": 105.5
     },
     {
-      "week_start": "2025-03-17T00:00:00.000",
+      "week_start": "2025-03-17",
       "period": "pilot",
       "orders": 245,
       "median_cycle": 84.6,
@@ -523,7 +523,7 @@
       "prior_median": 83.2
     },
     {
-      "week_start": "2025-03-24T00:00:00.000",
+      "week_start": "2025-03-24",
       "period": "pilot",
       "orders": 283,
       "median_cycle": 86.1,
@@ -532,7 +532,7 @@
       "prior_median": 84.6
     },
     {
-      "week_start": "2025-03-31T00:00:00.000",
+      "week_start": "2025-03-31",
       "period": "pilot",
       "orders": 314,
       "median_cycle": 86.4,
@@ -541,7 +541,7 @@
       "prior_median": 86.1
     },
     {
-      "week_start": "2025-04-07T00:00:00.000",
+      "week_start": "2025-04-07",
       "period": "pilot",
       "orders": 276,
       "median_cycle": 84.4,
@@ -550,7 +550,7 @@
       "prior_median": 86.4
     },
     {
-      "week_start": "2025-04-14T00:00:00.000",
+      "week_start": "2025-04-14",
       "period": "pilot",
       "orders": 270,
       "median_cycle": 82.8,
@@ -559,7 +559,7 @@
       "prior_median": 84.4
     },
     {
-      "week_start": "2025-04-21T00:00:00.000",
+      "week_start": "2025-04-21",
       "period": "pilot",
       "orders": 299,
       "median_cycle": 83.4,
@@ -568,7 +568,7 @@
       "prior_median": 82.8
     },
     {
-      "week_start": "2025-04-28T00:00:00.000",
+      "week_start": "2025-04-28",
       "period": "pilot",
       "orders": 318,
       "median_cycle": 84.6,
@@ -579,7 +579,7 @@
   ],
   "weekly_trend": [
     {
-      "week_start": "2025-01-06T00:00:00.000",
+      "week_start": "2025-01-06",
       "period": "baseline",
       "facility_id": "AUS-01",
       "orders": 88,
@@ -588,7 +588,7 @@
       "sla_miss_pct": 12.5
     },
     {
-      "week_start": "2025-01-06T00:00:00.000",
+      "week_start": "2025-01-06",
       "period": "baseline",
       "facility_id": "EWR-07",
       "orders": 110,
@@ -597,7 +597,7 @@
       "sla_miss_pct": 36.4
     },
     {
-      "week_start": "2025-01-06T00:00:00.000",
+      "week_start": "2025-01-06",
       "period": "baseline",
       "facility_id": "FNT-12",
       "orders": 85,
@@ -606,7 +606,7 @@
       "sla_miss_pct": 57.6
     },
     {
-      "week_start": "2025-01-13T00:00:00.000",
+      "week_start": "2025-01-13",
       "period": "baseline",
       "facility_id": "AUS-01",
       "orders": 80,
@@ -615,7 +615,7 @@
       "sla_miss_pct": 18.8
     },
     {
-      "week_start": "2025-01-13T00:00:00.000",
+      "week_start": "2025-01-13",
       "period": "baseline",
       "facility_id": "EWR-07",
       "orders": 107,
@@ -624,7 +624,7 @@
       "sla_miss_pct": 25.2
     },
     {
-      "week_start": "2025-01-13T00:00:00.000",
+      "week_start": "2025-01-13",
       "period": "baseline",
       "facility_id": "FNT-12",
       "orders": 100,
@@ -633,7 +633,7 @@
       "sla_miss_pct": 48.0
     },
     {
-      "week_start": "2025-01-20T00:00:00.000",
+      "week_start": "2025-01-20",
       "period": "baseline",
       "facility_id": "AUS-01",
       "orders": 84,
@@ -642,7 +642,7 @@
       "sla_miss_pct": 15.5
     },
     {
-      "week_start": "2025-01-20T00:00:00.000",
+      "week_start": "2025-01-20",
       "period": "baseline",
       "facility_id": "EWR-07",
       "orders": 95,
@@ -651,7 +651,7 @@
       "sla_miss_pct": 30.5
     },
     {
-      "week_start": "2025-01-20T00:00:00.000",
+      "week_start": "2025-01-20",
       "period": "baseline",
       "facility_id": "FNT-12",
       "orders": 91,
@@ -660,7 +660,7 @@
       "sla_miss_pct": 61.5
     },
     {
-      "week_start": "2025-01-27T00:00:00.000",
+      "week_start": "2025-01-27",
       "period": "baseline",
       "facility_id": "AUS-01",
       "orders": 68,
@@ -669,7 +669,7 @@
       "sla_miss_pct": 14.7
     },
     {
-      "week_start": "2025-01-27T00:00:00.000",
+      "week_start": "2025-01-27",
       "period": "baseline",
       "facility_id": "EWR-07",
       "orders": 99,
@@ -678,7 +678,7 @@
       "sla_miss_pct": 38.4
     },
     {
-      "week_start": "2025-01-27T00:00:00.000",
+      "week_start": "2025-01-27",
       "period": "baseline",
       "facility_id": "FNT-12",
       "orders": 98,
@@ -687,7 +687,7 @@
       "sla_miss_pct": 54.1
     },
     {
-      "week_start": "2025-02-03T00:00:00.000",
+      "week_start": "2025-02-03",
       "period": "baseline",
       "facility_id": "AUS-01",
       "orders": 98,
@@ -696,7 +696,7 @@
       "sla_miss_pct": 16.3
     },
     {
-      "week_start": "2025-02-03T00:00:00.000",
+      "week_start": "2025-02-03",
       "period": "baseline",
       "facility_id": "EWR-07",
       "orders": 91,
@@ -705,7 +705,7 @@
       "sla_miss_pct": 36.3
     },
     {
-      "week_start": "2025-02-03T00:00:00.000",
+      "week_start": "2025-02-03",
       "period": "baseline",
       "facility_id": "FNT-12",
       "orders": 94,
@@ -714,7 +714,7 @@
       "sla_miss_pct": 42.6
     },
     {
-      "week_start": "2025-02-10T00:00:00.000",
+      "week_start": "2025-02-10",
       "period": "baseline",
       "facility_id": "AUS-01",
       "orders": 76,
@@ -723,7 +723,7 @@
       "sla_miss_pct": 14.5
     },
     {
-      "week_start": "2025-02-10T00:00:00.000",
+      "week_start": "2025-02-10",
       "period": "baseline",
       "facility_id": "EWR-07",
       "orders": 105,
@@ -732,7 +732,7 @@
       "sla_miss_pct": 35.2
     },
     {
-      "week_start": "2025-02-10T00:00:00.000",
+      "week_start": "2025-02-10",
       "period": "baseline",
       "facility_id": "FNT-12",
       "orders": 100,
@@ -741,7 +741,7 @@
       "sla_miss_pct": 47.0
     },
     {
-      "week_start": "2025-02-17T00:00:00.000",
+      "week_start": "2025-02-17",
       "period": "baseline",
       "facility_id": "AUS-01",
       "orders": 71,
@@ -750,7 +750,7 @@
       "sla_miss_pct": 16.9
     },
     {
-      "week_start": "2025-02-17T00:00:00.000",
+      "week_start": "2025-02-17",
       "period": "baseline",
       "facility_id": "EWR-07",
       "orders": 103,
@@ -759,7 +759,7 @@
       "sla_miss_pct": 34.0
     },
     {
-      "week_start": "2025-02-17T00:00:00.000",
+      "week_start": "2025-02-17",
       "period": "baseline",
       "facility_id": "FNT-12",
       "orders": 95,
@@ -768,7 +768,7 @@
       "sla_miss_pct": 48.4
     },
     {
-      "week_start": "2025-02-24T00:00:00.000",
+      "week_start": "2025-02-24",
       "period": "baseline",
       "facility_id": "AUS-01",
       "orders": 97,
@@ -777,7 +777,7 @@
       "sla_miss_pct": 13.4
     },
     {
-      "week_start": "2025-02-24T00:00:00.000",
+      "week_start": "2025-02-24",
       "period": "baseline",
       "facility_id": "EWR-07",
       "orders": 106,
@@ -786,7 +786,7 @@
       "sla_miss_pct": 35.8
     },
     {
-      "week_start": "2025-02-24T00:00:00.000",
+      "week_start": "2025-02-24",
       "period": "baseline",
       "facility_id": "FNT-12",
       "orders": 79,
@@ -795,7 +795,7 @@
       "sla_miss_pct": 53.2
     },
     {
-      "week_start": "2025-03-10T00:00:00.000",
+      "week_start": "2025-03-10",
       "period": "pilot",
       "facility_id": "AUS-01",
       "orders": 91,
@@ -804,7 +804,7 @@
       "sla_miss_pct": 2.2
     },
     {
-      "week_start": "2025-03-10T00:00:00.000",
+      "week_start": "2025-03-10",
       "period": "pilot",
       "facility_id": "EWR-07",
       "orders": 120,
@@ -813,7 +813,7 @@
       "sla_miss_pct": 5.0
     },
     {
-      "week_start": "2025-03-10T00:00:00.000",
+      "week_start": "2025-03-10",
       "period": "pilot",
       "facility_id": "FNT-12",
       "orders": 88,
@@ -822,7 +822,7 @@
       "sla_miss_pct": 9.1
     },
     {
-      "week_start": "2025-03-17T00:00:00.000",
+      "week_start": "2025-03-17",
       "period": "pilot",
       "facility_id": "AUS-01",
       "orders": 66,
@@ -831,7 +831,7 @@
       "sla_miss_pct": 3.0
     },
     {
-      "week_start": "2025-03-17T00:00:00.000",
+      "week_start": "2025-03-17",
       "period": "pilot",
       "facility_id": "EWR-07",
       "orders": 87,
@@ -840,7 +840,7 @@
       "sla_miss_pct": 9.2
     },
     {
-      "week_start": "2025-03-17T00:00:00.000",
+      "week_start": "2025-03-17",
       "period": "pilot",
       "facility_id": "FNT-12",
       "orders": 92,
@@ -849,7 +849,7 @@
       "sla_miss_pct": 7.6
     },
     {
-      "week_start": "2025-03-24T00:00:00.000",
+      "week_start": "2025-03-24",
       "period": "pilot",
       "facility_id": "AUS-01",
       "orders": 79,
@@ -858,7 +858,7 @@
       "sla_miss_pct": 2.5
     },
     {
-      "week_start": "2025-03-24T00:00:00.000",
+      "week_start": "2025-03-24",
       "period": "pilot",
       "facility_id": "EWR-07",
       "orders": 107,
@@ -867,7 +867,7 @@
       "sla_miss_pct": 3.7
     },
     {
-      "week_start": "2025-03-24T00:00:00.000",
+      "week_start": "2025-03-24",
       "period": "pilot",
       "facility_id": "FNT-12",
       "orders": 97,
@@ -876,7 +876,7 @@
       "sla_miss_pct": 6.2
     },
     {
-      "week_start": "2025-03-31T00:00:00.000",
+      "week_start": "2025-03-31",
       "period": "pilot",
       "facility_id": "AUS-01",
       "orders": 88,
@@ -885,7 +885,7 @@
       "sla_miss_pct": 1.1
     },
     {
-      "week_start": "2025-03-31T00:00:00.000",
+      "week_start": "2025-03-31",
       "period": "pilot",
       "facility_id": "EWR-07",
       "orders": 121,
@@ -894,7 +894,7 @@
       "sla_miss_pct": 6.6
     },
     {
-      "week_start": "2025-03-31T00:00:00.000",
+      "week_start": "2025-03-31",
       "period": "pilot",
       "facility_id": "FNT-12",
       "orders": 105,
@@ -903,7 +903,7 @@
       "sla_miss_pct": 8.6
     },
     {
-      "week_start": "2025-04-07T00:00:00.000",
+      "week_start": "2025-04-07",
       "period": "pilot",
       "facility_id": "AUS-01",
       "orders": 96,
@@ -912,7 +912,7 @@
       "sla_miss_pct": 2.1
     },
     {
-      "week_start": "2025-04-07T00:00:00.000",
+      "week_start": "2025-04-07",
       "period": "pilot",
       "facility_id": "EWR-07",
       "orders": 101,
@@ -921,7 +921,7 @@
       "sla_miss_pct": 8.9
     },
     {
-      "week_start": "2025-04-07T00:00:00.000",
+      "week_start": "2025-04-07",
       "period": "pilot",
       "facility_id": "FNT-12",
       "orders": 79,
@@ -930,7 +930,7 @@
       "sla_miss_pct": 6.3
     },
     {
-      "week_start": "2025-04-14T00:00:00.000",
+      "week_start": "2025-04-14",
       "period": "pilot",
       "facility_id": "AUS-01",
       "orders": 86,
@@ -939,7 +939,7 @@
       "sla_miss_pct": 1.2
     },
     {
-      "week_start": "2025-04-14T00:00:00.000",
+      "week_start": "2025-04-14",
       "period": "pilot",
       "facility_id": "EWR-07",
       "orders": 97,
@@ -948,7 +948,7 @@
       "sla_miss_pct": 11.3
     },
     {
-      "week_start": "2025-04-14T00:00:00.000",
+      "week_start": "2025-04-14",
       "period": "pilot",
       "facility_id": "FNT-12",
       "orders": 87,
@@ -957,7 +957,7 @@
       "sla_miss_pct": 10.3
     },
     {
-      "week_start": "2025-04-21T00:00:00.000",
+      "week_start": "2025-04-21",
       "period": "pilot",
       "facility_id": "AUS-01",
       "orders": 98,
@@ -966,7 +966,7 @@
       "sla_miss_pct": 2.0
     },
     {
-      "week_start": "2025-04-21T00:00:00.000",
+      "week_start": "2025-04-21",
       "period": "pilot",
       "facility_id": "EWR-07",
       "orders": 108,
@@ -975,7 +975,7 @@
       "sla_miss_pct": 7.4
     },
     {
-      "week_start": "2025-04-21T00:00:00.000",
+      "week_start": "2025-04-21",
       "period": "pilot",
       "facility_id": "FNT-12",
       "orders": 93,
@@ -984,7 +984,7 @@
       "sla_miss_pct": 4.3
     },
     {
-      "week_start": "2025-04-28T00:00:00.000",
+      "week_start": "2025-04-28",
       "period": "pilot",
       "facility_id": "AUS-01",
       "orders": 86,
@@ -993,7 +993,7 @@
       "sla_miss_pct": 2.3
     },
     {
-      "week_start": "2025-04-28T00:00:00.000",
+      "week_start": "2025-04-28",
       "period": "pilot",
       "facility_id": "EWR-07",
       "orders": 122,
@@ -1002,7 +1002,7 @@
       "sla_miss_pct": 4.9
     },
     {
-      "week_start": "2025-04-28T00:00:00.000",
+      "week_start": "2025-04-28",
       "period": "pilot",
       "facility_id": "FNT-12",
       "orders": 110,
@@ -1705,6 +1705,14 @@
   ],
   "labor_bridge": [
     {
+      "facility_id": "AUS-01",
+      "labor_rate": 24.5,
+      "baseline_hours": 912.1,
+      "pilot_hours": 733.6,
+      "hours_recovered": 178.5,
+      "usd_recovered_in_window": 4374.0
+    },
+    {
       "facility_id": "EWR-07",
       "labor_rate": 31.2,
       "baseline_hours": 1299.8,
@@ -1719,14 +1727,6 @@
       "pilot_hours": 888.1,
       "hours_recovered": 395.5,
       "usd_recovered_in_window": 11233.0
-    },
-    {
-      "facility_id": "AUS-01",
-      "labor_rate": 24.5,
-      "baseline_hours": 912.1,
-      "pilot_hours": 733.6,
-      "hours_recovered": 178.5,
-      "usd_recovered_in_window": 4374.0
     }
   ],
   "sla_cells": [
@@ -56375,224 +56375,6 @@
       "err": 1
     }
   ],
-  "board": [
-    {
-      "order_id": "BL-13190",
-      "facility_id": "EWR-07",
-      "period": "pilot",
-      "shift": "Night",
-      "channel": "DTC web",
-      "line_count": 13,
-      "cycle_minutes": 167.6,
-      "sla_miss_flag": 1,
-      "rework_flag": 0,
-      "error_count": 0
-    },
-    {
-      "order_id": "BL-13179",
-      "facility_id": "EWR-07",
-      "period": "pilot",
-      "shift": "Days",
-      "channel": "DTC web",
-      "line_count": 14,
-      "cycle_minutes": 163.3,
-      "sla_miss_flag": 1,
-      "rework_flag": 1,
-      "error_count": 1
-    },
-    {
-      "order_id": "BL-12808",
-      "facility_id": "FNT-12",
-      "period": "pilot",
-      "shift": "Night",
-      "channel": "Store replen",
-      "line_count": 13,
-      "cycle_minutes": 162.5,
-      "sla_miss_flag": 1,
-      "rework_flag": 0,
-      "error_count": 1
-    },
-    {
-      "order_id": "BL-12559",
-      "facility_id": "AUS-01",
-      "period": "pilot",
-      "shift": "Night",
-      "channel": "Marketplace",
-      "line_count": 4,
-      "cycle_minutes": 161.7,
-      "sla_miss_flag": 1,
-      "rework_flag": 0,
-      "error_count": 0
-    },
-    {
-      "order_id": "BL-13096",
-      "facility_id": "FNT-12",
-      "period": "pilot",
-      "shift": "Night",
-      "channel": "Marketplace",
-      "line_count": 13,
-      "cycle_minutes": 155.3,
-      "sla_miss_flag": 1,
-      "rework_flag": 1,
-      "error_count": 1
-    },
-    {
-      "order_id": "BL-14110",
-      "facility_id": "FNT-12",
-      "period": "pilot",
-      "shift": "Swing",
-      "channel": "Marketplace",
-      "line_count": 11,
-      "cycle_minutes": 153.0,
-      "sla_miss_flag": 1,
-      "rework_flag": 0,
-      "error_count": 1
-    },
-    {
-      "order_id": "BL-14168",
-      "facility_id": "FNT-12",
-      "period": "pilot",
-      "shift": "Night",
-      "channel": "DTC web",
-      "line_count": 4,
-      "cycle_minutes": 151.8,
-      "sla_miss_flag": 1,
-      "rework_flag": 1,
-      "error_count": 2
-    },
-    {
-      "order_id": "BL-12663",
-      "facility_id": "EWR-07",
-      "period": "pilot",
-      "shift": "Night",
-      "channel": "Store replen",
-      "line_count": 7,
-      "cycle_minutes": 151.4,
-      "sla_miss_flag": 1,
-      "rework_flag": 0,
-      "error_count": 1
-    },
-    {
-      "order_id": "BL-13942",
-      "facility_id": "EWR-07",
-      "period": "pilot",
-      "shift": "Night",
-      "channel": "Marketplace",
-      "line_count": 2,
-      "cycle_minutes": 148.9,
-      "sla_miss_flag": 1,
-      "rework_flag": 1,
-      "error_count": 1
-    },
-    {
-      "order_id": "BL-12617",
-      "facility_id": "EWR-07",
-      "period": "pilot",
-      "shift": "Swing",
-      "channel": "Marketplace",
-      "line_count": 9,
-      "cycle_minutes": 147.8,
-      "sla_miss_flag": 1,
-      "rework_flag": 0,
-      "error_count": 0
-    },
-    {
-      "order_id": "BL-13250",
-      "facility_id": "FNT-12",
-      "period": "pilot",
-      "shift": "Days",
-      "channel": "DTC web",
-      "line_count": 10,
-      "cycle_minutes": 147.2,
-      "sla_miss_flag": 1,
-      "rework_flag": 1,
-      "error_count": 2
-    },
-    {
-      "order_id": "BL-13626",
-      "facility_id": "EWR-07",
-      "period": "pilot",
-      "shift": "Swing",
-      "channel": "DTC web",
-      "line_count": 7,
-      "cycle_minutes": 146.3,
-      "sla_miss_flag": 1,
-      "rework_flag": 1,
-      "error_count": 1
-    },
-    {
-      "order_id": "BL-13657",
-      "facility_id": "EWR-07",
-      "period": "pilot",
-      "shift": "Swing",
-      "channel": "DTC web",
-      "line_count": 14,
-      "cycle_minutes": 144.7,
-      "sla_miss_flag": 1,
-      "rework_flag": 0,
-      "error_count": 1
-    },
-    {
-      "order_id": "BL-13211",
-      "facility_id": "FNT-12",
-      "period": "pilot",
-      "shift": "Night",
-      "channel": "Marketplace",
-      "line_count": 9,
-      "cycle_minutes": 143.7,
-      "sla_miss_flag": 1,
-      "rework_flag": 0,
-      "error_count": 0
-    },
-    {
-      "order_id": "BL-13677",
-      "facility_id": "FNT-12",
-      "period": "pilot",
-      "shift": "Night",
-      "channel": "Store replen",
-      "line_count": 11,
-      "cycle_minutes": 142.9,
-      "sla_miss_flag": 1,
-      "rework_flag": 0,
-      "error_count": 0
-    },
-    {
-      "order_id": "BL-13804",
-      "facility_id": "EWR-07",
-      "period": "pilot",
-      "shift": "Night",
-      "channel": "DTC web",
-      "line_count": 13,
-      "cycle_minutes": 142.0,
-      "sla_miss_flag": 1,
-      "rework_flag": 1,
-      "error_count": 1
-    },
-    {
-      "order_id": "BL-13839",
-      "facility_id": "EWR-07",
-      "period": "pilot",
-      "shift": "Days",
-      "channel": "DTC web",
-      "line_count": 6,
-      "cycle_minutes": 141.9,
-      "sla_miss_flag": 1,
-      "rework_flag": 1,
-      "error_count": 1
-    },
-    {
-      "order_id": "BL-13362",
-      "facility_id": "AUS-01",
-      "period": "pilot",
-      "shift": "Days",
-      "channel": "Marketplace",
-      "line_count": 1,
-      "cycle_minutes": 141.7,
-      "sla_miss_flag": 1,
-      "rework_flag": 0,
-      "error_count": 1
-    }
-  ],
   "density": {
     "baseline": [
       {
@@ -56967,44 +56749,44 @@
   "money": {
     "blended_labor_rate": 28.27,
     "window_usd": 22885.0,
-    "hours_recovered_window": 876.5,
-    "payback_months_observed": 4.6
+    "hours_recovered_window": 807.3,
+    "payback_months_observed": 5.1
   },
   "sensitivity": [
     {
       "monthly_orders": 800,
-      "hours_month": 359.4,
-      "usd_month": 10160.0,
-      "usd_year": 121922.0,
-      "payback_months": 7.1
+      "hours_month": 325.8,
+      "usd_month": 9255.0,
+      "usd_year": 111062.0,
+      "payback_months": 7.8
     },
     {
       "monthly_orders": 1500,
-      "hours_month": 673.8,
-      "usd_month": 19050.0,
-      "usd_year": 228604.0,
-      "payback_months": 3.8
+      "hours_month": 610.8,
+      "usd_month": 17353.0,
+      "usd_year": 208241.0,
+      "payback_months": 4.1
     },
     {
       "monthly_orders": 2500,
-      "hours_month": 1123.0,
-      "usd_month": 31751.0,
-      "usd_year": 381006.0,
-      "payback_months": 2.3
+      "hours_month": 1018.0,
+      "usd_month": 28922.0,
+      "usd_year": 347068.0,
+      "payback_months": 2.5
     },
     {
       "monthly_orders": 4000,
-      "hours_month": 1796.8,
-      "usd_month": 50801.0,
-      "usd_year": 609610.0,
-      "payback_months": 1.4
+      "hours_month": 1628.8,
+      "usd_month": 46276.0,
+      "usd_year": 555309.0,
+      "payback_months": 1.6
     },
     {
       "monthly_orders": 6500,
-      "hours_month": 2919.7,
-      "usd_month": 82551.0,
-      "usd_year": 990616.0,
-      "payback_months": 0.9
+      "hours_month": 2646.8,
+      "usd_month": 75198.0,
+      "usd_year": 902377.0,
+      "payback_months": 1.0
     }
   ],
   "facilities": [
@@ -57040,9 +56822,9 @@
     }
   ],
   "brief": [
-    "Dock-to-stage median moved from 110 min to 85 min. The bootstrap 95% interval on that drop is 24\u201326 minutes (Mann\u2013Whitney p < 0.001).",
+    "Dock-to-stage median moved from 110 min to 85 min. The bootstrap 95% interval on that drop is 23.5\u201326.5 minutes (Mann\u2013Whitney p < 0.001).",
     "Pick was the recovered bottleneck: 47.5% of baseline dwell, 15.9 minutes faster after zone-pick. Fontana recovered 33.4 minutes at the median; night shift recovered 30.0.",
     "Same-day miss rate fell from 34.2% to 5.4%. That is an operations result, not a model score: cartons either hit the 120-minute dock or they do not.",
-    "At the observed mix, the eight-week window returns $22,885 in loaded labor. Payback against a $72,000 slotting/training spend is 4.6 months at this volume. The case is illustrative; a live pilot still needs a held-out control week."
+    "At the observed mix, the eight-week window returns $22,885 in loaded labor. Payback against a $72,000 slotting/training spend is 5.1 months at this volume. The case is illustrative; a live pilot still needs a held-out control week."
   ]
 }
