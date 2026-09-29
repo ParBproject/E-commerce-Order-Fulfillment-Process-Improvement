@@ -1379,7 +1379,6 @@ BL-12639,pack,damaged_carton,Damaged carton,14.2,0
 BL-12639,stage_ship,missed_sla,Missed same-day dock,7.5,0
 BL-12658,stage_ship,weight_fail,In-line weight fail,14.7,1
 BL-12660,pack,damaged_carton,Damaged carton,5.4,0
-BL-12661,stage_ship,missed_sla,Missed same-day dock,0.0,0
 BL-12662,stage_ship,label_mismatch,Label mismatch,10.2,1
 BL-12663,pack,damaged_carton,Damaged carton,20.3,0
 BL-12663,stage_ship,missed_sla,Missed same-day dock,31.4,0

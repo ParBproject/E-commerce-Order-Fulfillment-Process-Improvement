@@ -5,7 +5,7 @@ from pathlib import Path
 import pytest
 
 from bayline.analyze import connect, export
-from bayline.generate import write_tables
+from bayline.generate import simulate, write_tables
 from bayline.paths import DATA, SQL
 
 
@@ -83,6 +83,35 @@ def test_analysis_sql_has_join_and_window():
     assert "RANK() OVER" in sql
     assert "QUANTILE_CONT" in sql
     assert "LAG(" in sql
+
+
+def test_simulate_is_repeatable():
+    first = simulate()
+    second = simulate()
+    for name in first:
+        left = first[name].reset_index(drop=True)
+        right = second[name].reset_index(drop=True)
+        assert left.equals(right), name
+
+
+def test_sla_flag_matches_stored_cycle(tables):
+    orders = tables["fact_orders"]
+    exceptions = tables["fact_exceptions"]
+    expected = (orders["cycle_minutes"] > 120).astype(int)
+    assert orders["sla_miss_flag"].eq(expected).all()
+    misses = exceptions[exceptions["exception_code"] == "missed_sla"]
+    assert misses["minutes_added"].gt(0).all()
+    assert set(misses["order_id"]) == set(orders.loc[orders["sla_miss_flag"] == 1, "order_id"])
+    # The pre-round sum used to flag this on-gate carton and attach a 0-minute miss.
+    boundary = orders.loc[orders["order_id"] == "BL-12661"].iloc[0]
+    assert boundary["cycle_minutes"] == 120.0
+    assert boundary["sla_miss_flag"] == 0
+
+
+def test_seed_preserves_cycle_times(tables):
+    # SLA flag fix must not reshuffle dwell. This is the seed-42 cycle total.
+    assert tables["fact_orders"]["cycle_minutes"].sum() == pytest.approx(449_856.4, abs=0.05)
+    assert len(tables["fact_orders"]) == 4524
 
 
 def test_export_payload_is_internally_consistent(tables):

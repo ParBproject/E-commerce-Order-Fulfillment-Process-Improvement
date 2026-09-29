@@ -24,7 +24,7 @@
       "p75_cycle": 97.3,
       "p90_cycle": 111.4,
       "sd_cycle": 19.1,
-      "sla_miss_pct": 5.5,
+      "sla_miss_pct": 5.4,
       "error_rate_pct": 14.5,
       "rework_rate_pct": 10.8,
       "labor_hours": 3310.6,
@@ -229,7 +229,7 @@
       "orders": 313,
       "median_cycle": 87.8,
       "p90_cycle": 113.1,
-      "sla_miss_pct": 7.0,
+      "sla_miss_pct": 6.7,
       "rework_pct": 10.2
     },
     {
@@ -302,6 +302,16 @@
   "heterogeneity": [
     {
       "cut": "shift",
+      "slice": "Swing",
+      "baseline_n": 785,
+      "pilot_n": 839,
+      "baseline_median": 107.7,
+      "pilot_median": 84.0,
+      "recovered_minutes": 23.7,
+      "recovered_pct": 22.0
+    },
+    {
+      "cut": "shift",
       "slice": "Days",
       "baseline_n": 760,
       "pilot_n": 818,
@@ -321,14 +331,14 @@
       "recovered_pct": 25.5
     },
     {
-      "cut": "shift",
-      "slice": "Swing",
-      "baseline_n": 785,
-      "pilot_n": 839,
-      "baseline_median": 107.7,
-      "pilot_median": 84.0,
-      "recovered_minutes": 23.7,
-      "recovered_pct": 22.0
+      "cut": "facility",
+      "slice": "EWR-07",
+      "baseline_n": 816,
+      "pilot_n": 863,
+      "baseline_median": 110.3,
+      "pilot_median": 88.1,
+      "recovered_minutes": 22.2,
+      "recovered_pct": 20.1
     },
     {
       "cut": "facility",
@@ -351,14 +361,14 @@
       "recovered_pct": 27.6
     },
     {
-      "cut": "facility",
-      "slice": "EWR-07",
-      "baseline_n": 816,
-      "pilot_n": 863,
-      "baseline_median": 110.3,
-      "pilot_median": 88.1,
-      "recovered_minutes": 22.2,
-      "recovered_pct": 20.1
+      "cut": "line_band",
+      "slice": "1 line",
+      "baseline_n": 407,
+      "pilot_n": 412,
+      "baseline_median": 92.4,
+      "pilot_median": 71.5,
+      "recovered_minutes": 20.9,
+      "recovered_pct": 22.6
     },
     {
       "cut": "line_band",
@@ -369,16 +379,6 @@
       "pilot_median": 105.9,
       "recovered_minutes": 40.6,
       "recovered_pct": 27.7
-    },
-    {
-      "cut": "line_band",
-      "slice": "1 line",
-      "baseline_n": 407,
-      "pilot_n": 412,
-      "baseline_median": 92.4,
-      "pilot_median": 71.5,
-      "recovered_minutes": 20.9,
-      "recovered_pct": 22.6
     },
     {
       "cut": "line_band",
@@ -519,7 +519,7 @@
       "orders": 245,
       "median_cycle": 84.6,
       "p90_cycle": 115.0,
-      "sla_miss_pct": 7.3,
+      "sla_miss_pct": 6.9,
       "prior_median": 83.2
     },
     {
@@ -837,7 +837,7 @@
       "orders": 87,
       "median_cycle": 88.9,
       "p90_cycle": 118.6,
-      "sla_miss_pct": 10.3
+      "sla_miss_pct": 9.2
     },
     {
       "week_start": "2025-03-17T00:00:00.000",
@@ -1713,20 +1713,20 @@
       "usd_recovered_in_window": 7278.0
     },
     {
-      "facility_id": "AUS-01",
-      "labor_rate": 24.5,
-      "baseline_hours": 912.1,
-      "pilot_hours": 733.6,
-      "hours_recovered": 178.5,
-      "usd_recovered_in_window": 4374.0
-    },
-    {
       "facility_id": "FNT-12",
       "labor_rate": 28.4,
       "baseline_hours": 1283.7,
       "pilot_hours": 888.1,
       "hours_recovered": 395.5,
       "usd_recovered_in_window": 11233.0
+    },
+    {
+      "facility_id": "AUS-01",
+      "labor_rate": 24.5,
+      "baseline_hours": 912.1,
+      "pilot_hours": 733.6,
+      "hours_recovered": 178.5,
+      "usd_recovered_in_window": 4374.0
     }
   ],
   "sla_cells": [
@@ -34014,7 +34014,7 @@
       "ch": "Store replen",
       "lines": 5,
       "mins": 120.0,
-      "miss": 1,
+      "miss": 0,
       "rw": 0,
       "err": 0
     },
@@ -57042,7 +57042,7 @@
   "brief": [
     "Dock-to-stage median moved from 110 min to 85 min. The bootstrap 95% interval on that drop is 24\u201326 minutes (Mann\u2013Whitney p < 0.001).",
     "Pick was the recovered bottleneck: 47.5% of baseline dwell, 15.9 minutes faster after zone-pick. Fontana recovered 33.4 minutes at the median; night shift recovered 30.0.",
-    "Same-day miss rate fell from 34.2% to 5.5%. That is an operations result, not a model score: cartons either hit the 120-minute dock or they do not.",
+    "Same-day miss rate fell from 34.2% to 5.4%. That is an operations result, not a model score: cartons either hit the 120-minute dock or they do not.",
     "At the observed mix, the eight-week window returns $22,885 in loaded labor. Payback against a $72,000 slotting/training spend is 4.6 months at this volume. The case is illustrative; a live pilot still needs a held-out control week."
   ]
 }
