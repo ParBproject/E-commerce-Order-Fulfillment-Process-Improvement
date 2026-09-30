@@ -1,6 +1,18 @@
 -- Bayline fulfillment analysis
 -- DuckDB dialect. Grain is one order in fact_orders and one step in fact_order_steps.
 -- Same-day dock SLA is 120 minutes from wave drop to stage.
+-- Touch labor is slot locate, pick, pack, and QC. Wave release and stage are
+-- occupancy, not wages. Touch hours are aggregated to the order before any
+-- join back to fact_orders so step grain cannot fan out the scorecard.
+
+CREATE OR REPLACE VIEW order_touch AS
+SELECT
+    order_id,
+    SUM(dwell_minutes) FILTER (
+        WHERE step_id IN ('slot_locate', 'pick', 'pack', 'qc')
+    ) / 60.0 AS touch_hours
+FROM fact_order_steps
+GROUP BY order_id;
 
 CREATE OR REPLACE VIEW order_enriched AS
 SELECT
@@ -23,7 +35,9 @@ SELECT
     o.error_count,
     o.rework_flag,
     o.sla_miss_flag,
-    DATE_TRUNC('week', CAST(o.dropped_at AS TIMESTAMP)) AS week_start,
+    t.touch_hours,
+    -- DATE, not TIMESTAMP, so a session time zone cannot shift the week label.
+    CAST(DATE_TRUNC('week', CAST(o.dropped_at AS TIMESTAMP)) AS DATE) AS week_start,
     strftime(CAST(o.dropped_at AS TIMESTAMP), '%Y-%m-%d') AS order_date,
     CASE
         WHEN o.line_count = 1 THEN '1 line'
@@ -32,14 +46,15 @@ SELECT
         ELSE '7+ lines'
     END AS line_band
 FROM fact_orders o
-JOIN dim_facility f USING (facility_id);
+JOIN dim_facility f USING (facility_id)
+LEFT JOIN order_touch t USING (order_id);
 
 CREATE OR REPLACE VIEW step_enriched AS
 SELECT
     s.order_id,
     s.step_id,
-    s.step_name,
-    s.step_seq,
+    d.step_name,
+    d.step_seq,
     s.dwell_minutes,
     o.facility_id,
     o.facility_name,
@@ -48,7 +63,8 @@ SELECT
     o.line_band,
     o.cycle_minutes
 FROM fact_order_steps s
-JOIN order_enriched o USING (order_id);
+JOIN order_enriched o USING (order_id)
+JOIN dim_step d ON d.step_id = s.step_id;
 
 -- 1. Period scorecard with distribution, not just averages
 CREATE OR REPLACE TABLE kpi_period AS
@@ -63,10 +79,13 @@ SELECT
     ROUND(100.0 * AVG(sla_miss_flag), 1) AS sla_miss_pct,
     ROUND(100.0 * AVG(CASE WHEN error_count > 0 THEN 1 ELSE 0 END), 1) AS error_rate_pct,
     ROUND(100.0 * AVG(rework_flag), 1) AS rework_rate_pct,
-    ROUND(SUM(cycle_minutes) / 60.0, 1) AS labor_hours,
-    ROUND(SUM(cycle_minutes) / 60.0 * AVG(labor_rate), 0) AS loaded_labor_usd
+    -- Touch hours times each building's rate. SUM(hours) * AVG(rate) is wrong
+    -- when slower buildings also pay a higher rate.
+    ROUND(SUM(touch_hours), 1) AS labor_hours,
+    ROUND(SUM(touch_hours * labor_rate), 0) AS loaded_labor_usd
 FROM order_enriched
-GROUP BY period;
+GROUP BY period
+ORDER BY period;
 
 -- 2. Step bottleneck: share of dwell and change after the pilot
 CREATE OR REPLACE TABLE step_profile AS
@@ -188,9 +207,12 @@ FROM (
         ROUND(MEDIAN(cycle_minutes) FILTER (WHERE period = 'pilot'), 1)
     FROM order_enriched
     GROUP BY channel
-);
+)
+ORDER BY cut, slice;
 
--- 5. Weekly control chart
+-- 5. Weekly control chart. Aggregate first, then lag, so the window cannot
+-- see order-grain rows. prior_median is the previous observed week, including
+-- the step from the last baseline week across the unscored cutover week.
 CREATE OR REPLACE TABLE weekly_trend AS
 SELECT
     week_start,
@@ -205,17 +227,27 @@ GROUP BY week_start, period, facility_id
 ORDER BY week_start, facility_id;
 
 CREATE OR REPLACE TABLE weekly_network AS
+WITH weeks AS (
+    SELECT
+        week_start,
+        period,
+        COUNT(*) AS orders,
+        ROUND(MEDIAN(cycle_minutes), 1) AS median_cycle,
+        ROUND(QUANTILE_CONT(cycle_minutes, 0.90), 1) AS p90_cycle,
+        ROUND(100.0 * AVG(sla_miss_flag), 1) AS sla_miss_pct
+    FROM order_enriched
+    GROUP BY week_start, period
+)
 SELECT
     week_start,
     period,
-    COUNT(*) AS orders,
-    ROUND(MEDIAN(cycle_minutes), 1) AS median_cycle,
-    ROUND(QUANTILE_CONT(cycle_minutes, 0.90), 1) AS p90_cycle,
-    ROUND(100.0 * AVG(sla_miss_flag), 1) AS sla_miss_pct,
-    LAG(ROUND(MEDIAN(cycle_minutes), 1)) OVER (ORDER BY week_start) AS prior_median
-FROM order_enriched
-GROUP BY week_start, period
-ORDER BY week_start;
+    orders,
+    median_cycle,
+    p90_cycle,
+    sla_miss_pct,
+    LAG(median_cycle) OVER (ORDER BY week_start, period) AS prior_median
+FROM weeks
+ORDER BY week_start, period;
 
 -- 6. Within-facility rank of the worst cartons (window function interview staple)
 CREATE OR REPLACE TABLE worst_cartons AS
@@ -234,7 +266,7 @@ FROM (
         rework_flag,
         RANK() OVER (
             PARTITION BY facility_id, period
-            ORDER BY cycle_minutes DESC
+            ORDER BY cycle_minutes DESC, order_id
         ) AS cycle_rank
     FROM order_enriched
 )
@@ -256,39 +288,30 @@ WHERE e.exception_code <> 'missed_sla'
 GROUP BY o.period, e.exception_code, e.exception_label
 ORDER BY o.period, events DESC;
 
--- 8. Labor recovered at observed mix, then sensitivity on volume
+-- 8. In-window touch labor by building. Totals are not volume-matched:
+-- the pilot also handled more cartons. Payback math lives in analyze.py
+-- and holds the observed order rate constant.
 CREATE OR REPLACE TABLE labor_bridge AS
-WITH step_hours AS (
-    SELECT
-        o.period,
-        o.facility_id,
-        f.labor_rate,
-        SUM(s.dwell_minutes) / 60.0 AS hours
-    FROM fact_order_steps s
-    JOIN fact_orders o USING (order_id)
-    JOIN dim_facility f USING (facility_id)
-    WHERE s.step_id IN ('slot_locate', 'pick', 'pack', 'qc')
-    GROUP BY o.period, o.facility_id, f.labor_rate
-)
 SELECT
     facility_id,
-    MAX(labor_rate) AS labor_rate,
-    ROUND(SUM(hours) FILTER (WHERE period = 'baseline'), 1) AS baseline_hours,
-    ROUND(SUM(hours) FILTER (WHERE period = 'pilot'), 1) AS pilot_hours,
+    ANY_VALUE(labor_rate) AS labor_rate,
+    ROUND(SUM(touch_hours) FILTER (WHERE period = 'baseline'), 1) AS baseline_hours,
+    ROUND(SUM(touch_hours) FILTER (WHERE period = 'pilot'), 1) AS pilot_hours,
     ROUND(
-        SUM(hours) FILTER (WHERE period = 'baseline')
-        - SUM(hours) FILTER (WHERE period = 'pilot'),
+        SUM(touch_hours) FILTER (WHERE period = 'baseline')
+        - SUM(touch_hours) FILTER (WHERE period = 'pilot'),
         1
     ) AS hours_recovered,
     ROUND(
         (
-            SUM(hours) FILTER (WHERE period = 'baseline')
-            - SUM(hours) FILTER (WHERE period = 'pilot')
-        ) * MAX(labor_rate),
+            SUM(touch_hours) FILTER (WHERE period = 'baseline')
+            - SUM(touch_hours) FILTER (WHERE period = 'pilot')
+        ) * ANY_VALUE(labor_rate),
         0
     ) AS usd_recovered_in_window
-FROM step_hours
-GROUP BY facility_id;
+FROM order_enriched
+GROUP BY facility_id
+ORDER BY facility_id;
 
 -- 9. Same-day SLA waterfall: miss rate by the Fontana night cell vs network
 CREATE OR REPLACE TABLE sla_cells AS
