@@ -26,7 +26,7 @@ The question is operational, not decorative: **why did Fontana night miss the 12
 | Rework | 17.2% | 10.8% |
 | Touch-labor recovered in-window | — | **$22,885** at facility rates |
 
-Bootstrap 95% CI on the median drop: **23.5–26.5 minutes** (the median of that bootstrap is 25.1). Mann–Whitney on cycle time: **p < 0.001**. Implementation assumption: **$72k** slotting, relabel, training. Payback at observed volume: **5.1 months**.
+Bootstrap 95% CI on the median drop: **23.5–26.5 minutes** (the median of that bootstrap is 25.1). One-sided Mann–Whitney on cycle time: **p < 0.001** (the two-sided p-value is also under 0.001). Implementation assumption: **$72k** slotting, relabel, training. Payback at observed volume: **5.1 months**.
 
 The control board rounds the median and the P90 to the nearest minute (110, 85, 147, 111). The order-weighted labor-rate blend is **$28.27/hr**; the $22,885 figure is priced at each building's own rate, not at that blend. Rebuild with `python -m bayline` and these rows match `kpi_period`, `sla_cells`, and `dashboard/metrics.json`.
 
@@ -36,8 +36,8 @@ The datasets are a seeded, illustrative network (seed 42). Treat the method as t
 
 1. **Define.** Same-day gate is 120 minutes from wave drop to stage. Fontana night was the cell that broke the trailer plan.
 2. **Measure.** Star schema: facilities, steps, orders, step dwell, exceptions. Medians and p90, not just averages.
-3. **Analyze.** Pick was 47.5% of baseline dwell. Multi-line cartons and Fontana night travel dominate. SQL uses `JOIN`, `RANK() OVER`, `LAG`, and `QUANTILE_CONT`.
-4. **Improve.** Zone-pick (biggest cut at Fontana) + QC skip-lane for low-risk 1–2 line DTC work.
+3. **Analyze.** Pick was 47.5% of baseline dwell. Fontana night is the worst bay (79.9% miss), but 7+ line cartons miss more often (86.3% baseline). SQL uses `JOIN`, `RANK() OVER`, `LAG`, and `QUANTILE_CONT`.
+4. **Improve.** Zone-pick (biggest cut at Fontana) + QC skip-lane for low-risk 1–2 line DTC and marketplace cartons. Store replen stays on the full QC gate.
 5. **Control.** The live board filters by building and shift. Network same-day miss in the pilot is 5.4%. Residual Fontana night miss is 15.6% — the redesign is not a miracle.
 
 <p align="center">
@@ -68,7 +68,7 @@ python -m bayline          # rebuild CSVs + dashboard/metrics.json
 python -m http.server 8000
 ```
 
-Then open http://localhost:8000 for the landing page, or http://localhost:8000/dashboard/ for the board. The landing page reads `dashboard/metrics.json` (scenario toggle and building filter). On the board, building and shift filters recompute the tickets, density, and exception board from the order grain. Serve the dashboard directory alone if you only want the board:
+Then open http://localhost:8000 for the landing page, or http://localhost:8000/dashboard/ for the board. The landing page reads `dashboard/metrics.json` (scenario toggle and building filter). On the board, building and shift filters recompute the tickets, density, sortation dwell, week tape, and exception board. Dwell and the week tape for a shift come from `step_by_cell` and `weekly_cell`, not from the all-shift averages. Serve the dashboard directory alone if you only want the board:
 
 ```bash
 python -m http.server 8000 --directory dashboard
@@ -96,7 +96,7 @@ tests/             pytest
 docs/screenshots/  captured from the live board, not matplotlib posters
 ```
 
-Labor dollars use **touch time only** (locate, pick, pack, QC), priced at each building's rate. Wave-release queue and stage time are occupancy, not wages. The in-window $22,885 is baseline touch hours minus pilot touch hours, so it is not volume-matched: the pilot also handled more cartons. Payback holds the observed per-carton touch time constant and scales it to a 26-day month. Cycle time still includes queue, because the trailer does not care why a carton was late. A stored cycle of exactly 120.0 minutes is on the gate; miss means strictly greater than 120.
+Labor dollars use **touch time only** (locate, pick, pack, QC), priced at each building's rate. Wave-release queue and stage time are occupancy, not wages. The in-window $22,885 is baseline touch hours minus pilot touch hours, so it is not volume-matched: the pilot also handled more cartons. Holding each building's carton count fixed, that same per-carton cut is **$25,729** at the baseline mix and **$26,609** at the pilot mix. Payback holds the observed per-carton touch time constant and scales it to a 26-day month. It is not the raw $22,885. Cycle time still includes queue, because the trailer does not care why a carton was late. A stored cycle of exactly 120.0 minutes is on the gate; miss means strictly greater than 120. Every building received the pilot; Austin is an easier layout, not an untreated control.
 
 ## Skills this is meant to show
 

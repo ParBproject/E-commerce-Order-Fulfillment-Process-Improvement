@@ -139,6 +139,35 @@ FROM step_enriched
 GROUP BY facility_id, period, step_id, step_name, step_seq
 ORDER BY facility_id, period, step_seq;
 
+-- 2c. Step profile by shift, and by building x shift. The board's shift
+-- filter has to read these. Averaging step_by_facility would mix shifts.
+CREATE OR REPLACE TABLE step_by_shift AS
+SELECT
+    shift,
+    period,
+    step_id,
+    step_name,
+    step_seq,
+    ROUND(AVG(dwell_minutes), 1) AS avg_dwell,
+    ROUND(MEDIAN(dwell_minutes), 1) AS median_dwell
+FROM step_enriched
+GROUP BY shift, period, step_id, step_name, step_seq
+ORDER BY shift, period, step_seq;
+
+CREATE OR REPLACE TABLE step_by_cell AS
+SELECT
+    facility_id,
+    shift,
+    period,
+    step_id,
+    step_name,
+    step_seq,
+    ROUND(AVG(dwell_minutes), 1) AS avg_dwell,
+    ROUND(MEDIAN(dwell_minutes), 1) AS median_dwell
+FROM step_enriched
+GROUP BY facility_id, shift, period, step_id, step_name, step_seq
+ORDER BY facility_id, shift, period, step_seq;
+
 
 -- 3. Facility x shift: where the pain actually lived
 CREATE OR REPLACE TABLE facility_shift AS
@@ -166,7 +195,9 @@ SELECT
     baseline_median,
     pilot_median,
     ROUND(baseline_median - pilot_median, 1) AS recovered_minutes,
-    ROUND(100.0 * (baseline_median - pilot_median) / NULLIF(baseline_median, 0), 1) AS recovered_pct
+    ROUND(100.0 * (baseline_median - pilot_median) / NULLIF(baseline_median, 0), 1) AS recovered_pct,
+    baseline_miss_pct,
+    pilot_miss_pct
 FROM (
     SELECT
         'shift' AS cut,
@@ -174,7 +205,9 @@ FROM (
         COUNT(*) FILTER (WHERE period = 'baseline') AS baseline_n,
         COUNT(*) FILTER (WHERE period = 'pilot') AS pilot_n,
         ROUND(MEDIAN(cycle_minutes) FILTER (WHERE period = 'baseline'), 1) AS baseline_median,
-        ROUND(MEDIAN(cycle_minutes) FILTER (WHERE period = 'pilot'), 1) AS pilot_median
+        ROUND(MEDIAN(cycle_minutes) FILTER (WHERE period = 'pilot'), 1) AS pilot_median,
+        ROUND(100.0 * AVG(sla_miss_flag) FILTER (WHERE period = 'baseline'), 1) AS baseline_miss_pct,
+        ROUND(100.0 * AVG(sla_miss_flag) FILTER (WHERE period = 'pilot'), 1) AS pilot_miss_pct
     FROM order_enriched
     GROUP BY shift
     UNION ALL
@@ -184,7 +217,9 @@ FROM (
         COUNT(*) FILTER (WHERE period = 'baseline'),
         COUNT(*) FILTER (WHERE period = 'pilot'),
         ROUND(MEDIAN(cycle_minutes) FILTER (WHERE period = 'baseline'), 1),
-        ROUND(MEDIAN(cycle_minutes) FILTER (WHERE period = 'pilot'), 1)
+        ROUND(MEDIAN(cycle_minutes) FILTER (WHERE period = 'pilot'), 1),
+        ROUND(100.0 * AVG(sla_miss_flag) FILTER (WHERE period = 'baseline'), 1),
+        ROUND(100.0 * AVG(sla_miss_flag) FILTER (WHERE period = 'pilot'), 1)
     FROM order_enriched
     GROUP BY facility_id
     UNION ALL
@@ -194,7 +229,9 @@ FROM (
         COUNT(*) FILTER (WHERE period = 'baseline'),
         COUNT(*) FILTER (WHERE period = 'pilot'),
         ROUND(MEDIAN(cycle_minutes) FILTER (WHERE period = 'baseline'), 1),
-        ROUND(MEDIAN(cycle_minutes) FILTER (WHERE period = 'pilot'), 1)
+        ROUND(MEDIAN(cycle_minutes) FILTER (WHERE period = 'pilot'), 1),
+        ROUND(100.0 * AVG(sla_miss_flag) FILTER (WHERE period = 'baseline'), 1),
+        ROUND(100.0 * AVG(sla_miss_flag) FILTER (WHERE period = 'pilot'), 1)
     FROM order_enriched
     GROUP BY line_band
     UNION ALL
@@ -204,7 +241,9 @@ FROM (
         COUNT(*) FILTER (WHERE period = 'baseline'),
         COUNT(*) FILTER (WHERE period = 'pilot'),
         ROUND(MEDIAN(cycle_minutes) FILTER (WHERE period = 'baseline'), 1),
-        ROUND(MEDIAN(cycle_minutes) FILTER (WHERE period = 'pilot'), 1)
+        ROUND(MEDIAN(cycle_minutes) FILTER (WHERE period = 'pilot'), 1),
+        ROUND(100.0 * AVG(sla_miss_flag) FILTER (WHERE period = 'baseline'), 1),
+        ROUND(100.0 * AVG(sla_miss_flag) FILTER (WHERE period = 'pilot'), 1)
     FROM order_enriched
     GROUP BY channel
 )
@@ -225,6 +264,35 @@ SELECT
 FROM order_enriched
 GROUP BY week_start, period, facility_id
 ORDER BY week_start, facility_id;
+
+-- Shift and building-shift weeks. weekly_trend stays all-shifts so an
+-- existing facility filter does not silently average three shifts together.
+CREATE OR REPLACE TABLE weekly_shift AS
+SELECT
+    week_start,
+    period,
+    shift,
+    COUNT(*) AS orders,
+    ROUND(MEDIAN(cycle_minutes), 1) AS median_cycle,
+    ROUND(QUANTILE_CONT(cycle_minutes, 0.90), 1) AS p90_cycle,
+    ROUND(100.0 * AVG(sla_miss_flag), 1) AS sla_miss_pct
+FROM order_enriched
+GROUP BY week_start, period, shift
+ORDER BY week_start, shift;
+
+CREATE OR REPLACE TABLE weekly_cell AS
+SELECT
+    week_start,
+    period,
+    facility_id,
+    shift,
+    COUNT(*) AS orders,
+    ROUND(MEDIAN(cycle_minutes), 1) AS median_cycle,
+    ROUND(QUANTILE_CONT(cycle_minutes, 0.90), 1) AS p90_cycle,
+    ROUND(100.0 * AVG(sla_miss_flag), 1) AS sla_miss_pct
+FROM order_enriched
+GROUP BY week_start, period, facility_id, shift
+ORDER BY week_start, facility_id, shift;
 
 CREATE OR REPLACE TABLE weekly_network AS
 WITH weeks AS (
@@ -297,9 +365,11 @@ SELECT
     ANY_VALUE(labor_rate) AS labor_rate,
     ROUND(SUM(touch_hours) FILTER (WHERE period = 'baseline'), 1) AS baseline_hours,
     ROUND(SUM(touch_hours) FILTER (WHERE period = 'pilot'), 1) AS pilot_hours,
+    -- Difference of the displayed hours, so the row subtracts. Dollars below
+    -- stay on the unrounded hour difference.
     ROUND(
-        SUM(touch_hours) FILTER (WHERE period = 'baseline')
-        - SUM(touch_hours) FILTER (WHERE period = 'pilot'),
+        ROUND(SUM(touch_hours) FILTER (WHERE period = 'baseline'), 1)
+        - ROUND(SUM(touch_hours) FILTER (WHERE period = 'pilot'), 1),
         1
     ) AS hours_recovered,
     ROUND(

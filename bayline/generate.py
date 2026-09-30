@@ -5,7 +5,8 @@ The generating process is intentional, not decorative:
 * Fontana night shift pays a travel penalty because the pick face is sprawling.
 * Multi-line orders dominate pick dwell.
 * Baseline QC inspects every carton; the pilot skip-lanes low-risk work.
-* Newark is congested; Austin is the control site.
+* Newark is congested. Austin is the easier layout, not an untreated control:
+  the pilot runs in every building.
 
 Seed 42 keeps the case study reproducible. `simulate` resets that seed on
 every call so a second rebuild in the same process does not drift.
