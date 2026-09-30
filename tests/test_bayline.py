@@ -281,6 +281,25 @@ def test_cost_and_sla_come_from_assumptions(con, payload):
     assert rate is None
 
 
+def test_public_demo_reads_generated_metrics():
+    root = Path(__file__).resolve().parents[1]
+    page = (root / "index.html").read_text()
+    script = (root / "demo.js").read_text()
+    workflow = (root / ".github" / "workflows" / "pages.yml").read_text()
+    readme = (root / "README.md").read_text()
+    assert "demo.js" in page
+    assert "dashboard/metrics.json" in script
+    assert "kpi_period" in script
+    assert "facility_shift" in script
+    assert "workflow_dispatch" in workflow
+    assert "upload-pages-artifact" in workflow
+    assert "deploy-pages" in workflow
+    assert "python -m bayline" in workflow
+    assert "https://parbproject.github.io/E-commerce-Order-Fulfillment-Process-Improvement/" in readme
+    assert "109.7" not in page
+    assert "109.7" not in script
+
+
 def test_export_payload_is_internally_consistent(payload):
     assert payload["tests"]["mannwhitney"]["p_value"] < 0.01
     assert payload["tests"]["bootstrap"]["ci95_low"] > 0
