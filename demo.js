@@ -171,7 +171,7 @@ function renderSteps(data) {
     state.facility === "all"
       ? "Network averages from step_profile."
       : `${facilityName(data, state.facility)} averages from step_by_facility.`;
-  $("#dwellNote").textContent = `${where} The selected scenario is the solid bar.`;
+  $("#dwellNote").textContent = `${where} The selected scenario is the brighter bar.`;
 }
 
 function renderBays(data) {
