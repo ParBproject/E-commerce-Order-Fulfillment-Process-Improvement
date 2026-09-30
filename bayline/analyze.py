@@ -12,11 +12,6 @@ from scipy import stats
 
 from bayline.paths import DASHBOARD, DATA, SQL
 
-RNG = np.random.default_rng(42)
-SLA_MINUTES = 120
-IMPLEMENTATION_COST = 72000
-WORKING_DAYS_MONTH = 26
-
 
 def connect() -> duckdb.DuckDBPyConnection:
     con = duckdb.connect(database=":memory:")
@@ -37,9 +32,37 @@ def connect() -> duckdb.DuckDBPyConnection:
     return con
 
 
+def _iso_if_date(value):
+    if value is None or isinstance(value, str):
+        return value
+    if isinstance(value, float) and pd.isna(value):
+        return None
+    if isinstance(value, pd.Timestamp):
+        return value.strftime("%Y-%m-%d")
+    if hasattr(value, "isoformat"):
+        return value.isoformat()
+    return value
+
+
 def _records(con: duckdb.DuckDBPyConnection, table: str) -> list[dict]:
     frame = con.execute(f"SELECT * FROM {table}").fetchdf()
-    return json.loads(frame.to_json(orient="records", date_format="iso"))
+    out = frame.copy()
+    for col in out.columns:
+        if pd.api.types.is_datetime64_any_dtype(out[col]):
+            out[col] = out[col].dt.strftime("%Y-%m-%d")
+        elif out[col].dtype == object:
+            out[col] = out[col].map(_iso_if_date)
+    return json.loads(out.to_json(orient="records"))
+
+
+def _assumption(con: duckdb.DuckDBPyConnection, assumption_id: str) -> float:
+    row = con.execute(
+        "SELECT value FROM dim_assumption WHERE assumption_id = ?",
+        [assumption_id],
+    ).fetchone()
+    if row is None or row[0] is None or pd.isna(row[0]):
+        raise ValueError(f"dim_assumption.{assumption_id} has no value")
+    return float(row[0])
 
 
 def mannwhitney(baseline: np.ndarray, pilot: np.ndarray) -> dict:
@@ -58,10 +81,12 @@ def bootstrap_median_delta(
     pilot: np.ndarray,
     draws: int = 2000,
 ) -> dict:
+    # Reseed every call. A module-level generator made the second export drift.
+    rng = np.random.default_rng(42)
     deltas = np.empty(draws)
     for i in range(draws):
-        b = RNG.choice(baseline, size=len(baseline), replace=True)
-        p = RNG.choice(pilot, size=len(pilot), replace=True)
+        b = rng.choice(baseline, size=len(baseline), replace=True)
+        p = rng.choice(pilot, size=len(pilot), replace=True)
         deltas[i] = np.median(b) - np.median(p)
     lo, hi = np.quantile(deltas, [0.025, 0.975])
     return {
@@ -86,45 +111,75 @@ def density(values: np.ndarray, bins: np.ndarray) -> list[dict]:
     return out
 
 
-def sensitivity(baseline_hours_per_order: float, pilot_hours_per_order: float, blended_rate: float) -> list[dict]:
+def touch_unit_economics(con: duckdb.DuckDBPyConnection) -> dict:
+    """Touch-hour savings per carton, priced at each building's own rate.
+
+    Weights are the observed carton counts, so a busier building contributes
+    more. The month scale uses the calendar the generator actually ran
+    (distinct operating dates per week) and dim_assumption.working_days_month.
+    """
+    working_days = _assumption(con, "working_days_month")
+    days_per_week, n_weeks = con.execute(
+        """
+        SELECT
+            COUNT(DISTINCT order_date)::DOUBLE / COUNT(DISTINCT week_start),
+            COUNT(DISTINCT week_start)
+        FROM order_enriched
+        """
+    ).fetchone()
+    rows = con.execute(
+        """
+        SELECT
+            facility_id,
+            period,
+            COUNT(*)::DOUBLE AS orders,
+            SUM(touch_hours) AS touch_hours,
+            ANY_VALUE(labor_rate) AS labor_rate
+        FROM order_enriched
+        GROUP BY facility_id, period
+        """
+    ).fetchdf()
+    weighted_hours = 0.0
+    weighted_usd = 0.0
+    total_orders = 0.0
+    for facility_id, group in rows.groupby("facility_id"):
+        base = group.loc[group["period"] == "baseline"]
+        pilot = group.loc[group["period"] == "pilot"]
+        if len(base) != 1 or len(pilot) != 1:
+            raise ValueError(f"{facility_id} is missing a baseline or pilot slice")
+        base = base.iloc[0]
+        pilot = pilot.iloc[0]
+        hours_saved = float(base.touch_hours) / float(base.orders) - float(pilot.touch_hours) / float(pilot.orders)
+        weight = float(base.orders) + float(pilot.orders)
+        weighted_hours += hours_saved * weight
+        weighted_usd += hours_saved * float(base.labor_rate) * weight
+        total_orders += weight
+    orders_per_week = total_orders / float(n_weeks)
+    return {
+        "hours_per_order": weighted_hours / total_orders,
+        "usd_per_order": weighted_usd / total_orders,
+        "monthly_orders_observed": orders_per_week * (working_days / float(days_per_week)),
+        "days_per_week": float(days_per_week),
+        "weeks": int(n_weeks),
+    }
+
+
+def sensitivity(hours_per_order: float, usd_per_order: float, implementation_cost: float) -> list[dict]:
     rows = []
     for monthly_orders in (800, 1500, 2500, 4000, 6500):
-        hours = (baseline_hours_per_order - pilot_hours_per_order) * monthly_orders
-        annual = hours * 12 * blended_rate
-        payback = IMPLEMENTATION_COST / max(hours * blended_rate, 1)
+        hours = hours_per_order * monthly_orders
+        usd_month = usd_per_order * monthly_orders
+        payback = implementation_cost / max(usd_month, 1)
         rows.append(
             {
                 "monthly_orders": monthly_orders,
                 "hours_month": round(hours, 1),
-                "usd_month": round(hours * blended_rate, 0),
-                "usd_year": round(annual, 0),
+                "usd_month": round(usd_month, 0),
+                "usd_year": round(usd_month * 12, 0),
                 "payback_months": round(payback, 1),
             }
         )
     return rows
-
-
-def board_orders(con: duckdb.DuckDBPyConnection) -> list[dict]:
-    frame = con.execute(
-        """
-        SELECT
-            order_id,
-            facility_id,
-            period,
-            shift,
-            channel,
-            line_count,
-            cycle_minutes,
-            sla_miss_flag,
-            rework_flag,
-            error_count
-        FROM order_enriched
-        WHERE period = 'pilot'
-        ORDER BY sla_miss_flag DESC, cycle_minutes DESC
-        LIMIT 18
-        """
-    ).fetchdf()
-    return json.loads(frame.to_json(orient="records"))
 
 
 def build_brief(payload: dict) -> list[str]:
@@ -145,7 +200,7 @@ def build_brief(payload: dict) -> list[str]:
         (
             f"Dock-to-stage median moved from {k['baseline']['median_cycle']:.0f} min "
             f"to {k['pilot']['median_cycle']:.0f} min. The bootstrap 95% interval on that "
-            f"drop is {p['bootstrap']['ci95_low']:.0f}–{p['bootstrap']['ci95_high']:.0f} minutes "
+            f"drop is {p['bootstrap']['ci95_low']:.1f}–{p['bootstrap']['ci95_high']:.1f} minutes "
             f"(Mann–Whitney {p_text})."
         ),
         (
@@ -162,7 +217,7 @@ def build_brief(payload: dict) -> list[str]:
         (
             f"At the observed mix, the eight-week window returns "
             f"${payload['money']['window_usd']:,.0f} in loaded labor. "
-            f"Payback against a ${IMPLEMENTATION_COST:,.0f} slotting/training spend is "
+            f"Payback against a ${payload['implementation_cost']:,.0f} slotting/training spend is "
             f"{payload['money']['payback_months_observed']:.1f} months at this volume. "
             f"The case is illustrative; a live pilot still needs a held-out control week."
         ),
@@ -176,25 +231,33 @@ def export(con: duckdb.DuckDBPyConnection | None = None) -> dict:
     baseline = orders.loc[orders["period"] == "baseline", "cycle_minutes"].to_numpy()
     pilot = orders.loc[orders["period"] == "pilot", "cycle_minutes"].to_numpy()
 
-    kpi = con.execute("SELECT * FROM kpi_period").fetchdf()
-    kpi_map = {row.period: row for row in kpi.itertuples(index=False)}
-    hours_base = float(kpi_map["baseline"].labor_hours)
-    hours_pilot = float(kpi_map["pilot"].labor_hours)
-    n_base = float(kpi_map["baseline"].orders)
-    n_pilot = float(kpi_map["pilot"].orders)
-    hours_per_order_base = hours_base / n_base
-    hours_per_order_pilot = hours_pilot / n_pilot
+    sla_minutes = _assumption(con, "sla_minutes")
+    implementation_cost = _assumption(con, "pilot_implementation_cost")
+    if sla_minutes == int(sla_minutes):
+        sla_minutes = int(sla_minutes)
+    if implementation_cost == int(implementation_cost):
+        implementation_cost = int(implementation_cost)
+    econ = touch_unit_economics(con)
     blended = float(orders["labor_rate"].mean())
     window_usd = float(
         con.execute("SELECT SUM(usd_recovered_in_window) FROM labor_bridge").fetchone()[0]
     )
-    monthly_at_observed = (hours_per_order_base - hours_per_order_pilot) * ((n_base + n_pilot) / 16) * (26 / 6)
-    # 8 weeks each, 6 operating days/week → observed weekly volume; scale to 26-day month.
+    hours_recovered = float(
+        con.execute(
+            """
+            SELECT
+                SUM(touch_hours) FILTER (WHERE period = 'baseline')
+                - SUM(touch_hours) FILTER (WHERE period = 'pilot')
+            FROM order_enriched
+            """
+        ).fetchone()[0]
+    )
+    monthly_usd = econ["usd_per_order"] * econ["monthly_orders_observed"]
 
     bins = np.linspace(30, 280, 36)
     payload = {
-        "sla_minutes": SLA_MINUTES,
-        "implementation_cost": IMPLEMENTATION_COST,
+        "sla_minutes": sla_minutes,
+        "implementation_cost": implementation_cost,
         "kpi_period": _records(con, "kpi_period"),
         "step_profile": _records(con, "step_profile"),
         "facility_shift": _records(con, "facility_shift"),
@@ -226,7 +289,6 @@ def export(con: duckdb.DuckDBPyConnection | None = None) -> dict:
             .fetchdf()
             .to_json(orient="records")
         ),
-        "board": board_orders(con),
         "density": {
             "baseline": density(baseline, bins),
             "pilot": density(pilot, bins),
@@ -238,10 +300,10 @@ def export(con: duckdb.DuckDBPyConnection | None = None) -> dict:
         "money": {
             "blended_labor_rate": round(blended, 2),
             "window_usd": round(window_usd, 0),
-            "hours_recovered_window": round(hours_base - hours_pilot, 1),
-            "payback_months_observed": round(IMPLEMENTATION_COST / max(monthly_at_observed * blended, 1), 1),
+            "hours_recovered_window": round(hours_recovered, 1),
+            "payback_months_observed": round(implementation_cost / max(monthly_usd, 1), 1),
         },
-        "sensitivity": sensitivity(hours_per_order_base, hours_per_order_pilot, blended),
+        "sensitivity": sensitivity(econ["hours_per_order"], econ["usd_per_order"], implementation_cost),
         "facilities": json.loads(
             con.execute("SELECT * FROM dim_facility").fetchdf().to_json(orient="records")
         ),

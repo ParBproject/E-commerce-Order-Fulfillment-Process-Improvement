@@ -7,7 +7,8 @@ The generating process is intentional, not decorative:
 * Baseline QC inspects every carton; the pilot skip-lanes low-risk work.
 * Newark is congested; Austin is the control site.
 
-Seed 42 keeps the case study reproducible.
+Seed 42 keeps the case study reproducible. `simulate` resets that seed on
+every call so a second rebuild in the same process does not drift.
 """
 
 from __future__ import annotations
@@ -19,7 +20,9 @@ import pandas as pd
 
 from bayline.paths import DATA
 
-RNG = np.random.default_rng(42)
+SEED = 42
+SLA_MINUTES = 120
+RNG = np.random.default_rng(SEED)
 
 FACILITIES = [
     {
@@ -195,7 +198,9 @@ def _maybe_exception(pilot: bool, step_id: str, lines: int, facility_id: str) ->
     return EXCEPTION_TYPES[3]
 
 
-def simulate() -> dict[str, pd.DataFrame]:
+def simulate(seed: int = SEED) -> dict[str, pd.DataFrame]:
+    global RNG
+    RNG = np.random.default_rng(seed)
     baseline_start = datetime(2025, 1, 6)
     pilot_start = datetime(2025, 3, 10)
     periods = [
@@ -277,7 +282,10 @@ def simulate() -> dict[str, pd.DataFrame]:
                                 cycle += extra
                                 cursor += timedelta(minutes=extra)
 
-                        sla_miss = int(cycle > 120)
+                        # Flag the published cycle, not the pre-round sum. A total
+                        # that rounds to 120.0 is on the gate (miss is strict >).
+                        cycle_minutes = round(cycle, 1)
+                        sla_miss = int(cycle_minutes > SLA_MINUTES)
                         if sla_miss:
                             exceptions.append(
                                 {
@@ -285,7 +293,7 @@ def simulate() -> dict[str, pd.DataFrame]:
                                     "step_id": "stage_ship",
                                     "exception_code": "missed_sla",
                                     "exception_label": "Missed same-day dock",
-                                    "minutes_added": round(cycle - 120, 1),
+                                    "minutes_added": round(cycle_minutes - SLA_MINUTES, 1),
                                     "rework_flag": 0,
                                 }
                             )
@@ -303,7 +311,7 @@ def simulate() -> dict[str, pd.DataFrame]:
                                 "line_count": lines,
                                 "low_risk_flag": int(low_risk),
                                 "hazmat_flag": int(hazmat),
-                                "cycle_minutes": round(cycle, 1),
+                                "cycle_minutes": cycle_minutes,
                                 "error_count": error_count,
                                 "rework_flag": rework,
                                 "sla_miss_flag": sla_miss,
@@ -321,7 +329,7 @@ def simulate() -> dict[str, pd.DataFrame]:
         [
             {
                 "assumption_id": "hourly_loaded_labor",
-                "description": "Loaded warehouse labor including fringe",
+                "description": "Not a network rate. Use dim_facility.labor_rate; averaging buildings mis-states loaded cost.",
                 "unit": "USD_per_hour",
             },
             {

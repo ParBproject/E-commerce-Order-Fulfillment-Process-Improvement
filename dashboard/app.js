@@ -311,7 +311,7 @@ function renderBrief(data) {
     )
     .join("");
   $("#moneyFoot").textContent =
-    `Observed eight-week touch labor returned ${money(data.money.window_usd)} at $${data.money.blended_labor_rate}/hr blended. Implementation ${money(data.implementation_cost)}. Mann–Whitney on cycle time p < 0.001; bootstrap median drop ${data.tests.bootstrap.ci95_low}–${data.tests.bootstrap.ci95_high} min.`;
+    `Observed eight-week touch labor returned ${money(data.money.window_usd)} at facility rates (order-weighted blend $${data.money.blended_labor_rate}/hr). Implementation ${money(data.implementation_cost)}. Payback at observed volume is ${Number(data.money.payback_months_observed).toFixed(1)} months. Bootstrap median drop ${data.tests.bootstrap.ci95_low}–${data.tests.bootstrap.ci95_high} min.`;
 }
 
 function paint(data) {
