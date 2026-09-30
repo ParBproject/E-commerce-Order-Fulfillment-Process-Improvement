@@ -57,12 +57,30 @@ def test_fontana_night_was_the_problem(tables):
 
 
 def test_sql_scorecard_matches_pandas(con, tables):
-    kpi = con.execute("SELECT period, median_cycle, orders FROM kpi_period").fetchdf()
-    pandas_med = tables["fact_orders"].groupby("period")["cycle_minutes"].median().round(1)
+    kpi = con.execute("SELECT period, orders FROM kpi_period").fetchdf()
+    raw = con.execute(
+        "SELECT period, MEDIAN(cycle_minutes) AS median_cycle FROM order_enriched GROUP BY period"
+    ).fetchdf()
+    pandas_med = tables["fact_orders"].groupby("period")["cycle_minutes"].median()
     pandas_n = tables["fact_orders"].groupby("period").size()
+    for _, row in raw.iterrows():
+        assert row["median_cycle"] == pytest.approx(float(pandas_med[row["period"]]), abs=0.001)
     for _, row in kpi.iterrows():
-        assert row["median_cycle"] == pytest.approx(pandas_med[row["period"]], abs=0.11)
         assert int(row["orders"]) == int(pandas_n[row["period"]])
+
+
+def test_published_median_uses_half_away_rounding(con):
+    # The two central baseline cartons are 109.6 and 109.7, so the median is 109.65.
+    # DuckDB ROUND half-away publishes 109.7. That is the scorecard convention.
+    raw, published = con.execute(
+        """
+        SELECT
+            (SELECT MEDIAN(cycle_minutes) FROM order_enriched WHERE period = 'baseline'),
+            (SELECT median_cycle FROM kpi_period WHERE period = 'baseline')
+        """
+    ).fetchone()
+    assert raw == pytest.approx(109.65, abs=0.001)
+    assert published == pytest.approx(109.7)
 
 
 def test_step_profile_pick_is_largest_baseline_share(con):
@@ -310,3 +328,121 @@ def test_export_payload_is_internally_consistent(payload):
     dollars = [row["usd_year"] for row in payload["sensitivity"]]
     assert volumes == sorted(volumes)
     assert dollars == sorted(dollars)
+
+
+def test_requirements_are_pinned():
+    root = Path(__file__).resolve().parents[1]
+    for line in (root / "requirements.txt").read_text().splitlines():
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+        assert "==" in line, line
+        assert ">=" not in line, line
+
+
+def test_labor_bridge_hours_subtract(con):
+    rows = con.execute(
+        """
+        SELECT facility_id, baseline_hours, pilot_hours, hours_recovered, usd_recovered_in_window
+        FROM labor_bridge
+        ORDER BY facility_id
+        """
+    ).fetchdf()
+    assert len(rows) == 3
+    for row in rows.itertuples(index=False):
+        assert row.hours_recovered == pytest.approx(row.baseline_hours - row.pilot_hours, abs=0.001)
+    fontana = rows.loc[rows.facility_id == "FNT-12"].iloc[0]
+    assert fontana.baseline_hours == pytest.approx(1283.7)
+    assert fontana.pilot_hours == pytest.approx(888.1)
+    assert fontana.hours_recovered == pytest.approx(395.6)
+    assert fontana.usd_recovered_in_window == pytest.approx(11233, abs=0.5)
+    # Row differences sum to 807.4. The network total rounds the unrounded
+    # hour difference to 807.3, and the dollars use that unrounded difference.
+    assert rows.hours_recovered.sum() == pytest.approx(807.4, abs=0.001)
+
+
+def test_volume_matched_touch_dollars(payload):
+    money = payload["money"]
+    assert money["window_usd"] == pytest.approx(22885, abs=0.5)
+    assert money["hours_recovered_window"] == pytest.approx(807.3)
+    assert money["volume_matched_baseline_usd"] == pytest.approx(25729, abs=0.5)
+    assert money["volume_matched_pilot_usd"] == pytest.approx(26609, abs=0.5)
+    assert money["volume_matched_baseline_usd"] > money["window_usd"]
+    assert money["volume_matched_pilot_usd"] > money["volume_matched_baseline_usd"]
+    brief = " ".join(payload["brief"])
+    assert "25,729" in brief
+    assert "26,609" in brief
+    assert "7 or more lines" in brief
+    assert "86.3" in brief
+    assert "one-sided" in brief
+    assert "Every building was treated" in brief
+
+
+def test_multiline_miss_exceeds_fontana_night(payload):
+    cells = {(row["cell"], row["period"]): row for row in payload["sla_cells"]}
+    heavy = next(
+        row for row in payload["heterogeneity"] if row["cut"] == "line_band" and row["slice"] == "7+ lines"
+    )
+    assert heavy["baseline_miss_pct"] == pytest.approx(86.3)
+    assert heavy["pilot_miss_pct"] == pytest.approx(24.1)
+    assert heavy["baseline_miss_pct"] > cells[("Fontana night", "baseline")]["sla_miss_pct"]
+    assert heavy["pilot_miss_pct"] > cells[("Fontana night", "pilot")]["sla_miss_pct"]
+
+
+def test_every_building_was_treated(con):
+    rows = con.execute(
+        """
+        SELECT slice, baseline_median, pilot_median
+        FROM heterogeneity
+        WHERE cut = 'facility'
+        """
+    ).fetchdf()
+    assert set(rows["slice"]) == {"AUS-01", "EWR-07", "FNT-12"}
+    assert (rows["pilot_median"] < rows["baseline_median"]).all()
+
+
+def test_skip_lane_includes_marketplace_not_store_replen(tables):
+    orders = tables["fact_orders"]
+    assert int(orders.loc[orders.channel == "Store replen", "low_risk_flag"].sum()) == 0
+    assert int(orders.loc[orders.channel == "Marketplace", "low_risk_flag"].sum()) > 0
+    assert int(orders.loc[orders.channel == "DTC web", "low_risk_flag"].sum()) > 0
+    assert int(orders.loc[orders.line_count > 2, "low_risk_flag"].sum()) == 0
+    assert int(orders.loc[orders.hazmat_flag == 1, "low_risk_flag"].sum()) == 0
+
+
+def test_shift_step_profile_is_not_the_building_average(con):
+    night, building, n_cell, n_shift, n_week = con.execute(
+        """
+        SELECT
+            (SELECT avg_dwell FROM step_by_cell
+             WHERE facility_id = 'FNT-12' AND shift = 'Night' AND period = 'baseline' AND step_id = 'pick'),
+            (SELECT avg_dwell FROM step_by_facility
+             WHERE facility_id = 'FNT-12' AND period = 'baseline' AND step_id = 'pick'),
+            (SELECT COUNT(*) FROM step_by_cell),
+            (SELECT COUNT(*) FROM step_by_shift),
+            (SELECT COUNT(*) FROM weekly_cell)
+        """
+    ).fetchone()
+    assert night == pytest.approx(65.3)
+    assert building == pytest.approx(57.7)
+    assert night > building + 5
+    assert n_cell == 3 * 3 * 2 * 6
+    assert n_shift == 3 * 2 * 6
+    assert n_week == 3 * 3 * 16
+
+
+def test_readme_matches_published_comparisons(payload):
+    readme = (Path(__file__).resolve().parents[1] / "README.md").read_text()
+    assert "$25,729" in readme
+    assert "$26,609" in readme
+    assert "86.3%" in readme
+    assert "marketplace" in readme.lower()
+    assert "store replen" in readme.lower()
+    assert "untreated control" in readme.lower()
+    assert "one-sided" in readme.lower()
+    script = (Path(__file__).resolve().parents[1] / "dashboard" / "app.js").read_text()
+    assert "P90 dwell" not in script
+    assert "P90 dock-to-stage" in script
+    assert "step_by_cell" in script
+    assert "weekly_cell" in script
+    assert "n * width" in script or "/ (n * width)" in script

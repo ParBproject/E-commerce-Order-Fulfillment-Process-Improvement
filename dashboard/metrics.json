@@ -99,6 +99,1414 @@
       "pilot_share_pct": 10.7
     }
   ],
+  "step_by_shift": [
+    {
+      "shift": "Days",
+      "period": "baseline",
+      "step_id": "wave_release",
+      "step_name": "Wave release",
+      "step_seq": 1,
+      "avg_dwell": 5.8,
+      "median_dwell": 5.5
+    },
+    {
+      "shift": "Days",
+      "period": "baseline",
+      "step_id": "slot_locate",
+      "step_name": "Slot locate",
+      "step_seq": 2,
+      "avg_dwell": 9.1,
+      "median_dwell": 8.8
+    },
+    {
+      "shift": "Days",
+      "period": "baseline",
+      "step_id": "pick",
+      "step_name": "Pick",
+      "step_seq": 3,
+      "avg_dwell": 50.2,
+      "median_dwell": 46.5
+    },
+    {
+      "shift": "Days",
+      "period": "baseline",
+      "step_id": "pack",
+      "step_name": "Pack",
+      "step_seq": 4,
+      "avg_dwell": 14.7,
+      "median_dwell": 14.3
+    },
+    {
+      "shift": "Days",
+      "period": "baseline",
+      "step_id": "qc",
+      "step_name": "QC gate",
+      "step_seq": 5,
+      "avg_dwell": 17.0,
+      "median_dwell": 16.6
+    },
+    {
+      "shift": "Days",
+      "period": "baseline",
+      "step_id": "stage_ship",
+      "step_name": "Stage & ship",
+      "step_seq": 6,
+      "avg_dwell": 9.7,
+      "median_dwell": 9.4
+    },
+    {
+      "shift": "Days",
+      "period": "pilot",
+      "step_id": "wave_release",
+      "step_name": "Wave release",
+      "step_seq": 1,
+      "avg_dwell": 5.4,
+      "median_dwell": 5.1
+    },
+    {
+      "shift": "Days",
+      "period": "pilot",
+      "step_id": "slot_locate",
+      "step_name": "Slot locate",
+      "step_seq": 2,
+      "avg_dwell": 7.3,
+      "median_dwell": 6.9
+    },
+    {
+      "shift": "Days",
+      "period": "pilot",
+      "step_id": "pick",
+      "step_name": "Pick",
+      "step_seq": 3,
+      "avg_dwell": 35.7,
+      "median_dwell": 33.5
+    },
+    {
+      "shift": "Days",
+      "period": "pilot",
+      "step_id": "pack",
+      "step_name": "Pack",
+      "step_seq": 4,
+      "avg_dwell": 13.1,
+      "median_dwell": 12.8
+    },
+    {
+      "shift": "Days",
+      "period": "pilot",
+      "step_id": "qc",
+      "step_name": "QC gate",
+      "step_seq": 5,
+      "avg_dwell": 12.0,
+      "median_dwell": 12.0
+    },
+    {
+      "shift": "Days",
+      "period": "pilot",
+      "step_id": "stage_ship",
+      "step_name": "Stage & ship",
+      "step_seq": 6,
+      "avg_dwell": 8.8,
+      "median_dwell": 8.4
+    },
+    {
+      "shift": "Night",
+      "period": "baseline",
+      "step_id": "wave_release",
+      "step_name": "Wave release",
+      "step_seq": 1,
+      "avg_dwell": 6.4,
+      "median_dwell": 6.2
+    },
+    {
+      "shift": "Night",
+      "period": "baseline",
+      "step_id": "slot_locate",
+      "step_name": "Slot locate",
+      "step_seq": 2,
+      "avg_dwell": 9.9,
+      "median_dwell": 9.8
+    },
+    {
+      "shift": "Night",
+      "period": "baseline",
+      "step_id": "pick",
+      "step_name": "Pick",
+      "step_seq": 3,
+      "avg_dwell": 56.0,
+      "median_dwell": 51.7
+    },
+    {
+      "shift": "Night",
+      "period": "baseline",
+      "step_id": "pack",
+      "step_name": "Pack",
+      "step_seq": 4,
+      "avg_dwell": 16.2,
+      "median_dwell": 15.8
+    },
+    {
+      "shift": "Night",
+      "period": "baseline",
+      "step_id": "qc",
+      "step_name": "QC gate",
+      "step_seq": 5,
+      "avg_dwell": 18.8,
+      "median_dwell": 18.4
+    },
+    {
+      "shift": "Night",
+      "period": "baseline",
+      "step_id": "stage_ship",
+      "step_name": "Stage & ship",
+      "step_seq": 6,
+      "avg_dwell": 10.7,
+      "median_dwell": 10.5
+    },
+    {
+      "shift": "Night",
+      "period": "pilot",
+      "step_id": "wave_release",
+      "step_name": "Wave release",
+      "step_seq": 1,
+      "avg_dwell": 5.9,
+      "median_dwell": 5.7
+    },
+    {
+      "shift": "Night",
+      "period": "pilot",
+      "step_id": "slot_locate",
+      "step_name": "Slot locate",
+      "step_seq": 2,
+      "avg_dwell": 7.7,
+      "median_dwell": 7.4
+    },
+    {
+      "shift": "Night",
+      "period": "pilot",
+      "step_id": "pick",
+      "step_name": "Pick",
+      "step_seq": 3,
+      "avg_dwell": 37.8,
+      "median_dwell": 35.2
+    },
+    {
+      "shift": "Night",
+      "period": "pilot",
+      "step_id": "pack",
+      "step_name": "Pack",
+      "step_seq": 4,
+      "avg_dwell": 14.2,
+      "median_dwell": 13.8
+    },
+    {
+      "shift": "Night",
+      "period": "pilot",
+      "step_id": "qc",
+      "step_name": "QC gate",
+      "step_seq": 5,
+      "avg_dwell": 13.1,
+      "median_dwell": 13.2
+    },
+    {
+      "shift": "Night",
+      "period": "pilot",
+      "step_id": "stage_ship",
+      "step_name": "Stage & ship",
+      "step_seq": 6,
+      "avg_dwell": 9.7,
+      "median_dwell": 9.5
+    },
+    {
+      "shift": "Swing",
+      "period": "baseline",
+      "step_id": "wave_release",
+      "step_name": "Wave release",
+      "step_seq": 1,
+      "avg_dwell": 5.8,
+      "median_dwell": 5.7
+    },
+    {
+      "shift": "Swing",
+      "period": "baseline",
+      "step_id": "slot_locate",
+      "step_name": "Slot locate",
+      "step_seq": 2,
+      "avg_dwell": 9.1,
+      "median_dwell": 8.8
+    },
+    {
+      "shift": "Swing",
+      "period": "baseline",
+      "step_id": "pick",
+      "step_name": "Pick",
+      "step_seq": 3,
+      "avg_dwell": 51.8,
+      "median_dwell": 48.9
+    },
+    {
+      "shift": "Swing",
+      "period": "baseline",
+      "step_id": "pack",
+      "step_name": "Pack",
+      "step_seq": 4,
+      "avg_dwell": 14.6,
+      "median_dwell": 14.3
+    },
+    {
+      "shift": "Swing",
+      "period": "baseline",
+      "step_id": "qc",
+      "step_name": "QC gate",
+      "step_seq": 5,
+      "avg_dwell": 16.8,
+      "median_dwell": 16.4
+    },
+    {
+      "shift": "Swing",
+      "period": "baseline",
+      "step_id": "stage_ship",
+      "step_name": "Stage & ship",
+      "step_seq": 6,
+      "avg_dwell": 9.9,
+      "median_dwell": 9.7
+    },
+    {
+      "shift": "Swing",
+      "period": "pilot",
+      "step_id": "wave_release",
+      "step_name": "Wave release",
+      "step_seq": 1,
+      "avg_dwell": 5.4,
+      "median_dwell": 5.1
+    },
+    {
+      "shift": "Swing",
+      "period": "pilot",
+      "step_id": "slot_locate",
+      "step_name": "Slot locate",
+      "step_seq": 2,
+      "avg_dwell": 7.3,
+      "median_dwell": 7.0
+    },
+    {
+      "shift": "Swing",
+      "period": "pilot",
+      "step_id": "pick",
+      "step_name": "Pick",
+      "step_seq": 3,
+      "avg_dwell": 36.6,
+      "median_dwell": 35.5
+    },
+    {
+      "shift": "Swing",
+      "period": "pilot",
+      "step_id": "pack",
+      "step_name": "Pack",
+      "step_seq": 4,
+      "avg_dwell": 13.2,
+      "median_dwell": 12.6
+    },
+    {
+      "shift": "Swing",
+      "period": "pilot",
+      "step_id": "qc",
+      "step_name": "QC gate",
+      "step_seq": 5,
+      "avg_dwell": 12.5,
+      "median_dwell": 12.3
+    },
+    {
+      "shift": "Swing",
+      "period": "pilot",
+      "step_id": "stage_ship",
+      "step_name": "Stage & ship",
+      "step_seq": 6,
+      "avg_dwell": 8.7,
+      "median_dwell": 8.4
+    }
+  ],
+  "step_by_cell": [
+    {
+      "facility_id": "AUS-01",
+      "shift": "Days",
+      "period": "baseline",
+      "step_id": "wave_release",
+      "step_name": "Wave release",
+      "step_seq": 1,
+      "avg_dwell": 5.3,
+      "median_dwell": 5.0
+    },
+    {
+      "facility_id": "AUS-01",
+      "shift": "Days",
+      "period": "baseline",
+      "step_id": "slot_locate",
+      "step_name": "Slot locate",
+      "step_seq": 2,
+      "avg_dwell": 8.2,
+      "median_dwell": 7.9
+    },
+    {
+      "facility_id": "AUS-01",
+      "shift": "Days",
+      "period": "baseline",
+      "step_id": "pick",
+      "step_name": "Pick",
+      "step_seq": 3,
+      "avg_dwell": 45.2,
+      "median_dwell": 41.8
+    },
+    {
+      "facility_id": "AUS-01",
+      "shift": "Days",
+      "period": "baseline",
+      "step_id": "pack",
+      "step_name": "Pack",
+      "step_seq": 4,
+      "avg_dwell": 13.0,
+      "median_dwell": 12.6
+    },
+    {
+      "facility_id": "AUS-01",
+      "shift": "Days",
+      "period": "baseline",
+      "step_id": "qc",
+      "step_name": "QC gate",
+      "step_seq": 5,
+      "avg_dwell": 15.3,
+      "median_dwell": 14.9
+    },
+    {
+      "facility_id": "AUS-01",
+      "shift": "Days",
+      "period": "baseline",
+      "step_id": "stage_ship",
+      "step_name": "Stage & ship",
+      "step_seq": 6,
+      "avg_dwell": 8.8,
+      "median_dwell": 8.4
+    },
+    {
+      "facility_id": "AUS-01",
+      "shift": "Days",
+      "period": "pilot",
+      "step_id": "wave_release",
+      "step_name": "Wave release",
+      "step_seq": 1,
+      "avg_dwell": 4.7,
+      "median_dwell": 4.5
+    },
+    {
+      "facility_id": "AUS-01",
+      "shift": "Days",
+      "period": "pilot",
+      "step_id": "slot_locate",
+      "step_name": "Slot locate",
+      "step_seq": 2,
+      "avg_dwell": 6.7,
+      "median_dwell": 6.1
+    },
+    {
+      "facility_id": "AUS-01",
+      "shift": "Days",
+      "period": "pilot",
+      "step_id": "pick",
+      "step_name": "Pick",
+      "step_seq": 3,
+      "avg_dwell": 33.9,
+      "median_dwell": 33.0
+    },
+    {
+      "facility_id": "AUS-01",
+      "shift": "Days",
+      "period": "pilot",
+      "step_id": "pack",
+      "step_name": "Pack",
+      "step_seq": 4,
+      "avg_dwell": 11.4,
+      "median_dwell": 10.8
+    },
+    {
+      "facility_id": "AUS-01",
+      "shift": "Days",
+      "period": "pilot",
+      "step_id": "qc",
+      "step_name": "QC gate",
+      "step_seq": 5,
+      "avg_dwell": 10.6,
+      "median_dwell": 10.4
+    },
+    {
+      "facility_id": "AUS-01",
+      "shift": "Days",
+      "period": "pilot",
+      "step_id": "stage_ship",
+      "step_name": "Stage & ship",
+      "step_seq": 6,
+      "avg_dwell": 8.0,
+      "median_dwell": 7.4
+    },
+    {
+      "facility_id": "AUS-01",
+      "shift": "Night",
+      "period": "baseline",
+      "step_id": "wave_release",
+      "step_name": "Wave release",
+      "step_seq": 1,
+      "avg_dwell": 5.3,
+      "median_dwell": 5.0
+    },
+    {
+      "facility_id": "AUS-01",
+      "shift": "Night",
+      "period": "baseline",
+      "step_id": "slot_locate",
+      "step_name": "Slot locate",
+      "step_seq": 2,
+      "avg_dwell": 7.9,
+      "median_dwell": 7.6
+    },
+    {
+      "facility_id": "AUS-01",
+      "shift": "Night",
+      "period": "baseline",
+      "step_id": "pick",
+      "step_name": "Pick",
+      "step_seq": 3,
+      "avg_dwell": 46.9,
+      "median_dwell": 44.2
+    },
+    {
+      "facility_id": "AUS-01",
+      "shift": "Night",
+      "period": "baseline",
+      "step_id": "pack",
+      "step_name": "Pack",
+      "step_seq": 4,
+      "avg_dwell": 13.6,
+      "median_dwell": 13.1
+    },
+    {
+      "facility_id": "AUS-01",
+      "shift": "Night",
+      "period": "baseline",
+      "step_id": "qc",
+      "step_name": "QC gate",
+      "step_seq": 5,
+      "avg_dwell": 15.6,
+      "median_dwell": 15.0
+    },
+    {
+      "facility_id": "AUS-01",
+      "shift": "Night",
+      "period": "baseline",
+      "step_id": "stage_ship",
+      "step_name": "Stage & ship",
+      "step_seq": 6,
+      "avg_dwell": 8.8,
+      "median_dwell": 8.7
+    },
+    {
+      "facility_id": "AUS-01",
+      "shift": "Night",
+      "period": "pilot",
+      "step_id": "wave_release",
+      "step_name": "Wave release",
+      "step_seq": 1,
+      "avg_dwell": 5.0,
+      "median_dwell": 4.7
+    },
+    {
+      "facility_id": "AUS-01",
+      "shift": "Night",
+      "period": "pilot",
+      "step_id": "slot_locate",
+      "step_name": "Slot locate",
+      "step_seq": 2,
+      "avg_dwell": 6.7,
+      "median_dwell": 6.4
+    },
+    {
+      "facility_id": "AUS-01",
+      "shift": "Night",
+      "period": "pilot",
+      "step_id": "pick",
+      "step_name": "Pick",
+      "step_seq": 3,
+      "avg_dwell": 34.9,
+      "median_dwell": 32.3
+    },
+    {
+      "facility_id": "AUS-01",
+      "shift": "Night",
+      "period": "pilot",
+      "step_id": "pack",
+      "step_name": "Pack",
+      "step_seq": 4,
+      "avg_dwell": 12.1,
+      "median_dwell": 11.6
+    },
+    {
+      "facility_id": "AUS-01",
+      "shift": "Night",
+      "period": "pilot",
+      "step_id": "qc",
+      "step_name": "QC gate",
+      "step_seq": 5,
+      "avg_dwell": 11.0,
+      "median_dwell": 11.1
+    },
+    {
+      "facility_id": "AUS-01",
+      "shift": "Night",
+      "period": "pilot",
+      "step_id": "stage_ship",
+      "step_name": "Stage & ship",
+      "step_seq": 6,
+      "avg_dwell": 8.2,
+      "median_dwell": 7.7
+    },
+    {
+      "facility_id": "AUS-01",
+      "shift": "Swing",
+      "period": "baseline",
+      "step_id": "wave_release",
+      "step_name": "Wave release",
+      "step_seq": 1,
+      "avg_dwell": 5.2,
+      "median_dwell": 5.1
+    },
+    {
+      "facility_id": "AUS-01",
+      "shift": "Swing",
+      "period": "baseline",
+      "step_id": "slot_locate",
+      "step_name": "Slot locate",
+      "step_seq": 2,
+      "avg_dwell": 8.2,
+      "median_dwell": 8.0
+    },
+    {
+      "facility_id": "AUS-01",
+      "shift": "Swing",
+      "period": "baseline",
+      "step_id": "pick",
+      "step_name": "Pick",
+      "step_seq": 3,
+      "avg_dwell": 45.9,
+      "median_dwell": 42.8
+    },
+    {
+      "facility_id": "AUS-01",
+      "shift": "Swing",
+      "period": "baseline",
+      "step_id": "pack",
+      "step_name": "Pack",
+      "step_seq": 4,
+      "avg_dwell": 13.4,
+      "median_dwell": 12.5
+    },
+    {
+      "facility_id": "AUS-01",
+      "shift": "Swing",
+      "period": "baseline",
+      "step_id": "qc",
+      "step_name": "QC gate",
+      "step_seq": 5,
+      "avg_dwell": 15.0,
+      "median_dwell": 14.3
+    },
+    {
+      "facility_id": "AUS-01",
+      "shift": "Swing",
+      "period": "baseline",
+      "step_id": "stage_ship",
+      "step_name": "Stage & ship",
+      "step_seq": 6,
+      "avg_dwell": 8.9,
+      "median_dwell": 8.4
+    },
+    {
+      "facility_id": "AUS-01",
+      "shift": "Swing",
+      "period": "pilot",
+      "step_id": "wave_release",
+      "step_name": "Wave release",
+      "step_seq": 1,
+      "avg_dwell": 4.9,
+      "median_dwell": 4.6
+    },
+    {
+      "facility_id": "AUS-01",
+      "shift": "Swing",
+      "period": "pilot",
+      "step_id": "slot_locate",
+      "step_name": "Slot locate",
+      "step_seq": 2,
+      "avg_dwell": 6.6,
+      "median_dwell": 6.3
+    },
+    {
+      "facility_id": "AUS-01",
+      "shift": "Swing",
+      "period": "pilot",
+      "step_id": "pick",
+      "step_name": "Pick",
+      "step_seq": 3,
+      "avg_dwell": 34.3,
+      "median_dwell": 33.4
+    },
+    {
+      "facility_id": "AUS-01",
+      "shift": "Swing",
+      "period": "pilot",
+      "step_id": "pack",
+      "step_name": "Pack",
+      "step_seq": 4,
+      "avg_dwell": 12.0,
+      "median_dwell": 11.6
+    },
+    {
+      "facility_id": "AUS-01",
+      "shift": "Swing",
+      "period": "pilot",
+      "step_id": "qc",
+      "step_name": "QC gate",
+      "step_seq": 5,
+      "avg_dwell": 11.1,
+      "median_dwell": 10.6
+    },
+    {
+      "facility_id": "AUS-01",
+      "shift": "Swing",
+      "period": "pilot",
+      "step_id": "stage_ship",
+      "step_name": "Stage & ship",
+      "step_seq": 6,
+      "avg_dwell": 7.9,
+      "median_dwell": 7.6
+    },
+    {
+      "facility_id": "EWR-07",
+      "shift": "Days",
+      "period": "baseline",
+      "step_id": "wave_release",
+      "step_name": "Wave release",
+      "step_seq": 1,
+      "avg_dwell": 5.8,
+      "median_dwell": 5.5
+    },
+    {
+      "facility_id": "EWR-07",
+      "shift": "Days",
+      "period": "baseline",
+      "step_id": "slot_locate",
+      "step_name": "Slot locate",
+      "step_seq": 2,
+      "avg_dwell": 9.3,
+      "median_dwell": 8.9
+    },
+    {
+      "facility_id": "EWR-07",
+      "shift": "Days",
+      "period": "baseline",
+      "step_id": "pick",
+      "step_name": "Pick",
+      "step_seq": 3,
+      "avg_dwell": 51.3,
+      "median_dwell": 46.8
+    },
+    {
+      "facility_id": "EWR-07",
+      "shift": "Days",
+      "period": "baseline",
+      "step_id": "pack",
+      "step_name": "Pack",
+      "step_seq": 4,
+      "avg_dwell": 15.1,
+      "median_dwell": 14.7
+    },
+    {
+      "facility_id": "EWR-07",
+      "shift": "Days",
+      "period": "baseline",
+      "step_id": "qc",
+      "step_name": "QC gate",
+      "step_seq": 5,
+      "avg_dwell": 17.6,
+      "median_dwell": 16.9
+    },
+    {
+      "facility_id": "EWR-07",
+      "shift": "Days",
+      "period": "baseline",
+      "step_id": "stage_ship",
+      "step_name": "Stage & ship",
+      "step_seq": 6,
+      "avg_dwell": 9.9,
+      "median_dwell": 9.6
+    },
+    {
+      "facility_id": "EWR-07",
+      "shift": "Days",
+      "period": "pilot",
+      "step_id": "wave_release",
+      "step_name": "Wave release",
+      "step_seq": 1,
+      "avg_dwell": 5.5,
+      "median_dwell": 5.3
+    },
+    {
+      "facility_id": "EWR-07",
+      "shift": "Days",
+      "period": "pilot",
+      "step_id": "slot_locate",
+      "step_name": "Slot locate",
+      "step_seq": 2,
+      "avg_dwell": 7.3,
+      "median_dwell": 6.9
+    },
+    {
+      "facility_id": "EWR-07",
+      "shift": "Days",
+      "period": "pilot",
+      "step_id": "pick",
+      "step_name": "Pick",
+      "step_seq": 3,
+      "avg_dwell": 39.0,
+      "median_dwell": 37.3
+    },
+    {
+      "facility_id": "EWR-07",
+      "shift": "Days",
+      "period": "pilot",
+      "step_id": "pack",
+      "step_name": "Pack",
+      "step_seq": 4,
+      "avg_dwell": 13.7,
+      "median_dwell": 13.3
+    },
+    {
+      "facility_id": "EWR-07",
+      "shift": "Days",
+      "period": "pilot",
+      "step_id": "qc",
+      "step_name": "QC gate",
+      "step_seq": 5,
+      "avg_dwell": 12.3,
+      "median_dwell": 12.6
+    },
+    {
+      "facility_id": "EWR-07",
+      "shift": "Days",
+      "period": "pilot",
+      "step_id": "stage_ship",
+      "step_name": "Stage & ship",
+      "step_seq": 6,
+      "avg_dwell": 8.8,
+      "median_dwell": 8.5
+    },
+    {
+      "facility_id": "EWR-07",
+      "shift": "Night",
+      "period": "baseline",
+      "step_id": "wave_release",
+      "step_name": "Wave release",
+      "step_seq": 1,
+      "avg_dwell": 6.3,
+      "median_dwell": 6.1
+    },
+    {
+      "facility_id": "EWR-07",
+      "shift": "Night",
+      "period": "baseline",
+      "step_id": "slot_locate",
+      "step_name": "Slot locate",
+      "step_seq": 2,
+      "avg_dwell": 9.9,
+      "median_dwell": 9.6
+    },
+    {
+      "facility_id": "EWR-07",
+      "shift": "Night",
+      "period": "baseline",
+      "step_id": "pick",
+      "step_name": "Pick",
+      "step_seq": 3,
+      "avg_dwell": 54.5,
+      "median_dwell": 50.5
+    },
+    {
+      "facility_id": "EWR-07",
+      "shift": "Night",
+      "period": "baseline",
+      "step_id": "pack",
+      "step_name": "Pack",
+      "step_seq": 4,
+      "avg_dwell": 15.7,
+      "median_dwell": 15.3
+    },
+    {
+      "facility_id": "EWR-07",
+      "shift": "Night",
+      "period": "baseline",
+      "step_id": "qc",
+      "step_name": "QC gate",
+      "step_seq": 5,
+      "avg_dwell": 18.7,
+      "median_dwell": 18.1
+    },
+    {
+      "facility_id": "EWR-07",
+      "shift": "Night",
+      "period": "baseline",
+      "step_id": "stage_ship",
+      "step_name": "Stage & ship",
+      "step_seq": 6,
+      "avg_dwell": 10.7,
+      "median_dwell": 10.4
+    },
+    {
+      "facility_id": "EWR-07",
+      "shift": "Night",
+      "period": "pilot",
+      "step_id": "wave_release",
+      "step_name": "Wave release",
+      "step_seq": 1,
+      "avg_dwell": 5.8,
+      "median_dwell": 5.5
+    },
+    {
+      "facility_id": "EWR-07",
+      "shift": "Night",
+      "period": "pilot",
+      "step_id": "slot_locate",
+      "step_name": "Slot locate",
+      "step_seq": 2,
+      "avg_dwell": 7.7,
+      "median_dwell": 7.4
+    },
+    {
+      "facility_id": "EWR-07",
+      "shift": "Night",
+      "period": "pilot",
+      "step_id": "pick",
+      "step_name": "Pick",
+      "step_seq": 3,
+      "avg_dwell": 41.8,
+      "median_dwell": 39.0
+    },
+    {
+      "facility_id": "EWR-07",
+      "shift": "Night",
+      "period": "pilot",
+      "step_id": "pack",
+      "step_name": "Pack",
+      "step_seq": 4,
+      "avg_dwell": 14.0,
+      "median_dwell": 13.6
+    },
+    {
+      "facility_id": "EWR-07",
+      "shift": "Night",
+      "period": "pilot",
+      "step_id": "qc",
+      "step_name": "QC gate",
+      "step_seq": 5,
+      "avg_dwell": 13.1,
+      "median_dwell": 13.2
+    },
+    {
+      "facility_id": "EWR-07",
+      "shift": "Night",
+      "period": "pilot",
+      "step_id": "stage_ship",
+      "step_name": "Stage & ship",
+      "step_seq": 6,
+      "avg_dwell": 9.6,
+      "median_dwell": 9.5
+    },
+    {
+      "facility_id": "EWR-07",
+      "shift": "Swing",
+      "period": "baseline",
+      "step_id": "wave_release",
+      "step_name": "Wave release",
+      "step_seq": 1,
+      "avg_dwell": 5.9,
+      "median_dwell": 5.6
+    },
+    {
+      "facility_id": "EWR-07",
+      "shift": "Swing",
+      "period": "baseline",
+      "step_id": "slot_locate",
+      "step_name": "Slot locate",
+      "step_seq": 2,
+      "avg_dwell": 9.3,
+      "median_dwell": 9.0
+    },
+    {
+      "facility_id": "EWR-07",
+      "shift": "Swing",
+      "period": "baseline",
+      "step_id": "pick",
+      "step_name": "Pick",
+      "step_seq": 3,
+      "avg_dwell": 54.0,
+      "median_dwell": 50.4
+    },
+    {
+      "facility_id": "EWR-07",
+      "shift": "Swing",
+      "period": "baseline",
+      "step_id": "pack",
+      "step_name": "Pack",
+      "step_seq": 4,
+      "avg_dwell": 14.8,
+      "median_dwell": 14.5
+    },
+    {
+      "facility_id": "EWR-07",
+      "shift": "Swing",
+      "period": "baseline",
+      "step_id": "qc",
+      "step_name": "QC gate",
+      "step_seq": 5,
+      "avg_dwell": 17.1,
+      "median_dwell": 16.7
+    },
+    {
+      "facility_id": "EWR-07",
+      "shift": "Swing",
+      "period": "baseline",
+      "step_id": "stage_ship",
+      "step_name": "Stage & ship",
+      "step_seq": 6,
+      "avg_dwell": 10.1,
+      "median_dwell": 10.0
+    },
+    {
+      "facility_id": "EWR-07",
+      "shift": "Swing",
+      "period": "pilot",
+      "step_id": "wave_release",
+      "step_name": "Wave release",
+      "step_seq": 1,
+      "avg_dwell": 5.5,
+      "median_dwell": 5.2
+    },
+    {
+      "facility_id": "EWR-07",
+      "shift": "Swing",
+      "period": "pilot",
+      "step_id": "slot_locate",
+      "step_name": "Slot locate",
+      "step_seq": 2,
+      "avg_dwell": 7.4,
+      "median_dwell": 7.3
+    },
+    {
+      "facility_id": "EWR-07",
+      "shift": "Swing",
+      "period": "pilot",
+      "step_id": "pick",
+      "step_name": "Pick",
+      "step_seq": 3,
+      "avg_dwell": 39.9,
+      "median_dwell": 39.0
+    },
+    {
+      "facility_id": "EWR-07",
+      "shift": "Swing",
+      "period": "pilot",
+      "step_id": "pack",
+      "step_name": "Pack",
+      "step_seq": 4,
+      "avg_dwell": 13.6,
+      "median_dwell": 12.8
+    },
+    {
+      "facility_id": "EWR-07",
+      "shift": "Swing",
+      "period": "pilot",
+      "step_id": "qc",
+      "step_name": "QC gate",
+      "step_seq": 5,
+      "avg_dwell": 13.0,
+      "median_dwell": 12.8
+    },
+    {
+      "facility_id": "EWR-07",
+      "shift": "Swing",
+      "period": "pilot",
+      "step_id": "stage_ship",
+      "step_name": "Stage & ship",
+      "step_seq": 6,
+      "avg_dwell": 9.0,
+      "median_dwell": 8.5
+    },
+    {
+      "facility_id": "FNT-12",
+      "shift": "Days",
+      "period": "baseline",
+      "step_id": "wave_release",
+      "step_name": "Wave release",
+      "step_seq": 1,
+      "avg_dwell": 6.2,
+      "median_dwell": 6.2
+    },
+    {
+      "facility_id": "FNT-12",
+      "shift": "Days",
+      "period": "baseline",
+      "step_id": "slot_locate",
+      "step_name": "Slot locate",
+      "step_seq": 2,
+      "avg_dwell": 9.6,
+      "median_dwell": 9.5
+    },
+    {
+      "facility_id": "FNT-12",
+      "shift": "Days",
+      "period": "baseline",
+      "step_id": "pick",
+      "step_name": "Pick",
+      "step_seq": 3,
+      "avg_dwell": 53.7,
+      "median_dwell": 52.5
+    },
+    {
+      "facility_id": "FNT-12",
+      "shift": "Days",
+      "period": "baseline",
+      "step_id": "pack",
+      "step_name": "Pack",
+      "step_seq": 4,
+      "avg_dwell": 15.9,
+      "median_dwell": 15.5
+    },
+    {
+      "facility_id": "FNT-12",
+      "shift": "Days",
+      "period": "baseline",
+      "step_id": "qc",
+      "step_name": "QC gate",
+      "step_seq": 5,
+      "avg_dwell": 17.9,
+      "median_dwell": 17.7
+    },
+    {
+      "facility_id": "FNT-12",
+      "shift": "Days",
+      "period": "baseline",
+      "step_id": "stage_ship",
+      "step_name": "Stage & ship",
+      "step_seq": 6,
+      "avg_dwell": 10.5,
+      "median_dwell": 10.1
+    },
+    {
+      "facility_id": "FNT-12",
+      "shift": "Days",
+      "period": "pilot",
+      "step_id": "wave_release",
+      "step_name": "Wave release",
+      "step_seq": 1,
+      "avg_dwell": 5.7,
+      "median_dwell": 5.4
+    },
+    {
+      "facility_id": "FNT-12",
+      "shift": "Days",
+      "period": "pilot",
+      "step_id": "slot_locate",
+      "step_name": "Slot locate",
+      "step_seq": 2,
+      "avg_dwell": 7.8,
+      "median_dwell": 7.3
+    },
+    {
+      "facility_id": "FNT-12",
+      "shift": "Days",
+      "period": "pilot",
+      "step_id": "pick",
+      "step_name": "Pick",
+      "step_seq": 3,
+      "avg_dwell": 33.6,
+      "median_dwell": 30.2
+    },
+    {
+      "facility_id": "FNT-12",
+      "shift": "Days",
+      "period": "pilot",
+      "step_id": "pack",
+      "step_name": "Pack",
+      "step_seq": 4,
+      "avg_dwell": 13.9,
+      "median_dwell": 13.5
+    },
+    {
+      "facility_id": "FNT-12",
+      "shift": "Days",
+      "period": "pilot",
+      "step_id": "qc",
+      "step_name": "QC gate",
+      "step_seq": 5,
+      "avg_dwell": 12.9,
+      "median_dwell": 12.8
+    },
+    {
+      "facility_id": "FNT-12",
+      "shift": "Days",
+      "period": "pilot",
+      "step_id": "stage_ship",
+      "step_name": "Stage & ship",
+      "step_seq": 6,
+      "avg_dwell": 9.4,
+      "median_dwell": 8.9
+    },
+    {
+      "facility_id": "FNT-12",
+      "shift": "Night",
+      "period": "baseline",
+      "step_id": "wave_release",
+      "step_name": "Wave release",
+      "step_seq": 1,
+      "avg_dwell": 7.3,
+      "median_dwell": 7.2
+    },
+    {
+      "facility_id": "FNT-12",
+      "shift": "Night",
+      "period": "baseline",
+      "step_id": "slot_locate",
+      "step_name": "Slot locate",
+      "step_seq": 2,
+      "avg_dwell": 11.6,
+      "median_dwell": 11.6
+    },
+    {
+      "facility_id": "FNT-12",
+      "shift": "Night",
+      "period": "baseline",
+      "step_id": "pick",
+      "step_name": "Pick",
+      "step_seq": 3,
+      "avg_dwell": 65.3,
+      "median_dwell": 59.5
+    },
+    {
+      "facility_id": "FNT-12",
+      "shift": "Night",
+      "period": "baseline",
+      "step_id": "pack",
+      "step_name": "Pack",
+      "step_seq": 4,
+      "avg_dwell": 19.0,
+      "median_dwell": 18.7
+    },
+    {
+      "facility_id": "FNT-12",
+      "shift": "Night",
+      "period": "baseline",
+      "step_id": "qc",
+      "step_name": "QC gate",
+      "step_seq": 5,
+      "avg_dwell": 21.5,
+      "median_dwell": 21.3
+    },
+    {
+      "facility_id": "FNT-12",
+      "shift": "Night",
+      "period": "baseline",
+      "step_id": "stage_ship",
+      "step_name": "Stage & ship",
+      "step_seq": 6,
+      "avg_dwell": 12.4,
+      "median_dwell": 12.2
+    },
+    {
+      "facility_id": "FNT-12",
+      "shift": "Night",
+      "period": "pilot",
+      "step_id": "wave_release",
+      "step_name": "Wave release",
+      "step_seq": 1,
+      "avg_dwell": 6.8,
+      "median_dwell": 6.6
+    },
+    {
+      "facility_id": "FNT-12",
+      "shift": "Night",
+      "period": "pilot",
+      "step_id": "slot_locate",
+      "step_name": "Slot locate",
+      "step_seq": 2,
+      "avg_dwell": 8.8,
+      "median_dwell": 8.4
+    },
+    {
+      "facility_id": "FNT-12",
+      "shift": "Night",
+      "period": "pilot",
+      "step_id": "pick",
+      "step_name": "Pick",
+      "step_seq": 3,
+      "avg_dwell": 35.8,
+      "median_dwell": 32.3
+    },
+    {
+      "facility_id": "FNT-12",
+      "shift": "Night",
+      "period": "pilot",
+      "step_id": "pack",
+      "step_name": "Pack",
+      "step_seq": 4,
+      "avg_dwell": 16.3,
+      "median_dwell": 16.1
+    },
+    {
+      "facility_id": "FNT-12",
+      "shift": "Night",
+      "period": "pilot",
+      "step_id": "qc",
+      "step_name": "QC gate",
+      "step_seq": 5,
+      "avg_dwell": 15.1,
+      "median_dwell": 15.5
+    },
+    {
+      "facility_id": "FNT-12",
+      "shift": "Night",
+      "period": "pilot",
+      "step_id": "stage_ship",
+      "step_name": "Stage & ship",
+      "step_seq": 6,
+      "avg_dwell": 11.2,
+      "median_dwell": 10.9
+    },
+    {
+      "facility_id": "FNT-12",
+      "shift": "Swing",
+      "period": "baseline",
+      "step_id": "wave_release",
+      "step_name": "Wave release",
+      "step_seq": 1,
+      "avg_dwell": 6.3,
+      "median_dwell": 6.2
+    },
+    {
+      "facility_id": "FNT-12",
+      "shift": "Swing",
+      "period": "baseline",
+      "step_id": "slot_locate",
+      "step_name": "Slot locate",
+      "step_seq": 2,
+      "avg_dwell": 9.7,
+      "median_dwell": 9.3
+    },
+    {
+      "facility_id": "FNT-12",
+      "shift": "Swing",
+      "period": "baseline",
+      "step_id": "pick",
+      "step_name": "Pick",
+      "step_seq": 3,
+      "avg_dwell": 54.7,
+      "median_dwell": 51.3
+    },
+    {
+      "facility_id": "FNT-12",
+      "shift": "Swing",
+      "period": "baseline",
+      "step_id": "pack",
+      "step_name": "Pack",
+      "step_seq": 4,
+      "avg_dwell": 15.5,
+      "median_dwell": 15.3
+    },
+    {
+      "facility_id": "FNT-12",
+      "shift": "Swing",
+      "period": "baseline",
+      "step_id": "qc",
+      "step_name": "QC gate",
+      "step_seq": 5,
+      "avg_dwell": 18.1,
+      "median_dwell": 17.6
+    },
+    {
+      "facility_id": "FNT-12",
+      "shift": "Swing",
+      "period": "baseline",
+      "step_id": "stage_ship",
+      "step_name": "Stage & ship",
+      "step_seq": 6,
+      "avg_dwell": 10.5,
+      "median_dwell": 10.1
+    },
+    {
+      "facility_id": "FNT-12",
+      "shift": "Swing",
+      "period": "pilot",
+      "step_id": "wave_release",
+      "step_name": "Wave release",
+      "step_seq": 1,
+      "avg_dwell": 5.7,
+      "median_dwell": 5.5
+    },
+    {
+      "facility_id": "FNT-12",
+      "shift": "Swing",
+      "period": "pilot",
+      "step_id": "slot_locate",
+      "step_name": "Slot locate",
+      "step_seq": 2,
+      "avg_dwell": 7.8,
+      "median_dwell": 7.4
+    },
+    {
+      "facility_id": "FNT-12",
+      "shift": "Swing",
+      "period": "pilot",
+      "step_id": "pick",
+      "step_name": "Pick",
+      "step_seq": 3,
+      "avg_dwell": 34.9,
+      "median_dwell": 34.3
+    },
+    {
+      "facility_id": "FNT-12",
+      "shift": "Swing",
+      "period": "pilot",
+      "step_id": "pack",
+      "step_name": "Pack",
+      "step_seq": 4,
+      "avg_dwell": 14.0,
+      "median_dwell": 13.6
+    },
+    {
+      "facility_id": "FNT-12",
+      "shift": "Swing",
+      "period": "pilot",
+      "step_id": "qc",
+      "step_name": "QC gate",
+      "step_seq": 5,
+      "avg_dwell": 13.4,
+      "median_dwell": 13.7
+    },
+    {
+      "facility_id": "FNT-12",
+      "shift": "Swing",
+      "period": "pilot",
+      "step_id": "stage_ship",
+      "step_name": "Stage & ship",
+      "step_seq": 6,
+      "avg_dwell": 9.2,
+      "median_dwell": 9.0
+    }
+  ],
   "facility_shift": [
     {
       "facility_id": "AUS-01",
@@ -308,7 +1716,9 @@
       "baseline_median": 108.2,
       "pilot_median": 83.6,
       "recovered_minutes": 24.6,
-      "recovered_pct": 22.7
+      "recovered_pct": 22.7,
+      "baseline_miss_pct": 32.4,
+      "pilot_miss_pct": 4.9
     },
     {
       "cut": "channel",
@@ -318,7 +1728,9 @@
       "baseline_median": 109.1,
       "pilot_median": 84.7,
       "recovered_minutes": 24.4,
-      "recovered_pct": 22.4
+      "recovered_pct": 22.4,
+      "baseline_miss_pct": 32.4,
+      "pilot_miss_pct": 4.4
     },
     {
       "cut": "channel",
@@ -328,7 +1740,9 @@
       "baseline_median": 115.1,
       "pilot_median": 88.2,
       "recovered_minutes": 26.9,
-      "recovered_pct": 23.4
+      "recovered_pct": 23.4,
+      "baseline_miss_pct": 43.4,
+      "pilot_miss_pct": 9.5
     },
     {
       "cut": "facility",
@@ -338,7 +1752,9 @@
       "baseline_median": 96.2,
       "pilot_median": 77.8,
       "recovered_minutes": 18.4,
-      "recovered_pct": 19.1
+      "recovered_pct": 19.1,
+      "baseline_miss_pct": 15.3,
+      "pilot_miss_pct": 2.0
     },
     {
       "cut": "facility",
@@ -348,7 +1764,9 @@
       "baseline_median": 110.3,
       "pilot_median": 88.1,
       "recovered_minutes": 22.2,
-      "recovered_pct": 20.1
+      "recovered_pct": 20.1,
+      "baseline_miss_pct": 33.9,
+      "pilot_miss_pct": 7.0
     },
     {
       "cut": "facility",
@@ -358,7 +1776,9 @@
       "baseline_median": 120.8,
       "pilot_median": 87.4,
       "recovered_minutes": 33.4,
-      "recovered_pct": 27.6
+      "recovered_pct": 27.6,
+      "baseline_miss_pct": 51.3,
+      "pilot_miss_pct": 6.8
     },
     {
       "cut": "line_band",
@@ -368,7 +1788,9 @@
       "baseline_median": 92.4,
       "pilot_median": 71.5,
       "recovered_minutes": 20.9,
-      "recovered_pct": 22.6
+      "recovered_pct": 22.6,
+      "baseline_miss_pct": 8.8,
+      "pilot_miss_pct": 1.5
     },
     {
       "cut": "line_band",
@@ -378,7 +1800,9 @@
       "baseline_median": 102.3,
       "pilot_median": 79.5,
       "recovered_minutes": 22.8,
-      "recovered_pct": 22.3
+      "recovered_pct": 22.3,
+      "baseline_miss_pct": 17.5,
+      "pilot_miss_pct": 0.8
     },
     {
       "cut": "line_band",
@@ -388,7 +1812,9 @@
       "baseline_median": 117.8,
       "pilot_median": 91.3,
       "recovered_minutes": 26.5,
-      "recovered_pct": 22.5
+      "recovered_pct": 22.5,
+      "baseline_miss_pct": 45.4,
+      "pilot_miss_pct": 5.0
     },
     {
       "cut": "line_band",
@@ -398,7 +1824,9 @@
       "baseline_median": 146.5,
       "pilot_median": 105.9,
       "recovered_minutes": 40.6,
-      "recovered_pct": 27.7
+      "recovered_pct": 27.7,
+      "baseline_miss_pct": 86.3,
+      "pilot_miss_pct": 24.1
     },
     {
       "cut": "shift",
@@ -408,7 +1836,9 @@
       "baseline_median": 105.6,
       "pilot_median": 82.8,
       "recovered_minutes": 22.8,
-      "recovered_pct": 21.6
+      "recovered_pct": 21.6,
+      "baseline_miss_pct": 27.4,
+      "pilot_miss_pct": 3.9
     },
     {
       "cut": "shift",
@@ -418,7 +1848,9 @@
       "baseline_median": 117.7,
       "pilot_median": 87.7,
       "recovered_minutes": 30.0,
-      "recovered_pct": 25.5
+      "recovered_pct": 25.5,
+      "baseline_miss_pct": 46.2,
+      "pilot_miss_pct": 9.4
     },
     {
       "cut": "shift",
@@ -428,7 +1860,9 @@
       "baseline_median": 107.7,
       "pilot_median": 84.0,
       "recovered_minutes": 23.7,
-      "recovered_pct": 22.0
+      "recovered_pct": 22.0,
+      "baseline_miss_pct": 30.4,
+      "pilot_miss_pct": 3.8
     }
   ],
   "weekly_network": [
@@ -1009,6 +2443,1882 @@
       "median_cycle": 86.7,
       "p90_cycle": 108.1,
       "sla_miss_pct": 2.7
+    }
+  ],
+  "weekly_shift": [
+    {
+      "week_start": "2025-01-06",
+      "period": "baseline",
+      "shift": "Days",
+      "orders": 104,
+      "median_cycle": 104.9,
+      "p90_cycle": 145.5,
+      "sla_miss_pct": 33.7
+    },
+    {
+      "week_start": "2025-01-06",
+      "period": "baseline",
+      "shift": "Night",
+      "orders": 87,
+      "median_cycle": 115.1,
+      "p90_cycle": 153.7,
+      "sla_miss_pct": 43.7
+    },
+    {
+      "week_start": "2025-01-06",
+      "period": "baseline",
+      "shift": "Swing",
+      "orders": 92,
+      "median_cycle": 106.3,
+      "p90_cycle": 138.7,
+      "sla_miss_pct": 29.3
+    },
+    {
+      "week_start": "2025-01-13",
+      "period": "baseline",
+      "shift": "Days",
+      "orders": 90,
+      "median_cycle": 104.1,
+      "p90_cycle": 137.6,
+      "sla_miss_pct": 23.3
+    },
+    {
+      "week_start": "2025-01-13",
+      "period": "baseline",
+      "shift": "Night",
+      "orders": 88,
+      "median_cycle": 116.4,
+      "p90_cycle": 165.6,
+      "sla_miss_pct": 44.3
+    },
+    {
+      "week_start": "2025-01-13",
+      "period": "baseline",
+      "shift": "Swing",
+      "orders": 109,
+      "median_cycle": 108.2,
+      "p90_cycle": 139.7,
+      "sla_miss_pct": 27.5
+    },
+    {
+      "week_start": "2025-01-20",
+      "period": "baseline",
+      "shift": "Days",
+      "orders": 100,
+      "median_cycle": 104.3,
+      "p90_cycle": 132.4,
+      "sla_miss_pct": 27.0
+    },
+    {
+      "week_start": "2025-01-20",
+      "period": "baseline",
+      "shift": "Night",
+      "orders": 76,
+      "median_cycle": 121.3,
+      "p90_cycle": 152.6,
+      "sla_miss_pct": 50.0
+    },
+    {
+      "week_start": "2025-01-20",
+      "period": "baseline",
+      "shift": "Swing",
+      "orders": 94,
+      "median_cycle": 109.0,
+      "p90_cycle": 145.7,
+      "sla_miss_pct": 35.1
+    },
+    {
+      "week_start": "2025-01-27",
+      "period": "baseline",
+      "shift": "Days",
+      "orders": 95,
+      "median_cycle": 106.5,
+      "p90_cycle": 142.7,
+      "sla_miss_pct": 30.5
+    },
+    {
+      "week_start": "2025-01-27",
+      "period": "baseline",
+      "shift": "Night",
+      "orders": 76,
+      "median_cycle": 124.6,
+      "p90_cycle": 160.3,
+      "sla_miss_pct": 56.6
+    },
+    {
+      "week_start": "2025-01-27",
+      "period": "baseline",
+      "shift": "Swing",
+      "orders": 94,
+      "median_cycle": 103.5,
+      "p90_cycle": 148.9,
+      "sla_miss_pct": 30.9
+    },
+    {
+      "week_start": "2025-02-03",
+      "period": "baseline",
+      "shift": "Days",
+      "orders": 77,
+      "median_cycle": 109.3,
+      "p90_cycle": 139.4,
+      "sla_miss_pct": 26.0
+    },
+    {
+      "week_start": "2025-02-03",
+      "period": "baseline",
+      "shift": "Night",
+      "orders": 87,
+      "median_cycle": 114.7,
+      "p90_cycle": 162.3,
+      "sla_miss_pct": 41.4
+    },
+    {
+      "week_start": "2025-02-03",
+      "period": "baseline",
+      "shift": "Swing",
+      "orders": 119,
+      "median_cycle": 107.6,
+      "p90_cycle": 138.6,
+      "sla_miss_pct": 27.7
+    },
+    {
+      "week_start": "2025-02-10",
+      "period": "baseline",
+      "shift": "Days",
+      "orders": 93,
+      "median_cycle": 107.7,
+      "p90_cycle": 134.0,
+      "sla_miss_pct": 26.9
+    },
+    {
+      "week_start": "2025-02-10",
+      "period": "baseline",
+      "shift": "Night",
+      "orders": 95,
+      "median_cycle": 117.7,
+      "p90_cycle": 165.1,
+      "sla_miss_pct": 46.3
+    },
+    {
+      "week_start": "2025-02-10",
+      "period": "baseline",
+      "shift": "Swing",
+      "orders": 93,
+      "median_cycle": 104.7,
+      "p90_cycle": 144.9,
+      "sla_miss_pct": 28.0
+    },
+    {
+      "week_start": "2025-02-17",
+      "period": "baseline",
+      "shift": "Days",
+      "orders": 94,
+      "median_cycle": 105.9,
+      "p90_cycle": 136.8,
+      "sla_miss_pct": 26.6
+    },
+    {
+      "week_start": "2025-02-17",
+      "period": "baseline",
+      "shift": "Night",
+      "orders": 87,
+      "median_cycle": 118.1,
+      "p90_cycle": 155.8,
+      "sla_miss_pct": 47.1
+    },
+    {
+      "week_start": "2025-02-17",
+      "period": "baseline",
+      "shift": "Swing",
+      "orders": 88,
+      "median_cycle": 111.0,
+      "p90_cycle": 138.6,
+      "sla_miss_pct": 30.7
+    },
+    {
+      "week_start": "2025-02-24",
+      "period": "baseline",
+      "shift": "Days",
+      "orders": 107,
+      "median_cycle": 103.5,
+      "p90_cycle": 141.4,
+      "sla_miss_pct": 24.3
+    },
+    {
+      "week_start": "2025-02-24",
+      "period": "baseline",
+      "shift": "Night",
+      "orders": 79,
+      "median_cycle": 111.6,
+      "p90_cycle": 154.5,
+      "sla_miss_pct": 41.8
+    },
+    {
+      "week_start": "2025-02-24",
+      "period": "baseline",
+      "shift": "Swing",
+      "orders": 96,
+      "median_cycle": 105.6,
+      "p90_cycle": 152.0,
+      "sla_miss_pct": 35.4
+    },
+    {
+      "week_start": "2025-03-10",
+      "period": "pilot",
+      "shift": "Days",
+      "orders": 105,
+      "median_cycle": 79.6,
+      "p90_cycle": 105.3,
+      "sla_miss_pct": 2.9
+    },
+    {
+      "week_start": "2025-03-10",
+      "period": "pilot",
+      "shift": "Night",
+      "orders": 82,
+      "median_cycle": 87.4,
+      "p90_cycle": 119.8,
+      "sla_miss_pct": 11.0
+    },
+    {
+      "week_start": "2025-03-10",
+      "period": "pilot",
+      "shift": "Swing",
+      "orders": 112,
+      "median_cycle": 86.2,
+      "p90_cycle": 112.3,
+      "sla_miss_pct": 3.6
+    },
+    {
+      "week_start": "2025-03-17",
+      "period": "pilot",
+      "shift": "Days",
+      "orders": 87,
+      "median_cycle": 82.5,
+      "p90_cycle": 113.4,
+      "sla_miss_pct": 6.9
+    },
+    {
+      "week_start": "2025-03-17",
+      "period": "pilot",
+      "shift": "Night",
+      "orders": 66,
+      "median_cycle": 88.5,
+      "p90_cycle": 117.7,
+      "sla_miss_pct": 9.1
+    },
+    {
+      "week_start": "2025-03-17",
+      "period": "pilot",
+      "shift": "Swing",
+      "orders": 92,
+      "median_cycle": 83.6,
+      "p90_cycle": 112.5,
+      "sla_miss_pct": 5.4
+    },
+    {
+      "week_start": "2025-03-24",
+      "period": "pilot",
+      "shift": "Days",
+      "orders": 96,
+      "median_cycle": 84.8,
+      "p90_cycle": 109.7,
+      "sla_miss_pct": 5.2
+    },
+    {
+      "week_start": "2025-03-24",
+      "period": "pilot",
+      "shift": "Night",
+      "orders": 91,
+      "median_cycle": 88.5,
+      "p90_cycle": 113.0,
+      "sla_miss_pct": 5.5
+    },
+    {
+      "week_start": "2025-03-24",
+      "period": "pilot",
+      "shift": "Swing",
+      "orders": 96,
+      "median_cycle": 85.8,
+      "p90_cycle": 108.6,
+      "sla_miss_pct": 2.1
+    },
+    {
+      "week_start": "2025-03-31",
+      "period": "pilot",
+      "shift": "Days",
+      "orders": 111,
+      "median_cycle": 85.9,
+      "p90_cycle": 113.2,
+      "sla_miss_pct": 5.4
+    },
+    {
+      "week_start": "2025-03-31",
+      "period": "pilot",
+      "shift": "Night",
+      "orders": 100,
+      "median_cycle": 91.2,
+      "p90_cycle": 116.8,
+      "sla_miss_pct": 9.0
+    },
+    {
+      "week_start": "2025-03-31",
+      "period": "pilot",
+      "shift": "Swing",
+      "orders": 103,
+      "median_cycle": 83.5,
+      "p90_cycle": 107.3,
+      "sla_miss_pct": 2.9
+    },
+    {
+      "week_start": "2025-04-07",
+      "period": "pilot",
+      "shift": "Days",
+      "orders": 93,
+      "median_cycle": 81.6,
+      "p90_cycle": 100.4,
+      "sla_miss_pct": 1.1
+    },
+    {
+      "week_start": "2025-04-07",
+      "period": "pilot",
+      "shift": "Night",
+      "orders": 82,
+      "median_cycle": 84.4,
+      "p90_cycle": 120.0,
+      "sla_miss_pct": 11.0
+    },
+    {
+      "week_start": "2025-04-07",
+      "period": "pilot",
+      "shift": "Swing",
+      "orders": 101,
+      "median_cycle": 85.7,
+      "p90_cycle": 112.5,
+      "sla_miss_pct": 5.9
+    },
+    {
+      "week_start": "2025-04-14",
+      "period": "pilot",
+      "shift": "Days",
+      "orders": 98,
+      "median_cycle": 81.4,
+      "p90_cycle": 109.4,
+      "sla_miss_pct": 5.1
+    },
+    {
+      "week_start": "2025-04-14",
+      "period": "pilot",
+      "shift": "Night",
+      "orders": 68,
+      "median_cycle": 87.9,
+      "p90_cycle": 124.6,
+      "sla_miss_pct": 13.2
+    },
+    {
+      "week_start": "2025-04-14",
+      "period": "pilot",
+      "shift": "Swing",
+      "orders": 104,
+      "median_cycle": 81.2,
+      "p90_cycle": 112.7,
+      "sla_miss_pct": 6.7
+    },
+    {
+      "week_start": "2025-04-21",
+      "period": "pilot",
+      "shift": "Days",
+      "orders": 109,
+      "median_cycle": 80.7,
+      "p90_cycle": 104.7,
+      "sla_miss_pct": 2.8
+    },
+    {
+      "week_start": "2025-04-21",
+      "period": "pilot",
+      "shift": "Night",
+      "orders": 81,
+      "median_cycle": 85.1,
+      "p90_cycle": 116.2,
+      "sla_miss_pct": 8.6
+    },
+    {
+      "week_start": "2025-04-21",
+      "period": "pilot",
+      "shift": "Swing",
+      "orders": 109,
+      "median_cycle": 84.3,
+      "p90_cycle": 106.6,
+      "sla_miss_pct": 3.7
+    },
+    {
+      "week_start": "2025-04-28",
+      "period": "pilot",
+      "shift": "Days",
+      "orders": 119,
+      "median_cycle": 82.7,
+      "p90_cycle": 102.0,
+      "sla_miss_pct": 2.5
+    },
+    {
+      "week_start": "2025-04-28",
+      "period": "pilot",
+      "shift": "Night",
+      "orders": 77,
+      "median_cycle": 87.7,
+      "p90_cycle": 115.1,
+      "sla_miss_pct": 9.1
+    },
+    {
+      "week_start": "2025-04-28",
+      "period": "pilot",
+      "shift": "Swing",
+      "orders": 122,
+      "median_cycle": 83.5,
+      "p90_cycle": 104.9,
+      "sla_miss_pct": 0.8
+    }
+  ],
+  "weekly_cell": [
+    {
+      "week_start": "2025-01-06",
+      "period": "baseline",
+      "facility_id": "AUS-01",
+      "shift": "Days",
+      "orders": 30,
+      "median_cycle": 93.1,
+      "p90_cycle": 115.0,
+      "sla_miss_pct": 10.0
+    },
+    {
+      "week_start": "2025-01-06",
+      "period": "baseline",
+      "facility_id": "AUS-01",
+      "shift": "Night",
+      "orders": 29,
+      "median_cycle": 98.2,
+      "p90_cycle": 123.8,
+      "sla_miss_pct": 13.8
+    },
+    {
+      "week_start": "2025-01-06",
+      "period": "baseline",
+      "facility_id": "AUS-01",
+      "shift": "Swing",
+      "orders": 29,
+      "median_cycle": 101.5,
+      "p90_cycle": 126.6,
+      "sla_miss_pct": 13.8
+    },
+    {
+      "week_start": "2025-01-06",
+      "period": "baseline",
+      "facility_id": "EWR-07",
+      "shift": "Days",
+      "orders": 45,
+      "median_cycle": 111.6,
+      "p90_cycle": 147.8,
+      "sla_miss_pct": 46.7
+    },
+    {
+      "week_start": "2025-01-06",
+      "period": "baseline",
+      "facility_id": "EWR-07",
+      "shift": "Night",
+      "orders": 30,
+      "median_cycle": 110.8,
+      "p90_cycle": 133.0,
+      "sla_miss_pct": 30.0
+    },
+    {
+      "week_start": "2025-01-06",
+      "period": "baseline",
+      "facility_id": "EWR-07",
+      "shift": "Swing",
+      "orders": 35,
+      "median_cycle": 108.2,
+      "p90_cycle": 126.1,
+      "sla_miss_pct": 28.6
+    },
+    {
+      "week_start": "2025-01-06",
+      "period": "baseline",
+      "facility_id": "FNT-12",
+      "shift": "Days",
+      "orders": 29,
+      "median_cycle": 112.2,
+      "p90_cycle": 148.0,
+      "sla_miss_pct": 37.9
+    },
+    {
+      "week_start": "2025-01-06",
+      "period": "baseline",
+      "facility_id": "FNT-12",
+      "shift": "Night",
+      "orders": 28,
+      "median_cycle": 133.4,
+      "p90_cycle": 167.7,
+      "sla_miss_pct": 89.3
+    },
+    {
+      "week_start": "2025-01-06",
+      "period": "baseline",
+      "facility_id": "FNT-12",
+      "shift": "Swing",
+      "orders": 28,
+      "median_cycle": 116.4,
+      "p90_cycle": 145.9,
+      "sla_miss_pct": 46.4
+    },
+    {
+      "week_start": "2025-01-13",
+      "period": "baseline",
+      "facility_id": "AUS-01",
+      "shift": "Days",
+      "orders": 21,
+      "median_cycle": 94.6,
+      "p90_cycle": 127.8,
+      "sla_miss_pct": 19.0
+    },
+    {
+      "week_start": "2025-01-13",
+      "period": "baseline",
+      "facility_id": "AUS-01",
+      "shift": "Night",
+      "orders": 26,
+      "median_cycle": 92.2,
+      "p90_cycle": 134.2,
+      "sla_miss_pct": 15.4
+    },
+    {
+      "week_start": "2025-01-13",
+      "period": "baseline",
+      "facility_id": "AUS-01",
+      "shift": "Swing",
+      "orders": 33,
+      "median_cycle": 103.1,
+      "p90_cycle": 129.2,
+      "sla_miss_pct": 21.2
+    },
+    {
+      "week_start": "2025-01-13",
+      "period": "baseline",
+      "facility_id": "EWR-07",
+      "shift": "Days",
+      "orders": 38,
+      "median_cycle": 103.5,
+      "p90_cycle": 129.2,
+      "sla_miss_pct": 15.8
+    },
+    {
+      "week_start": "2025-01-13",
+      "period": "baseline",
+      "facility_id": "EWR-07",
+      "shift": "Night",
+      "orders": 30,
+      "median_cycle": 107.0,
+      "p90_cycle": 136.8,
+      "sla_miss_pct": 30.0
+    },
+    {
+      "week_start": "2025-01-13",
+      "period": "baseline",
+      "facility_id": "EWR-07",
+      "shift": "Swing",
+      "orders": 39,
+      "median_cycle": 107.8,
+      "p90_cycle": 139.2,
+      "sla_miss_pct": 30.8
+    },
+    {
+      "week_start": "2025-01-13",
+      "period": "baseline",
+      "facility_id": "FNT-12",
+      "shift": "Days",
+      "orders": 31,
+      "median_cycle": 111.5,
+      "p90_cycle": 144.6,
+      "sla_miss_pct": 35.5
+    },
+    {
+      "week_start": "2025-01-13",
+      "period": "baseline",
+      "facility_id": "FNT-12",
+      "shift": "Night",
+      "orders": 32,
+      "median_cycle": 140.8,
+      "p90_cycle": 175.3,
+      "sla_miss_pct": 81.3
+    },
+    {
+      "week_start": "2025-01-13",
+      "period": "baseline",
+      "facility_id": "FNT-12",
+      "shift": "Swing",
+      "orders": 37,
+      "median_cycle": 114.2,
+      "p90_cycle": 151.6,
+      "sla_miss_pct": 29.7
+    },
+    {
+      "week_start": "2025-01-20",
+      "period": "baseline",
+      "facility_id": "AUS-01",
+      "shift": "Days",
+      "orders": 34,
+      "median_cycle": 91.6,
+      "p90_cycle": 120.1,
+      "sla_miss_pct": 11.8
+    },
+    {
+      "week_start": "2025-01-20",
+      "period": "baseline",
+      "facility_id": "AUS-01",
+      "shift": "Night",
+      "orders": 20,
+      "median_cycle": 97.9,
+      "p90_cycle": 138.3,
+      "sla_miss_pct": 25.0
+    },
+    {
+      "week_start": "2025-01-20",
+      "period": "baseline",
+      "facility_id": "AUS-01",
+      "shift": "Swing",
+      "orders": 30,
+      "median_cycle": 99.0,
+      "p90_cycle": 127.9,
+      "sla_miss_pct": 13.3
+    },
+    {
+      "week_start": "2025-01-20",
+      "period": "baseline",
+      "facility_id": "EWR-07",
+      "shift": "Days",
+      "orders": 36,
+      "median_cycle": 104.2,
+      "p90_cycle": 133.1,
+      "sla_miss_pct": 22.2
+    },
+    {
+      "week_start": "2025-01-20",
+      "period": "baseline",
+      "facility_id": "EWR-07",
+      "shift": "Night",
+      "orders": 26,
+      "median_cycle": 109.5,
+      "p90_cycle": 152.0,
+      "sla_miss_pct": 38.5
+    },
+    {
+      "week_start": "2025-01-20",
+      "period": "baseline",
+      "facility_id": "EWR-07",
+      "shift": "Swing",
+      "orders": 33,
+      "median_cycle": 107.0,
+      "p90_cycle": 151.9,
+      "sla_miss_pct": 33.3
+    },
+    {
+      "week_start": "2025-01-20",
+      "period": "baseline",
+      "facility_id": "FNT-12",
+      "shift": "Days",
+      "orders": 30,
+      "median_cycle": 119.7,
+      "p90_cycle": 143.9,
+      "sla_miss_pct": 50.0
+    },
+    {
+      "week_start": "2025-01-20",
+      "period": "baseline",
+      "facility_id": "FNT-12",
+      "shift": "Night",
+      "orders": 30,
+      "median_cycle": 132.7,
+      "p90_cycle": 160.8,
+      "sla_miss_pct": 76.7
+    },
+    {
+      "week_start": "2025-01-20",
+      "period": "baseline",
+      "facility_id": "FNT-12",
+      "shift": "Swing",
+      "orders": 31,
+      "median_cycle": 125.1,
+      "p90_cycle": 155.9,
+      "sla_miss_pct": 58.1
+    },
+    {
+      "week_start": "2025-01-27",
+      "period": "baseline",
+      "facility_id": "AUS-01",
+      "shift": "Days",
+      "orders": 32,
+      "median_cycle": 92.3,
+      "p90_cycle": 117.0,
+      "sla_miss_pct": 9.4
+    },
+    {
+      "week_start": "2025-01-27",
+      "period": "baseline",
+      "facility_id": "AUS-01",
+      "shift": "Night",
+      "orders": 14,
+      "median_cycle": 105.2,
+      "p90_cycle": 139.5,
+      "sla_miss_pct": 28.6
+    },
+    {
+      "week_start": "2025-01-27",
+      "period": "baseline",
+      "facility_id": "AUS-01",
+      "shift": "Swing",
+      "orders": 22,
+      "median_cycle": 94.2,
+      "p90_cycle": 131.3,
+      "sla_miss_pct": 13.6
+    },
+    {
+      "week_start": "2025-01-27",
+      "period": "baseline",
+      "facility_id": "EWR-07",
+      "shift": "Days",
+      "orders": 30,
+      "median_cycle": 107.1,
+      "p90_cycle": 156.7,
+      "sla_miss_pct": 36.7
+    },
+    {
+      "week_start": "2025-01-27",
+      "period": "baseline",
+      "facility_id": "EWR-07",
+      "shift": "Night",
+      "orders": 30,
+      "median_cycle": 115.3,
+      "p90_cycle": 158.6,
+      "sla_miss_pct": 43.3
+    },
+    {
+      "week_start": "2025-01-27",
+      "period": "baseline",
+      "facility_id": "EWR-07",
+      "shift": "Swing",
+      "orders": 39,
+      "median_cycle": 111.9,
+      "p90_cycle": 152.1,
+      "sla_miss_pct": 35.9
+    },
+    {
+      "week_start": "2025-01-27",
+      "period": "baseline",
+      "facility_id": "FNT-12",
+      "shift": "Days",
+      "orders": 33,
+      "median_cycle": 117.7,
+      "p90_cycle": 135.4,
+      "sla_miss_pct": 45.5
+    },
+    {
+      "week_start": "2025-01-27",
+      "period": "baseline",
+      "facility_id": "FNT-12",
+      "shift": "Night",
+      "orders": 32,
+      "median_cycle": 131.9,
+      "p90_cycle": 166.4,
+      "sla_miss_pct": 81.3
+    },
+    {
+      "week_start": "2025-01-27",
+      "period": "baseline",
+      "facility_id": "FNT-12",
+      "shift": "Swing",
+      "orders": 33,
+      "median_cycle": 106.2,
+      "p90_cycle": 154.0,
+      "sla_miss_pct": 36.4
+    },
+    {
+      "week_start": "2025-02-03",
+      "period": "baseline",
+      "facility_id": "AUS-01",
+      "shift": "Days",
+      "orders": 29,
+      "median_cycle": 94.5,
+      "p90_cycle": 138.3,
+      "sla_miss_pct": 20.7
+    },
+    {
+      "week_start": "2025-02-03",
+      "period": "baseline",
+      "facility_id": "AUS-01",
+      "shift": "Night",
+      "orders": 27,
+      "median_cycle": 98.5,
+      "p90_cycle": 118.1,
+      "sla_miss_pct": 11.1
+    },
+    {
+      "week_start": "2025-02-03",
+      "period": "baseline",
+      "facility_id": "AUS-01",
+      "shift": "Swing",
+      "orders": 42,
+      "median_cycle": 105.1,
+      "p90_cycle": 126.9,
+      "sla_miss_pct": 16.7
+    },
+    {
+      "week_start": "2025-02-03",
+      "period": "baseline",
+      "facility_id": "EWR-07",
+      "shift": "Days",
+      "orders": 17,
+      "median_cycle": 106.3,
+      "p90_cycle": 138.9,
+      "sla_miss_pct": 35.3
+    },
+    {
+      "week_start": "2025-02-03",
+      "period": "baseline",
+      "facility_id": "EWR-07",
+      "shift": "Night",
+      "orders": 33,
+      "median_cycle": 117.0,
+      "p90_cycle": 132.0,
+      "sla_miss_pct": 36.4
+    },
+    {
+      "week_start": "2025-02-03",
+      "period": "baseline",
+      "facility_id": "EWR-07",
+      "shift": "Swing",
+      "orders": 41,
+      "median_cycle": 110.2,
+      "p90_cycle": 156.6,
+      "sla_miss_pct": 36.6
+    },
+    {
+      "week_start": "2025-02-03",
+      "period": "baseline",
+      "facility_id": "FNT-12",
+      "shift": "Days",
+      "orders": 31,
+      "median_cycle": 113.1,
+      "p90_cycle": 139.5,
+      "sla_miss_pct": 25.8
+    },
+    {
+      "week_start": "2025-02-03",
+      "period": "baseline",
+      "facility_id": "FNT-12",
+      "shift": "Night",
+      "orders": 27,
+      "median_cycle": 146.0,
+      "p90_cycle": 183.2,
+      "sla_miss_pct": 77.8
+    },
+    {
+      "week_start": "2025-02-03",
+      "period": "baseline",
+      "facility_id": "FNT-12",
+      "shift": "Swing",
+      "orders": 36,
+      "median_cycle": 111.3,
+      "p90_cycle": 135.8,
+      "sla_miss_pct": 30.6
+    },
+    {
+      "week_start": "2025-02-10",
+      "period": "baseline",
+      "facility_id": "AUS-01",
+      "shift": "Days",
+      "orders": 24,
+      "median_cycle": 98.5,
+      "p90_cycle": 121.0,
+      "sla_miss_pct": 12.5
+    },
+    {
+      "week_start": "2025-02-10",
+      "period": "baseline",
+      "facility_id": "AUS-01",
+      "shift": "Night",
+      "orders": 31,
+      "median_cycle": 101.6,
+      "p90_cycle": 125.7,
+      "sla_miss_pct": 19.4
+    },
+    {
+      "week_start": "2025-02-10",
+      "period": "baseline",
+      "facility_id": "AUS-01",
+      "shift": "Swing",
+      "orders": 21,
+      "median_cycle": 84.9,
+      "p90_cycle": 115.4,
+      "sla_miss_pct": 9.5
+    },
+    {
+      "week_start": "2025-02-10",
+      "period": "baseline",
+      "facility_id": "EWR-07",
+      "shift": "Days",
+      "orders": 40,
+      "median_cycle": 108.6,
+      "p90_cycle": 124.5,
+      "sla_miss_pct": 25.0
+    },
+    {
+      "week_start": "2025-02-10",
+      "period": "baseline",
+      "facility_id": "EWR-07",
+      "shift": "Night",
+      "orders": 32,
+      "median_cycle": 115.3,
+      "p90_cycle": 163.1,
+      "sla_miss_pct": 46.9
+    },
+    {
+      "week_start": "2025-02-10",
+      "period": "baseline",
+      "facility_id": "EWR-07",
+      "shift": "Swing",
+      "orders": 33,
+      "median_cycle": 107.1,
+      "p90_cycle": 156.1,
+      "sla_miss_pct": 36.4
+    },
+    {
+      "week_start": "2025-02-10",
+      "period": "baseline",
+      "facility_id": "FNT-12",
+      "shift": "Days",
+      "orders": 29,
+      "median_cycle": 116.6,
+      "p90_cycle": 135.3,
+      "sla_miss_pct": 41.4
+    },
+    {
+      "week_start": "2025-02-10",
+      "period": "baseline",
+      "facility_id": "FNT-12",
+      "shift": "Night",
+      "orders": 32,
+      "median_cycle": 128.9,
+      "p90_cycle": 180.7,
+      "sla_miss_pct": 71.9
+    },
+    {
+      "week_start": "2025-02-10",
+      "period": "baseline",
+      "facility_id": "FNT-12",
+      "shift": "Swing",
+      "orders": 39,
+      "median_cycle": 109.8,
+      "p90_cycle": 143.1,
+      "sla_miss_pct": 30.8
+    },
+    {
+      "week_start": "2025-02-17",
+      "period": "baseline",
+      "facility_id": "AUS-01",
+      "shift": "Days",
+      "orders": 25,
+      "median_cycle": 98.0,
+      "p90_cycle": 128.7,
+      "sla_miss_pct": 20.0
+    },
+    {
+      "week_start": "2025-02-17",
+      "period": "baseline",
+      "facility_id": "AUS-01",
+      "shift": "Night",
+      "orders": 23,
+      "median_cycle": 93.7,
+      "p90_cycle": 129.0,
+      "sla_miss_pct": 17.4
+    },
+    {
+      "week_start": "2025-02-17",
+      "period": "baseline",
+      "facility_id": "AUS-01",
+      "shift": "Swing",
+      "orders": 23,
+      "median_cycle": 93.1,
+      "p90_cycle": 121.4,
+      "sla_miss_pct": 13.0
+    },
+    {
+      "week_start": "2025-02-17",
+      "period": "baseline",
+      "facility_id": "EWR-07",
+      "shift": "Days",
+      "orders": 41,
+      "median_cycle": 111.4,
+      "p90_cycle": 138.4,
+      "sla_miss_pct": 29.3
+    },
+    {
+      "week_start": "2025-02-17",
+      "period": "baseline",
+      "facility_id": "EWR-07",
+      "shift": "Night",
+      "orders": 30,
+      "median_cycle": 113.4,
+      "p90_cycle": 139.5,
+      "sla_miss_pct": 33.3
+    },
+    {
+      "week_start": "2025-02-17",
+      "period": "baseline",
+      "facility_id": "EWR-07",
+      "shift": "Swing",
+      "orders": 32,
+      "median_cycle": 110.2,
+      "p90_cycle": 139.1,
+      "sla_miss_pct": 40.6
+    },
+    {
+      "week_start": "2025-02-17",
+      "period": "baseline",
+      "facility_id": "FNT-12",
+      "shift": "Days",
+      "orders": 28,
+      "median_cycle": 112.8,
+      "p90_cycle": 138.7,
+      "sla_miss_pct": 28.6
+    },
+    {
+      "week_start": "2025-02-17",
+      "period": "baseline",
+      "facility_id": "FNT-12",
+      "shift": "Night",
+      "orders": 34,
+      "median_cycle": 137.4,
+      "p90_cycle": 171.2,
+      "sla_miss_pct": 79.4
+    },
+    {
+      "week_start": "2025-02-17",
+      "period": "baseline",
+      "facility_id": "FNT-12",
+      "shift": "Swing",
+      "orders": 33,
+      "median_cycle": 115.9,
+      "p90_cycle": 145.1,
+      "sla_miss_pct": 33.3
+    },
+    {
+      "week_start": "2025-02-24",
+      "period": "baseline",
+      "facility_id": "AUS-01",
+      "shift": "Days",
+      "orders": 37,
+      "median_cycle": 86.4,
+      "p90_cycle": 117.2,
+      "sla_miss_pct": 10.8
+    },
+    {
+      "week_start": "2025-02-24",
+      "period": "baseline",
+      "facility_id": "AUS-01",
+      "shift": "Night",
+      "orders": 29,
+      "median_cycle": 96.0,
+      "p90_cycle": 125.1,
+      "sla_miss_pct": 20.7
+    },
+    {
+      "week_start": "2025-02-24",
+      "period": "baseline",
+      "facility_id": "AUS-01",
+      "shift": "Swing",
+      "orders": 31,
+      "median_cycle": 94.3,
+      "p90_cycle": 118.8,
+      "sla_miss_pct": 9.7
+    },
+    {
+      "week_start": "2025-02-24",
+      "period": "baseline",
+      "facility_id": "EWR-07",
+      "shift": "Days",
+      "orders": 38,
+      "median_cycle": 105.0,
+      "p90_cycle": 135.3,
+      "sla_miss_pct": 26.3
+    },
+    {
+      "week_start": "2025-02-24",
+      "period": "baseline",
+      "facility_id": "EWR-07",
+      "shift": "Night",
+      "orders": 31,
+      "median_cycle": 110.7,
+      "p90_cycle": 144.5,
+      "sla_miss_pct": 35.5
+    },
+    {
+      "week_start": "2025-02-24",
+      "period": "baseline",
+      "facility_id": "EWR-07",
+      "shift": "Swing",
+      "orders": 37,
+      "median_cycle": 114.8,
+      "p90_cycle": 153.4,
+      "sla_miss_pct": 45.9
+    },
+    {
+      "week_start": "2025-02-24",
+      "period": "baseline",
+      "facility_id": "FNT-12",
+      "shift": "Days",
+      "orders": 32,
+      "median_cycle": 113.9,
+      "p90_cycle": 152.0,
+      "sla_miss_pct": 37.5
+    },
+    {
+      "week_start": "2025-02-24",
+      "period": "baseline",
+      "facility_id": "FNT-12",
+      "shift": "Night",
+      "orders": 19,
+      "median_cycle": 140.9,
+      "p90_cycle": 180.1,
+      "sla_miss_pct": 84.2
+    },
+    {
+      "week_start": "2025-02-24",
+      "period": "baseline",
+      "facility_id": "FNT-12",
+      "shift": "Swing",
+      "orders": 28,
+      "median_cycle": 121.1,
+      "p90_cycle": 154.8,
+      "sla_miss_pct": 50.0
+    },
+    {
+      "week_start": "2025-03-10",
+      "period": "pilot",
+      "facility_id": "AUS-01",
+      "shift": "Days",
+      "orders": 28,
+      "median_cycle": 73.3,
+      "p90_cycle": 84.2,
+      "sla_miss_pct": 0.0
+    },
+    {
+      "week_start": "2025-03-10",
+      "period": "pilot",
+      "facility_id": "AUS-01",
+      "shift": "Night",
+      "orders": 28,
+      "median_cycle": 78.0,
+      "p90_cycle": 99.6,
+      "sla_miss_pct": 3.6
+    },
+    {
+      "week_start": "2025-03-10",
+      "period": "pilot",
+      "facility_id": "AUS-01",
+      "shift": "Swing",
+      "orders": 35,
+      "median_cycle": 77.6,
+      "p90_cycle": 97.4,
+      "sla_miss_pct": 2.9
+    },
+    {
+      "week_start": "2025-03-10",
+      "period": "pilot",
+      "facility_id": "EWR-07",
+      "shift": "Days",
+      "orders": 41,
+      "median_cycle": 82.9,
+      "p90_cycle": 110.4,
+      "sla_miss_pct": 0.0
+    },
+    {
+      "week_start": "2025-03-10",
+      "period": "pilot",
+      "facility_id": "EWR-07",
+      "shift": "Night",
+      "orders": 32,
+      "median_cycle": 89.8,
+      "p90_cycle": 121.1,
+      "sla_miss_pct": 12.5
+    },
+    {
+      "week_start": "2025-03-10",
+      "period": "pilot",
+      "facility_id": "EWR-07",
+      "shift": "Swing",
+      "orders": 47,
+      "median_cycle": 92.1,
+      "p90_cycle": 114.2,
+      "sla_miss_pct": 4.3
+    },
+    {
+      "week_start": "2025-03-10",
+      "period": "pilot",
+      "facility_id": "FNT-12",
+      "shift": "Days",
+      "orders": 36,
+      "median_cycle": 79.8,
+      "p90_cycle": 110.9,
+      "sla_miss_pct": 8.3
+    },
+    {
+      "week_start": "2025-03-10",
+      "period": "pilot",
+      "facility_id": "FNT-12",
+      "shift": "Night",
+      "orders": 22,
+      "median_cycle": 96.2,
+      "p90_cycle": 120.8,
+      "sla_miss_pct": 18.2
+    },
+    {
+      "week_start": "2025-03-10",
+      "period": "pilot",
+      "facility_id": "FNT-12",
+      "shift": "Swing",
+      "orders": 30,
+      "median_cycle": 86.9,
+      "p90_cycle": 114.8,
+      "sla_miss_pct": 3.3
+    },
+    {
+      "week_start": "2025-03-17",
+      "period": "pilot",
+      "facility_id": "AUS-01",
+      "shift": "Days",
+      "orders": 23,
+      "median_cycle": 80.5,
+      "p90_cycle": 96.3,
+      "sla_miss_pct": 4.3
+    },
+    {
+      "week_start": "2025-03-17",
+      "period": "pilot",
+      "facility_id": "AUS-01",
+      "shift": "Night",
+      "orders": 16,
+      "median_cycle": 75.0,
+      "p90_cycle": 96.6,
+      "sla_miss_pct": 6.3
+    },
+    {
+      "week_start": "2025-03-17",
+      "period": "pilot",
+      "facility_id": "AUS-01",
+      "shift": "Swing",
+      "orders": 27,
+      "median_cycle": 79.7,
+      "p90_cycle": 94.2,
+      "sla_miss_pct": 0.0
+    },
+    {
+      "week_start": "2025-03-17",
+      "period": "pilot",
+      "facility_id": "EWR-07",
+      "shift": "Days",
+      "orders": 28,
+      "median_cycle": 85.8,
+      "p90_cycle": 117.7,
+      "sla_miss_pct": 10.7
+    },
+    {
+      "week_start": "2025-03-17",
+      "period": "pilot",
+      "facility_id": "EWR-07",
+      "shift": "Night",
+      "orders": 26,
+      "median_cycle": 89.7,
+      "p90_cycle": 117.7,
+      "sla_miss_pct": 7.7
+    },
+    {
+      "week_start": "2025-03-17",
+      "period": "pilot",
+      "facility_id": "EWR-07",
+      "shift": "Swing",
+      "orders": 33,
+      "median_cycle": 89.8,
+      "p90_cycle": 118.7,
+      "sla_miss_pct": 9.1
+    },
+    {
+      "week_start": "2025-03-17",
+      "period": "pilot",
+      "facility_id": "FNT-12",
+      "shift": "Days",
+      "orders": 36,
+      "median_cycle": 82.1,
+      "p90_cycle": 105.6,
+      "sla_miss_pct": 5.6
+    },
+    {
+      "week_start": "2025-03-17",
+      "period": "pilot",
+      "facility_id": "FNT-12",
+      "shift": "Night",
+      "orders": 24,
+      "median_cycle": 92.1,
+      "p90_cycle": 123.5,
+      "sla_miss_pct": 12.5
+    },
+    {
+      "week_start": "2025-03-17",
+      "period": "pilot",
+      "facility_id": "FNT-12",
+      "shift": "Swing",
+      "orders": 32,
+      "median_cycle": 82.6,
+      "p90_cycle": 113.2,
+      "sla_miss_pct": 6.3
+    },
+    {
+      "week_start": "2025-03-24",
+      "period": "pilot",
+      "facility_id": "AUS-01",
+      "shift": "Days",
+      "orders": 26,
+      "median_cycle": 80.3,
+      "p90_cycle": 109.8,
+      "sla_miss_pct": 7.7
+    },
+    {
+      "week_start": "2025-03-24",
+      "period": "pilot",
+      "facility_id": "AUS-01",
+      "shift": "Night",
+      "orders": 22,
+      "median_cycle": 75.9,
+      "p90_cycle": 106.9,
+      "sla_miss_pct": 0.0
+    },
+    {
+      "week_start": "2025-03-24",
+      "period": "pilot",
+      "facility_id": "AUS-01",
+      "shift": "Swing",
+      "orders": 31,
+      "median_cycle": 79.2,
+      "p90_cycle": 101.5,
+      "sla_miss_pct": 0.0
+    },
+    {
+      "week_start": "2025-03-24",
+      "period": "pilot",
+      "facility_id": "EWR-07",
+      "shift": "Days",
+      "orders": 42,
+      "median_cycle": 88.4,
+      "p90_cycle": 112.6,
+      "sla_miss_pct": 7.1
+    },
+    {
+      "week_start": "2025-03-24",
+      "period": "pilot",
+      "facility_id": "EWR-07",
+      "shift": "Night",
+      "orders": 33,
+      "median_cycle": 92.9,
+      "p90_cycle": 108.9,
+      "sla_miss_pct": 3.0
+    },
+    {
+      "week_start": "2025-03-24",
+      "period": "pilot",
+      "facility_id": "EWR-07",
+      "shift": "Swing",
+      "orders": 32,
+      "median_cycle": 85.8,
+      "p90_cycle": 108.5,
+      "sla_miss_pct": 0.0
+    },
+    {
+      "week_start": "2025-03-24",
+      "period": "pilot",
+      "facility_id": "FNT-12",
+      "shift": "Days",
+      "orders": 28,
+      "median_cycle": 86.2,
+      "p90_cycle": 105.6,
+      "sla_miss_pct": 0.0
+    },
+    {
+      "week_start": "2025-03-24",
+      "period": "pilot",
+      "facility_id": "FNT-12",
+      "shift": "Night",
+      "orders": 36,
+      "median_cycle": 91.2,
+      "p90_cycle": 120.5,
+      "sla_miss_pct": 11.1
+    },
+    {
+      "week_start": "2025-03-24",
+      "period": "pilot",
+      "facility_id": "FNT-12",
+      "shift": "Swing",
+      "orders": 33,
+      "median_cycle": 89.5,
+      "p90_cycle": 113.3,
+      "sla_miss_pct": 6.1
+    },
+    {
+      "week_start": "2025-03-31",
+      "period": "pilot",
+      "facility_id": "AUS-01",
+      "shift": "Days",
+      "orders": 28,
+      "median_cycle": 80.3,
+      "p90_cycle": 93.9,
+      "sla_miss_pct": 0.0
+    },
+    {
+      "week_start": "2025-03-31",
+      "period": "pilot",
+      "facility_id": "AUS-01",
+      "shift": "Night",
+      "orders": 28,
+      "median_cycle": 82.6,
+      "p90_cycle": 101.2,
+      "sla_miss_pct": 0.0
+    },
+    {
+      "week_start": "2025-03-31",
+      "period": "pilot",
+      "facility_id": "AUS-01",
+      "shift": "Swing",
+      "orders": 32,
+      "median_cycle": 82.5,
+      "p90_cycle": 105.7,
+      "sla_miss_pct": 3.1
+    },
+    {
+      "week_start": "2025-03-31",
+      "period": "pilot",
+      "facility_id": "EWR-07",
+      "shift": "Days",
+      "orders": 43,
+      "median_cycle": 88.9,
+      "p90_cycle": 118.7,
+      "sla_miss_pct": 7.0
+    },
+    {
+      "week_start": "2025-03-31",
+      "period": "pilot",
+      "facility_id": "EWR-07",
+      "shift": "Night",
+      "orders": 44,
+      "median_cycle": 92.3,
+      "p90_cycle": 117.7,
+      "sla_miss_pct": 9.1
+    },
+    {
+      "week_start": "2025-03-31",
+      "period": "pilot",
+      "facility_id": "EWR-07",
+      "shift": "Swing",
+      "orders": 34,
+      "median_cycle": 88.6,
+      "p90_cycle": 107.5,
+      "sla_miss_pct": 2.9
+    },
+    {
+      "week_start": "2025-03-31",
+      "period": "pilot",
+      "facility_id": "FNT-12",
+      "shift": "Days",
+      "orders": 40,
+      "median_cycle": 88.6,
+      "p90_cycle": 106.6,
+      "sla_miss_pct": 7.5
+    },
+    {
+      "week_start": "2025-03-31",
+      "period": "pilot",
+      "facility_id": "FNT-12",
+      "shift": "Night",
+      "orders": 28,
+      "median_cycle": 92.3,
+      "p90_cycle": 127.1,
+      "sla_miss_pct": 17.9
+    },
+    {
+      "week_start": "2025-03-31",
+      "period": "pilot",
+      "facility_id": "FNT-12",
+      "shift": "Swing",
+      "orders": 37,
+      "median_cycle": 77.4,
+      "p90_cycle": 108.5,
+      "sla_miss_pct": 2.7
+    },
+    {
+      "week_start": "2025-04-07",
+      "period": "pilot",
+      "facility_id": "AUS-01",
+      "shift": "Days",
+      "orders": 31,
+      "median_cycle": 72.3,
+      "p90_cycle": 96.5,
+      "sla_miss_pct": 3.2
+    },
+    {
+      "week_start": "2025-04-07",
+      "period": "pilot",
+      "facility_id": "AUS-01",
+      "shift": "Night",
+      "orders": 30,
+      "median_cycle": 74.8,
+      "p90_cycle": 101.5,
+      "sla_miss_pct": 3.3
+    },
+    {
+      "week_start": "2025-04-07",
+      "period": "pilot",
+      "facility_id": "AUS-01",
+      "shift": "Swing",
+      "orders": 35,
+      "median_cycle": 79.4,
+      "p90_cycle": 102.9,
+      "sla_miss_pct": 0.0
+    },
+    {
+      "week_start": "2025-04-07",
+      "period": "pilot",
+      "facility_id": "EWR-07",
+      "shift": "Days",
+      "orders": 31,
+      "median_cycle": 91.2,
+      "p90_cycle": 99.4,
+      "sla_miss_pct": 0.0
+    },
+    {
+      "week_start": "2025-04-07",
+      "period": "pilot",
+      "facility_id": "EWR-07",
+      "shift": "Night",
+      "orders": 25,
+      "median_cycle": 87.2,
+      "p90_cycle": 118.9,
+      "sla_miss_pct": 12.0
+    },
+    {
+      "week_start": "2025-04-07",
+      "period": "pilot",
+      "facility_id": "EWR-07",
+      "shift": "Swing",
+      "orders": 45,
+      "median_cycle": 92.3,
+      "p90_cycle": 128.3,
+      "sla_miss_pct": 13.3
+    },
+    {
+      "week_start": "2025-04-07",
+      "period": "pilot",
+      "facility_id": "FNT-12",
+      "shift": "Days",
+      "orders": 31,
+      "median_cycle": 80.2,
+      "p90_cycle": 100.6,
+      "sla_miss_pct": 0.0
+    },
+    {
+      "week_start": "2025-04-07",
+      "period": "pilot",
+      "facility_id": "FNT-12",
+      "shift": "Night",
+      "orders": 27,
+      "median_cycle": 85.7,
+      "p90_cycle": 127.8,
+      "sla_miss_pct": 18.5
+    },
+    {
+      "week_start": "2025-04-07",
+      "period": "pilot",
+      "facility_id": "FNT-12",
+      "shift": "Swing",
+      "orders": 21,
+      "median_cycle": 93.7,
+      "p90_cycle": 112.9,
+      "sla_miss_pct": 0.0
+    },
+    {
+      "week_start": "2025-04-14",
+      "period": "pilot",
+      "facility_id": "AUS-01",
+      "shift": "Days",
+      "orders": 27,
+      "median_cycle": 78.0,
+      "p90_cycle": 95.5,
+      "sla_miss_pct": 0.0
+    },
+    {
+      "week_start": "2025-04-14",
+      "period": "pilot",
+      "facility_id": "AUS-01",
+      "shift": "Night",
+      "orders": 19,
+      "median_cycle": 78.3,
+      "p90_cycle": 94.3,
+      "sla_miss_pct": 0.0
+    },
+    {
+      "week_start": "2025-04-14",
+      "period": "pilot",
+      "facility_id": "AUS-01",
+      "shift": "Swing",
+      "orders": 40,
+      "median_cycle": 74.0,
+      "p90_cycle": 97.2,
+      "sla_miss_pct": 2.5
+    },
+    {
+      "week_start": "2025-04-14",
+      "period": "pilot",
+      "facility_id": "EWR-07",
+      "shift": "Days",
+      "orders": 34,
+      "median_cycle": 83.9,
+      "p90_cycle": 115.7,
+      "sla_miss_pct": 8.8
+    },
+    {
+      "week_start": "2025-04-14",
+      "period": "pilot",
+      "facility_id": "EWR-07",
+      "shift": "Night",
+      "orders": 26,
+      "median_cycle": 92.3,
+      "p90_cycle": 121.6,
+      "sla_miss_pct": 11.5
+    },
+    {
+      "week_start": "2025-04-14",
+      "period": "pilot",
+      "facility_id": "EWR-07",
+      "shift": "Swing",
+      "orders": 37,
+      "median_cycle": 85.6,
+      "p90_cycle": 121.2,
+      "sla_miss_pct": 13.5
+    },
+    {
+      "week_start": "2025-04-14",
+      "period": "pilot",
+      "facility_id": "FNT-12",
+      "shift": "Days",
+      "orders": 37,
+      "median_cycle": 80.4,
+      "p90_cycle": 107.0,
+      "sla_miss_pct": 5.4
+    },
+    {
+      "week_start": "2025-04-14",
+      "period": "pilot",
+      "facility_id": "FNT-12",
+      "shift": "Night",
+      "orders": 23,
+      "median_cycle": 91.5,
+      "p90_cycle": 126.8,
+      "sla_miss_pct": 26.1
+    },
+    {
+      "week_start": "2025-04-14",
+      "period": "pilot",
+      "facility_id": "FNT-12",
+      "shift": "Swing",
+      "orders": 27,
+      "median_cycle": 86.7,
+      "p90_cycle": 111.1,
+      "sla_miss_pct": 3.7
+    },
+    {
+      "week_start": "2025-04-21",
+      "period": "pilot",
+      "facility_id": "AUS-01",
+      "shift": "Days",
+      "orders": 36,
+      "median_cycle": 74.4,
+      "p90_cycle": 95.4,
+      "sla_miss_pct": 0.0
+    },
+    {
+      "week_start": "2025-04-21",
+      "period": "pilot",
+      "facility_id": "AUS-01",
+      "shift": "Night",
+      "orders": 31,
+      "median_cycle": 70.2,
+      "p90_cycle": 109.4,
+      "sla_miss_pct": 6.5
+    },
+    {
+      "week_start": "2025-04-21",
+      "period": "pilot",
+      "facility_id": "AUS-01",
+      "shift": "Swing",
+      "orders": 31,
+      "median_cycle": 77.7,
+      "p90_cycle": 98.4,
+      "sla_miss_pct": 0.0
+    },
+    {
+      "week_start": "2025-04-21",
+      "period": "pilot",
+      "facility_id": "EWR-07",
+      "shift": "Days",
+      "orders": 37,
+      "median_cycle": 83.8,
+      "p90_cycle": 118.3,
+      "sla_miss_pct": 5.4
+    },
+    {
+      "week_start": "2025-04-21",
+      "period": "pilot",
+      "facility_id": "EWR-07",
+      "shift": "Night",
+      "orders": 30,
+      "median_cycle": 91.0,
+      "p90_cycle": 120.5,
+      "sla_miss_pct": 10.0
+    },
+    {
+      "week_start": "2025-04-21",
+      "period": "pilot",
+      "facility_id": "EWR-07",
+      "shift": "Swing",
+      "orders": 41,
+      "median_cycle": 86.9,
+      "p90_cycle": 109.5,
+      "sla_miss_pct": 7.3
+    },
+    {
+      "week_start": "2025-04-21",
+      "period": "pilot",
+      "facility_id": "FNT-12",
+      "shift": "Days",
+      "orders": 36,
+      "median_cycle": 86.1,
+      "p90_cycle": 103.7,
+      "sla_miss_pct": 2.8
+    },
+    {
+      "week_start": "2025-04-21",
+      "period": "pilot",
+      "facility_id": "FNT-12",
+      "shift": "Night",
+      "orders": 20,
+      "median_cycle": 96.9,
+      "p90_cycle": 118.0,
+      "sla_miss_pct": 10.0
+    },
+    {
+      "week_start": "2025-04-21",
+      "period": "pilot",
+      "facility_id": "FNT-12",
+      "shift": "Swing",
+      "orders": 37,
+      "median_cycle": 82.2,
+      "p90_cycle": 106.1,
+      "sla_miss_pct": 2.7
+    },
+    {
+      "week_start": "2025-04-28",
+      "period": "pilot",
+      "facility_id": "AUS-01",
+      "shift": "Days",
+      "orders": 28,
+      "median_cycle": 77.7,
+      "p90_cycle": 88.6,
+      "sla_miss_pct": 0.0
+    },
+    {
+      "week_start": "2025-04-28",
+      "period": "pilot",
+      "facility_id": "AUS-01",
+      "shift": "Night",
+      "orders": 25,
+      "median_cycle": 81.1,
+      "p90_cycle": 106.6,
+      "sla_miss_pct": 8.0
+    },
+    {
+      "week_start": "2025-04-28",
+      "period": "pilot",
+      "facility_id": "AUS-01",
+      "shift": "Swing",
+      "orders": 33,
+      "median_cycle": 75.7,
+      "p90_cycle": 99.4,
+      "sla_miss_pct": 0.0
+    },
+    {
+      "week_start": "2025-04-28",
+      "period": "pilot",
+      "facility_id": "EWR-07",
+      "shift": "Days",
+      "orders": 45,
+      "median_cycle": 87.6,
+      "p90_cycle": 102.1,
+      "sla_miss_pct": 4.4
+    },
+    {
+      "week_start": "2025-04-28",
+      "period": "pilot",
+      "facility_id": "EWR-07",
+      "shift": "Night",
+      "orders": 33,
+      "median_cycle": 87.1,
+      "p90_cycle": 115.4,
+      "sla_miss_pct": 9.1
+    },
+    {
+      "week_start": "2025-04-28",
+      "period": "pilot",
+      "facility_id": "EWR-07",
+      "shift": "Swing",
+      "orders": 44,
+      "median_cycle": 84.7,
+      "p90_cycle": 109.1,
+      "sla_miss_pct": 2.3
+    },
+    {
+      "week_start": "2025-04-28",
+      "period": "pilot",
+      "facility_id": "FNT-12",
+      "shift": "Days",
+      "orders": 46,
+      "median_cycle": 82.9,
+      "p90_cycle": 104.1,
+      "sla_miss_pct": 2.2
+    },
+    {
+      "week_start": "2025-04-28",
+      "period": "pilot",
+      "facility_id": "FNT-12",
+      "shift": "Night",
+      "orders": 19,
+      "median_cycle": 95.1,
+      "p90_cycle": 114.9,
+      "sla_miss_pct": 10.5
+    },
+    {
+      "week_start": "2025-04-28",
+      "period": "pilot",
+      "facility_id": "FNT-12",
+      "shift": "Swing",
+      "orders": 45,
+      "median_cycle": 83.4,
+      "p90_cycle": 103.6,
+      "sla_miss_pct": 0.0
     }
   ],
   "worst_cartons": [
@@ -1725,7 +5035,7 @@
       "labor_rate": 28.4,
       "baseline_hours": 1283.7,
       "pilot_hours": 888.1,
-      "hours_recovered": 395.5,
+      "hours_recovered": 395.6,
       "usd_recovered_in_window": 11233.0
     }
   ],
@@ -56750,6 +60060,8 @@
     "blended_labor_rate": 28.27,
     "window_usd": 22885.0,
     "hours_recovered_window": 807.3,
+    "volume_matched_baseline_usd": 25729.0,
+    "volume_matched_pilot_usd": 26609.0,
     "payback_months_observed": 5.1
   },
   "sensitivity": [
@@ -56822,9 +60134,9 @@
     }
   ],
   "brief": [
-    "Dock-to-stage median moved from 110 min to 85 min. The bootstrap 95% interval on that drop is 23.5\u201326.5 minutes (Mann\u2013Whitney p < 0.001).",
-    "Pick was the recovered bottleneck: 47.5% of baseline dwell, 15.9 minutes faster after zone-pick. Fontana recovered 33.4 minutes at the median; night shift recovered 30.0.",
-    "Same-day miss rate fell from 34.2% to 5.4%. That is an operations result, not a model score: cartons either hit the 120-minute dock or they do not.",
-    "At the observed mix, the eight-week window returns $22,885 in loaded labor. Payback against a $72,000 slotting/training spend is 5.1 months at this volume. The case is illustrative; a live pilot still needs a held-out control week."
+    "Dock-to-stage median moved from 109.7 min to 84.6 min. The bootstrap 95% interval on that drop is 23.5\u201326.5 minutes (Mann\u2013Whitney one-sided p < 0.001).",
+    "Pick was the recovered bottleneck: 47.5% of baseline dwell, 15.9 minutes faster on average after zone-pick. Fontana recovered 33.4 minutes at the median; night shift recovered 30.0.",
+    "Same-day miss rate fell from 34.2% to 5.4%. Fontana night, the worst bay, went from 79.9% to 15.6%. Cartons with 7 or more lines missed more often than that bay (86.3% baseline, 24.1% pilot).",
+    "Touch-labor spend in the eight-week window was $22,885 lower even with more pilot cartons (2,304 vs 2,220). The same per-carton cut is $25,729 at baseline volume and $26,609 at pilot volume. Payback on a $72,000 spend is 5.1 months at observed volume. Every building was treated; a live pilot still needs a held-out control week."
   ]
 }

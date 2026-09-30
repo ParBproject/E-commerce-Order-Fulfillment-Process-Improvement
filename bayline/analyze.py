@@ -164,6 +164,44 @@ def touch_unit_economics(con: duckdb.DuckDBPyConnection) -> dict:
     }
 
 
+def volume_matched_touch_usd(con: duckdb.DuckDBPyConnection) -> dict[str, float]:
+    """Per-carton touch-time cut, priced at each building's rate.
+
+    The in-window total subtracts raw hour sums, so a busier pilot shrinks
+    the dollar figure. These two rows hold carton counts at the baseline
+    mix and at the pilot mix instead.
+    """
+    rows = con.execute(
+        """
+        SELECT
+            facility_id,
+            period,
+            COUNT(*)::DOUBLE AS orders,
+            SUM(touch_hours) AS touch_hours,
+            ANY_VALUE(labor_rate) AS labor_rate
+        FROM order_enriched
+        GROUP BY facility_id, period
+        """
+    ).fetchdf()
+    baseline_mix = 0.0
+    pilot_mix = 0.0
+    for facility_id, group in rows.groupby("facility_id"):
+        base = group.loc[group["period"] == "baseline"]
+        pilot = group.loc[group["period"] == "pilot"]
+        if len(base) != 1 or len(pilot) != 1:
+            raise ValueError(f"{facility_id} is missing a baseline or pilot slice")
+        base = base.iloc[0]
+        pilot = pilot.iloc[0]
+        saved = float(base.touch_hours) / float(base.orders) - float(pilot.touch_hours) / float(pilot.orders)
+        rate = float(base.labor_rate)
+        baseline_mix += saved * float(base.orders) * rate
+        pilot_mix += saved * float(pilot.orders) * rate
+    return {
+        "baseline_mix": round(baseline_mix, 0),
+        "pilot_mix": round(pilot_mix, 0),
+    }
+
+
 def sensitivity(hours_per_order: float, usd_per_order: float, implementation_cost: float) -> list[dict]:
     rows = []
     for monthly_orders in (800, 1500, 2500, 4000, 6500):
@@ -193,33 +231,43 @@ def build_brief(payload: dict) -> list[str]:
     night = next(
         row for row in payload["heterogeneity"] if row["cut"] == "shift" and row["slice"] == "Night"
     )
+    heavy = next(
+        row for row in payload["heterogeneity"] if row["cut"] == "line_band" and row["slice"] == "7+ lines"
+    )
+    cells = {(row["cell"], row["period"]): row for row in payload["sla_cells"]}
     p = payload["tests"]
     p_value = payload["tests"]["mannwhitney"]["p_value"]
-    p_text = "p < 0.001" if p_value < 0.001 else f"p = {p_value:.3f}"
+    p_text = "one-sided p < 0.001" if p_value < 0.001 else f"one-sided p = {p_value:.3f}"
+    money = payload["money"]
     return [
         (
-            f"Dock-to-stage median moved from {k['baseline']['median_cycle']:.0f} min "
-            f"to {k['pilot']['median_cycle']:.0f} min. The bootstrap 95% interval on that "
+            f"Dock-to-stage median moved from {k['baseline']['median_cycle']:.1f} min "
+            f"to {k['pilot']['median_cycle']:.1f} min. The bootstrap 95% interval on that "
             f"drop is {p['bootstrap']['ci95_low']:.1f}–{p['bootstrap']['ci95_high']:.1f} minutes "
             f"(Mann–Whitney {p_text})."
         ),
         (
             f"Pick was the recovered bottleneck: {pick['baseline_share_pct']}% of baseline dwell, "
-            f"{pick['minutes_recovered']} minutes faster after zone-pick. "
+            f"{pick['minutes_recovered']} minutes faster on average after zone-pick. "
             f"Fontana recovered {fontana['recovered_minutes']} minutes at the median; "
             f"night shift recovered {night['recovered_minutes']}."
         ),
         (
             f"Same-day miss rate fell from {k['baseline']['sla_miss_pct']}% to "
-            f"{k['pilot']['sla_miss_pct']}%. That is an operations result, not a model score: "
-            f"cartons either hit the 120-minute dock or they do not."
+            f"{k['pilot']['sla_miss_pct']}%. Fontana night, the worst bay, went from "
+            f"{cells[('Fontana night', 'baseline')]['sla_miss_pct']}% to "
+            f"{cells[('Fontana night', 'pilot')]['sla_miss_pct']}%. "
+            f"Cartons with 7 or more lines missed more often than that bay "
+            f"({heavy['baseline_miss_pct']}% baseline, {heavy['pilot_miss_pct']}% pilot)."
         ),
         (
-            f"At the observed mix, the eight-week window returns "
-            f"${payload['money']['window_usd']:,.0f} in loaded labor. "
-            f"Payback against a ${payload['implementation_cost']:,.0f} slotting/training spend is "
-            f"{payload['money']['payback_months_observed']:.1f} months at this volume. "
-            f"The case is illustrative; a live pilot still needs a held-out control week."
+            f"Touch-labor spend in the eight-week window was ${money['window_usd']:,.0f} lower "
+            f"even with more pilot cartons ({k['pilot']['orders']:,} vs {k['baseline']['orders']:,}). "
+            f"The same per-carton cut is ${money['volume_matched_baseline_usd']:,.0f} at baseline volume "
+            f"and ${money['volume_matched_pilot_usd']:,.0f} at pilot volume. "
+            f"Payback on a ${payload['implementation_cost']:,.0f} spend is "
+            f"{money['payback_months_observed']:.1f} months at observed volume. "
+            f"Every building was treated; a live pilot still needs a held-out control week."
         ),
     ]
 
@@ -238,6 +286,7 @@ def export(con: duckdb.DuckDBPyConnection | None = None) -> dict:
     if implementation_cost == int(implementation_cost):
         implementation_cost = int(implementation_cost)
     econ = touch_unit_economics(con)
+    matched = volume_matched_touch_usd(con)
     blended = float(orders["labor_rate"].mean())
     window_usd = float(
         con.execute("SELECT SUM(usd_recovered_in_window) FROM labor_bridge").fetchone()[0]
@@ -260,10 +309,14 @@ def export(con: duckdb.DuckDBPyConnection | None = None) -> dict:
         "implementation_cost": implementation_cost,
         "kpi_period": _records(con, "kpi_period"),
         "step_profile": _records(con, "step_profile"),
+        "step_by_shift": _records(con, "step_by_shift"),
+        "step_by_cell": _records(con, "step_by_cell"),
         "facility_shift": _records(con, "facility_shift"),
         "heterogeneity": _records(con, "heterogeneity"),
         "weekly_network": _records(con, "weekly_network"),
         "weekly_trend": _records(con, "weekly_trend"),
+        "weekly_shift": _records(con, "weekly_shift"),
+        "weekly_cell": _records(con, "weekly_cell"),
         "worst_cartons": _records(con, "worst_cartons"),
         "exception_mix": _records(con, "exception_mix"),
         "labor_bridge": _records(con, "labor_bridge"),
@@ -284,6 +337,7 @@ def export(con: duckdb.DuckDBPyConnection | None = None) -> dict:
                     rework_flag AS rw,
                     error_count AS err
                 FROM order_enriched
+                ORDER BY order_id
                 """
             )
             .fetchdf()
@@ -301,6 +355,8 @@ def export(con: duckdb.DuckDBPyConnection | None = None) -> dict:
             "blended_labor_rate": round(blended, 2),
             "window_usd": round(window_usd, 0),
             "hours_recovered_window": round(hours_recovered, 1),
+            "volume_matched_baseline_usd": matched["baseline_mix"],
+            "volume_matched_pilot_usd": matched["pilot_mix"],
             "payback_months_observed": round(implementation_cost / max(monthly_usd, 1), 1),
         },
         "sensitivity": sensitivity(econ["hours_per_order"], econ["usd_per_order"], implementation_cost),

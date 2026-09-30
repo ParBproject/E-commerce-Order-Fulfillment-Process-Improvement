@@ -230,9 +230,16 @@ function renderNotes(data) {
     );
   }
   if (money.window_usd != null) {
-    facts.append(fact(`Touch labor in window ${usd(money.window_usd)}`));
+    facts.append(fact(`In-window touch labor ${usd(money.window_usd)} (not volume-matched)`));
+    if (money.volume_matched_baseline_usd != null) {
+      facts.append(
+        fact(
+          `Same cut at baseline volume ${usd(money.volume_matched_baseline_usd)}; at pilot volume ${usd(money.volume_matched_pilot_usd)}`,
+        ),
+      );
+    }
     facts.append(fact(`Payback ${num(money.payback_months_observed)} months at observed volume`));
-    facts.append(fact(`Blended rate $${num(money.blended_labor_rate, 2)}/hr`));
+    facts.append(fact(`Blended rate $${num(money.blended_labor_rate, 2)}/hr is descriptive only`));
   }
   host.append(facts);
 }
