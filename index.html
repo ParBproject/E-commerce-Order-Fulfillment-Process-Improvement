@@ -2,11 +2,115 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta http-equiv="refresh" content="0; url=dashboard/" />
-  <title>Bayline</title>
-  <link rel="canonical" href="dashboard/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bayline — Fulfillment Control</title>
+  <meta name="description" content="Public demo of the Bayline dock-to-stage control board. No sign-in. Every figure is read from the metrics file produced by python -m bayline." />
+  <meta name="theme-color" content="#07110d" />
+  <link rel="icon" href="dashboard/assets/mark.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="demo.css" />
 </head>
 <body>
-  <p><a href="dashboard/">Open Bayline control board</a></p>
+  <header class="mast">
+    <a class="brand" href="./">
+      <img src="dashboard/assets/mark.svg" alt="" width="36" height="36" />
+      <span>
+        <strong>Bayline</strong>
+        <small>Fulfillment Control</small>
+      </span>
+    </a>
+    <nav aria-label="Demo">
+      <a href="dashboard/">Control board</a>
+      <a href="dashboard/#line">Sortation</a>
+      <a href="dashboard/#floor">Bays</a>
+      <a href="dashboard/#board">Exceptions</a>
+      <a href="dashboard/metrics.json">metrics.json</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Public demo · no sign-in · static site</p>
+      <h1>Same-day dock-to-stage, three buildings.</h1>
+      <p class="lede">
+        Austin Gateway, Newark Hub, and Fontana West. Fontana night was the cell that broke the 120-minute trailer.
+        Zone-pick and skip-lane QC are the pilot. The scorecard below, and the control board it links to, both read
+        <code>dashboard/metrics.json</code> from <code>python -m bayline</code>.
+      </p>
+      <div class="actions">
+        <a class="btn primary" href="dashboard/">Open the control board</a>
+        <a class="btn" href="dashboard/#line">Sortation line</a>
+        <a class="btn" href="dashboard/#floor">Building bays</a>
+        <a class="btn" href="dashboard/#board">Exception board</a>
+        <a class="btn" href="dashboard/metrics.json">metrics.json</a>
+      </div>
+    </section>
+
+    <section class="score" aria-labelledby="score-title">
+      <div class="section-head">
+        <h2 id="score-title">Network scorecard</h2>
+        <p id="sourceNote">Loading metrics.json…</p>
+      </div>
+      <div class="toolbar">
+        <div class="toggle" role="group" aria-label="Scenario">
+          <button type="button" id="period-baseline" data-period="baseline" aria-pressed="false">Baseline</button>
+          <button type="button" id="period-pilot" data-period="pilot" aria-pressed="true">Pilot</button>
+        </div>
+        <label class="building">Building
+          <select id="building" aria-label="Building">
+            <option value="all">Network</option>
+          </select>
+        </label>
+      </div>
+      <div class="cards" id="cards"></div>
+      <p class="status" id="status" role="status"></p>
+    </section>
+
+    <section class="split">
+      <article class="panel" aria-labelledby="dwell-title">
+        <div class="section-head">
+          <h2 id="dwell-title">Sortation dwell</h2>
+          <p id="dwellNote">Average minutes by station.</p>
+        </div>
+        <div class="legend">
+          <span class="swatch base"></span> Baseline
+          <span class="swatch pilot"></span> Pilot
+        </div>
+        <div class="steps" id="steps"></div>
+      </article>
+      <article class="panel" aria-labelledby="bay-title">
+        <div class="section-head">
+          <h2 id="bay-title">Shift bays</h2>
+          <p>Published facility-shift rows for the selected scenario. Medians are not re-averaged in the browser.</p>
+        </div>
+        <div class="table-wrap">
+          <table id="bays">
+            <thead>
+              <tr>
+                <th>Building</th>
+                <th>Shift</th>
+                <th>Cartons</th>
+                <th>Median</th>
+                <th>P90</th>
+                <th>Miss</th>
+                <th>Rework</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </article>
+    </section>
+
+    <section class="notes" id="notes" aria-label="Analyst note"></section>
+  </main>
+
+  <footer>
+    <span>Illustrative network · seed 42 · not a live warehouse feed</span>
+    <a href="dashboard/">Open the dock-to-stage board</a>
+  </footer>
+  <script src="demo.js"></script>
 </body>
 </html>

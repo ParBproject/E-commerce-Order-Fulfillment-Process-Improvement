@@ -1,5 +1,9 @@
 # Bayline — same-day fulfillment control
 
+[![Live demo](https://img.shields.io/badge/Live%20demo-Bayline%20KPI%20board-10B981?style=for-the-badge)](https://parbproject.github.io/E-commerce-Order-Fulfillment-Process-Improvement/)
+
+**Live demo (no sign-in):** [parbproject.github.io/E-commerce-Order-Fulfillment-Process-Improvement](https://parbproject.github.io/E-commerce-Order-Fulfillment-Process-Improvement/)
+
 **Lead project for a data analyst application.** Open the control board below, then the SQL in `sql/analysis.sql`. The interview story is a bottleneck, a before/after, and a labor dollar figure — not a chart template.
 
 A three-building dock-to-stage case study. Not a red-vs-green KPI poster: a **control board** for Austin Gateway, Newark Hub, and Fontana West, with SQL marts, a Mann–Whitney test, and a labor tariff that a warehouse manager could argue with.
@@ -54,13 +58,21 @@ The datasets are a seeded, illustrative network (seed 42). Treat the method as t
 
 ## Open the control board
 
+The public demo is a static site: a short landing page plus the control board. GitHub Actions runs `python -m bayline` on every push to `main` and deploys the result with `actions/upload-pages-artifact` and `actions/deploy-pages`. The same build step is in CI, so a broken export fails the check.
+
+Locally:
+
 ```bash
 python -m pip install -r requirements.txt
 python -m bayline          # rebuild CSVs + dashboard/metrics.json
-python -m http.server 8000 --directory dashboard
+python -m http.server 8000
 ```
 
-Then open http://localhost:8000. Building and shift filters recompute the tickets, density, and exception board from the order grain.
+Then open http://localhost:8000 for the landing page, or http://localhost:8000/dashboard/ for the board. The landing page reads `dashboard/metrics.json` (scenario toggle and building filter). On the board, building and shift filters recompute the tickets, density, and exception board from the order grain. Serve the dashboard directory alone if you only want the board:
+
+```bash
+python -m http.server 8000 --directory dashboard
+```
 
 ## Reproduce the analysis
 
@@ -76,7 +88,10 @@ CI runs `python -m bayline` and then the same suite: schema integrity, the SLA f
 bayline/           generate, DuckDB marts, statistical export
 sql/analysis.sql   interview-grade SQL (the source of truth for KPIs)
 data/              dim_facility, dim_step, fact_orders, fact_order_steps, fact_exceptions
+index.html         public landing page (reads dashboard/metrics.json)
 dashboard/         Bayline control board (static HTML + metrics.json)
+.github/workflows/pages.yml
+                   build on main, deploy to GitHub Pages
 tests/             pytest
 docs/screenshots/  captured from the live board, not matplotlib posters
 ```
