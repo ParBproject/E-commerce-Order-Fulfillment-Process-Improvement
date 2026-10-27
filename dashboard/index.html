@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Bayline — Dock-to-stage control</title>
-  <meta name="description" content="Fulfillment control board for a three-DC same-day network. Baseline vs zone-pick pilot." />
+  <meta name="description" content="Control board for a simulated three-building fulfillment network. Baseline and pilot are generated with seed 42." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
@@ -23,7 +23,7 @@
     </div>
     <div class="mast-meta">
       <span class="pill">AUS-01 · EWR-07 · FNT-12</span>
-      <span class="pill warn">SLA 120 min</span>
+      <span class="pill warn" id="slaPill">SLA</span>
       <span class="pill" id="orderCount">— cartons</span>
     </div>
     <form class="filters" id="filters">
@@ -52,7 +52,7 @@
     <section class="line-block" id="line">
       <div class="section-head">
         <h2>Sortation line</h2>
-        <p id="lineCaption">Average dwell by station. Pick is the recovered bottleneck — the door that still owns the most minutes.</p>
+        <p id="lineCaption">Average dwell by station.</p>
       </div>
       <div class="docks" id="docks"></div>
     </section>
@@ -81,15 +81,15 @@
     <section class="floor-block" id="floor">
       <div class="section-head">
         <h2>Three buildings, nine bays</h2>
-        <p>Median dock-to-stage by facility and shift. Fontana night was the cell that broke the trailer plan.</p>
+        <p>Median dock-to-stage by building and shift. Fontana night is highlighted because it was the highest baseline miss rate.</p>
       </div>
       <div class="yards" id="yards"></div>
     </section>
 
     <section class="board-block" id="board">
       <div class="section-head">
-        <h2>Live exception board</h2>
-        <p id="boardCaption">Pilot cartons still over the gate, ranked like a departure screen — not a chart.</p>
+        <h2>Exception board</h2>
+        <p id="boardCaption">Longest pilot cartons in the current filter.</p>
       </div>
       <div class="fids" id="fids"></div>
     </section>
@@ -98,14 +98,14 @@
       <article class="brief panel">
         <div class="section-head">
           <h2>Analyst note</h2>
-          <p>Every sentence below is generated from the DuckDB marts, not written by hand.</p>
+          <p>Filled in from the SQL export.</p>
         </div>
         <div class="brief-copy" id="brief"></div>
       </article>
       <article class="tariff panel">
         <div class="section-head">
           <h2>Labor tariff</h2>
-          <p>Touch-time only (locate, pick, pack, QC). Wave queue is occupancy, not wages.</p>
+          <p>Touch time only (locate, pick, pack, QC). Monthly carton counts are scenarios, except the row marked observed. The implementation cost is an input, not a measured invoice. Wave release and stage are left out.</p>
         </div>
         <table id="tariff">
           <thead>
@@ -125,7 +125,7 @@
 
   <footer>
     <span>Illustrative network · seed 42 · not a live warehouse feed</span>
-    <span>Bayline control · same-day dock geometry</span>
+    <span>Static board · baseline and pilot</span>
   </footer>
   <script src="app.js"></script>
 </body>

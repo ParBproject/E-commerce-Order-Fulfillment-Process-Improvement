@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Bayline — Fulfillment Control</title>
-  <meta name="description" content="Public demo of the Bayline dock-to-stage control board. No sign-in. Every figure is read from the metrics file produced by python -m bayline." />
+  <meta name="description" content="Bayline dock-to-stage board for a simulated three-building network. Figures are read from dashboard/metrics.json." />
   <meta name="theme-color" content="#07110d" />
   <link rel="icon" href="dashboard/assets/mark.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -32,12 +32,12 @@
 
   <main>
     <section class="hero">
-      <p class="eyebrow">Public demo · no sign-in · static site</p>
+      <p class="eyebrow">Simulated network · static page</p>
       <h1>Same-day dock-to-stage, three buildings.</h1>
       <p class="lede">
-        Austin Gateway, Newark Hub, and Fontana West. Fontana night was the cell that broke the 120-minute trailer.
-        Zone-pick and skip-lane QC are the pilot. The scorecard below, and the control board it links to, both read
-        <code>dashboard/metrics.json</code> from <code>python -m bayline</code>.
+        Austin Gateway, Newark Hub, and Fontana West. Orders are generated with seed 42, not pulled from a warehouse.
+        The same-day gate is 120 minutes. The pilot is zone-pick plus a QC skip-lane. This page and the control board
+        both read <code>dashboard/metrics.json</code> from <code>python -m bayline</code>.
       </p>
       <div class="actions">
         <a class="btn primary" href="dashboard/">Open the control board</a>

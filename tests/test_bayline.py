@@ -143,7 +143,7 @@ def test_sla_flag_matches_stored_cycle(tables):
 
 
 def test_seed_preserves_cycle_times(tables):
-    # SLA flag fix must not reshuffle dwell. This is the seed-42 cycle total.
+    # Seed 42 cycle-time total.
     assert tables["fact_orders"]["cycle_minutes"].sum() == pytest.approx(449_856.4, abs=0.05)
     assert len(tables["fact_orders"]) == 4524
 
@@ -316,6 +316,12 @@ def test_public_demo_reads_generated_metrics():
     assert "https://parbproject.github.io/E-commerce-Order-Fulfillment-Process-Improvement/" in readme
     assert "109.7" not in page
     assert "109.7" not in script
+    assert "interview" not in readme.lower()
+    board = (root / "dashboard" / "index.html").read_text()
+    app = (root / "dashboard" / "app.js").read_text()
+    assert "Live exception" not in board
+    assert "departure screen" not in board
+    assert "departure screen" not in app
 
 
 def test_export_payload_is_internally_consistent(payload):
@@ -326,8 +332,13 @@ def test_export_payload_is_internally_consistent(payload):
     assert Path(DATA / "fact_orders.csv").exists()
     volumes = [row["monthly_orders"] for row in payload["sensitivity"]]
     dollars = [row["usd_year"] for row in payload["sensitivity"]]
+    bases = [row["basis"] for row in payload["sensitivity"]]
     assert volumes == sorted(volumes)
     assert dollars == sorted(dollars)
+    assert bases.count("observed") == 1
+    assert set(bases) <= {"observed", "scenario"}
+    observed = next(row for row in payload["sensitivity"] if row["basis"] == "observed")
+    assert observed["payback_months"] == pytest.approx(payload["money"]["payback_months_observed"])
 
 
 def test_requirements_are_pinned():
@@ -446,3 +457,6 @@ def test_readme_matches_published_comparisons(payload):
     assert "step_by_cell" in script
     assert "weekly_cell" in script
     assert "n * width" in script or "/ (n * width)" in script
+    assert "basis" in script
+    assert "observed" in script
+    assert "scenario" in (Path(__file__).resolve().parents[1] / "dashboard" / "index.html").read_text().lower()

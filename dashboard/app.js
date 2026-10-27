@@ -78,6 +78,7 @@ function renderTickets(data, orders) {
     baseline: orders.filter((o) => o.period === "baseline"),
     pilot: orders.filter((o) => o.period === "pilot"),
   };
+  const gate = data.sla_minutes;
   const medB = median(byPeriod.baseline.map((o) => o.mins));
   const medP = median(byPeriod.pilot.map((o) => o.mins));
   const missB = 100 * mean(byPeriod.baseline.map((o) => o.miss));
@@ -92,18 +93,18 @@ function renderTickets(data, orders) {
       k: "Median dock-to-stage",
       v: `${Math.round(medP)}<em>min</em>`,
       h: `Baseline ${Math.round(medB)} min · Δ ${drop.toFixed(1)} min`,
-      cls: "good",
+      cls: medP < medB ? "good" : "",
     },
     {
       k: "Same-day miss",
       v: `${missP.toFixed(1)}<em>%</em>`,
-      h: `Was ${missB.toFixed(1)}% of cartons past 120 min`,
-      cls: missP < 10 ? "good" : "alert",
+      h: `Was ${missB.toFixed(1)}% of cartons past ${gate} min`,
+      cls: missP < missB ? "good" : missP > missB ? "alert" : "",
     },
     {
       k: "P90 dock-to-stage",
       v: `${Math.round(p90P)}<em>min</em>`,
-      h: `Tail compressed from ${Math.round(p90B)} min`,
+      h: `Baseline ${Math.round(p90B)} min`,
       cls: "",
     },
     {
@@ -125,14 +126,16 @@ function renderTickets(data, orders) {
   $("#orderCount").textContent = `${orders.length.toLocaleString()} cartons in view`;
 }
 
-const FACILITY_NAMES = {
-  "AUS-01": "Austin Gateway",
-  "EWR-07": "Newark Hub",
-  "FNT-12": "Fontana West",
-};
+function namesById(data) {
+  const names = {};
+  (data.facilities || []).forEach((row) => {
+    names[row.facility_id] = row.name;
+  });
+  return names;
+}
 
-function placeLabel(dc, shift) {
-  const building = dc === "all" ? "Network" : FACILITY_NAMES[dc] || dc;
+function placeLabel(dc, shift, names) {
+  const building = dc === "all" ? "Network" : names[dc] || dc;
   const when = shift === "all" ? "all shifts" : shift;
   return `${building}, ${when}`;
 }
@@ -168,11 +171,11 @@ function dwellSteps(data, dc, shift) {
   return profileFromPeriodRows(data.step_by_facility.filter((row) => row.facility_id === dc));
 }
 
-function renderDocks(data, dc, shift) {
+function renderDocks(data, dc, shift, names) {
   const steps = dwellSteps(data, dc, shift);
   const lineCaption = document.querySelector("#lineCaption");
   if (lineCaption) {
-    lineCaption.textContent = `Average dwell by station for ${placeLabel(dc, shift)}.`;
+    lineCaption.textContent = `Average dwell by station for ${placeLabel(dc, shift, names)}.`;
   }
   const localMax = Math.max(...steps.map((s) => Math.max(s.baseline_avg, s.pilot_avg)), 1);
   $("#docks").innerHTML = steps
@@ -192,7 +195,7 @@ function renderDocks(data, dc, shift) {
     .join("");
 }
 
-function renderDensity(orders) {
+function renderDensity(orders, gate) {
   const base = orders.filter((o) => o.period === "baseline").map((o) => o.mins);
   const pilot = orders.filter((o) => o.period === "pilot").map((o) => o.mins);
   const lo = 30;
@@ -207,7 +210,7 @@ function renderDensity(orders) {
     bin.y /= peak;
   });
   const layout = pathFrom(b, 220, lo, hi);
-  const slaX = layout.x(120);
+  const slaX = layout.x(gate);
   const ticks = [40, 80, 120, 160, 200, 240];
   const svg = $("#density");
   svg.innerHTML = `
@@ -222,15 +225,16 @@ function renderDensity(orders) {
     <path d="${pathFrom(b, 220, lo, hi).d}" fill="rgba(138,122,98,0.45)"></path>
     <path d="${pathFrom(p, 220, lo, hi).d}" fill="rgba(227,160,8,0.42)"></path>
     <line x1="${slaX}" x2="${slaX}" y1="8" y2="192" stroke="#eadcc6" stroke-dasharray="3 4"/>
-    <text x="${slaX + 6}" y="20" fill="#eadcc6" font-size="10" font-family="IBM Plex Mono">GATE 120</text>
+    <text x="${slaX + 6}" y="20" fill="#eadcc6" font-size="10" font-family="IBM Plex Mono">GATE ${gate}</text>
   `;
 }
 
-function renderTape(data, dc, shift) {
+function renderTape(data, dc, shift, names) {
+  const gate = data.sla_minutes;
   const tapeCaption = document.querySelector("#tapeCaption");
   if (tapeCaption) {
     tapeCaption.textContent =
-      `${placeLabel(dc, shift)} median by week. The vertical scale stays on 60–160 min so the 120-minute gate does not move. Cutover week of 3–9 Mar is not in the sample.`;
+      `${placeLabel(dc, shift, names)} median by week. The scale is fixed at 60–160 minutes. Cutover week of 3–9 Mar is not in the sample.`;
   }
   let series;
   if (dc !== "all" && shift !== "all") {
@@ -273,7 +277,7 @@ function renderTape(data, dc, shift) {
     return `<polyline fill="none" stroke="${color}" stroke-width="2.4" points="${pts.join(" ")}"></polyline>`;
   };
   svg.innerHTML = `
-    <line x1="${left}" x2="${w - right}" y1="${ys(120)}" y2="${ys(120)}" stroke="rgba(234,220,198,0.25)" stroke-dasharray="4 5"/>
+    <line x1="${left}" x2="${w - right}" y1="${ys(gate)}" y2="${ys(gate)}" stroke="rgba(234,220,198,0.25)" stroke-dasharray="4 5"/>
     ${line("baseline", "#8a7a62")}
     ${line("pilot", "#e3a008")}
     ${weeks
@@ -283,14 +287,14 @@ function renderTape(data, dc, shift) {
           : ""
       )
       .join("")}
-    <text x="${left}" y="14" fill="#cbbba0" font-size="10" font-family="IBM Plex Mono">120 MIN GATE</text>
+    <text x="${left}" y="14" fill="#cbbba0" font-size="10" font-family="IBM Plex Mono">${gate} MIN GATE</text>
   `;
 }
 
-function renderYards(data) {
-  const names = FACILITY_NAMES;
+function renderYards(data, names) {
   const shifts = ["Days", "Swing", "Night"];
-  $("#yards").innerHTML = Object.keys(names)
+  const ids = (data.facilities || []).map((row) => row.facility_id);
+  $("#yards").innerHTML = ids
     .map((dc) => {
       const bays = shifts
         .map((shift) => {
@@ -301,8 +305,7 @@ function renderYards(data) {
             (r) => r.facility_id === dc && r.shift === shift && r.period === "pilot"
           );
           const pain = dc === "FNT-12" && shift === "Night";
-          const ok = p && p.sla_miss_pct < 8;
-          return `<div class="bay ${pain ? "pain" : ok ? "ok" : ""}">
+          return `<div class="bay ${pain ? "pain" : ""}">
             <div class="shift">${shift}</div>
             <div class="stat">${p ? Math.round(p.median_cycle) : "–"}</div>
             <div class="was">was ${b ? Math.round(b.median_cycle) : "–"} · ${p ? p.sla_miss_pct : "–"}% miss</div>
@@ -318,7 +321,7 @@ function renderYards(data) {
     .join("");
 }
 
-function renderBoard(orders) {
+function renderBoard(orders, gate) {
   const pilot = orders
     .filter((o) => o.period === "pilot")
     .sort((a, b) => b.miss - a.miss || b.mins - a.mins)
@@ -327,9 +330,7 @@ function renderBoard(orders) {
   const boardCaption = document.querySelector("#boardCaption");
   if (boardCaption) {
     boardCaption.textContent =
-      overGate === pilot.length
-        ? "Pilot cartons still over the gate, ranked like a departure screen — not a chart."
-        : `Longest pilot cartons in this cut. ${overGate} of these ${pilot.length} are over the 120-minute gate.`;
+      `Longest pilot cartons in this cut. ${overGate} of these ${pilot.length} are over the ${gate}-minute gate.`;
   }
   $("#fids").innerHTML = `
     <div class="head">
@@ -356,31 +357,38 @@ function renderBrief(data) {
   $("#brief").innerHTML = data.brief.map((p) => `<p>${p}</p>`).join("");
   const tbody = $("#tariff tbody");
   tbody.innerHTML = data.sensitivity
-    .map(
-      (r) => `<tr>
-        <td>${r.monthly_orders.toLocaleString()}</td>
+    .map((r) => {
+      const cartons =
+        r.basis === "observed"
+          ? `${Number(r.monthly_orders).toLocaleString()} observed`
+          : Number(r.monthly_orders).toLocaleString();
+      return `<tr>
+        <td>${cartons}</td>
         <td>${r.hours_month.toLocaleString()}</td>
         <td>${money(r.usd_month)}</td>
         <td>${r.payback_months.toFixed(1)} mo</td>
-      </tr>`
-    )
+      </tr>`;
+    })
     .join("");
   const matchedBase = data.money.volume_matched_baseline_usd;
   const matchedPilot = data.money.volume_matched_pilot_usd;
   $("#moneyFoot").textContent =
-    `In-window touch labor is ${money(data.money.window_usd)} lower at facility rates, and the pilot also handled more cartons. The same per-carton cut is ${money(matchedBase)} at baseline volume and ${money(matchedPilot)} at pilot volume. The $${data.money.blended_labor_rate}/hr blend is descriptive only. Implementation ${money(data.implementation_cost)}. Payback at observed volume is ${Number(data.money.payback_months_observed).toFixed(1)} months. Bootstrap median drop ${data.tests.bootstrap.ci95_low}–${data.tests.bootstrap.ci95_high} min.`;
+    `In-window touch labor is ${money(data.money.window_usd)} lower at facility rates, and the pilot also handled more cartons. The same per-carton cut is ${money(matchedBase)} at baseline volume and ${money(matchedPilot)} at pilot volume. The $${data.money.blended_labor_rate}/hr blend is descriptive only. Implementation ${money(data.implementation_cost)} is an input. Payback at observed volume is ${Number(data.money.payback_months_observed).toFixed(1)} months. Other carton counts in the table are scenarios. Bootstrap median drop ${data.tests.bootstrap.ci95_low}–${data.tests.bootstrap.ci95_high} min.`;
 }
 
 function paint(data) {
   const dc = document.querySelector("select[name=dc]").value;
   const shift = document.querySelector("select[name=shift]").value;
+  const names = namesById(data);
   const orders = filterOrders(data, dc, shift);
+  const slaPill = document.querySelector("#slaPill");
+  if (slaPill) slaPill.textContent = `SLA ${data.sla_minutes} min`;
   renderTickets(data, orders);
-  renderDocks(data, dc, shift);
-  renderDensity(orders);
-  renderTape(data, dc, shift);
-  renderYards(data);
-  renderBoard(orders);
+  renderDocks(data, dc, shift, names);
+  renderDensity(orders, data.sla_minutes);
+  renderTape(data, dc, shift, names);
+  renderYards(data, names);
+  renderBoard(orders, data.sla_minutes);
   renderBrief(data);
 }
 

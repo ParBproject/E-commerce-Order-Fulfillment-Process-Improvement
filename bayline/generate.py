@@ -1,15 +1,12 @@
-"""Simulate a three-DC fulfillment network across a baseline and a pilot.
+"""Generate orders for three buildings, baseline then pilot.
 
-The generating process is intentional, not decorative:
+Fontana night pick is slower because the pick face is larger. Multi-line
+orders take longer to pick. Baseline QC inspects every carton. The pilot
+skip-lanes low-risk 1–2 line DTC and marketplace cartons. Store replen
+and hazmat stay on the full QC gate. Newark is more congested. Austin's
+layout factor is 1.0. The pilot runs in every building.
 
-* Fontana night shift pays a travel penalty because the pick face is sprawling.
-* Multi-line orders dominate pick dwell.
-* Baseline QC inspects every carton; the pilot skip-lanes low-risk work.
-* Newark is congested. Austin is the easier layout, not an untreated control:
-  the pilot runs in every building.
-
-Seed 42 keeps the case study reproducible. `simulate` resets that seed on
-every call so a second rebuild in the same process does not drift.
+`simulate` resets seed 42 on every call.
 """
 
 from __future__ import annotations
@@ -106,7 +103,7 @@ def _weekdays(start: datetime, weeks: int) -> list[datetime]:
 
 
 def _line_count() -> int:
-    # Heavy left tail: most cartons are 1-3 lines, a few are wave-killers.
+    # Most cartons are 1-3 lines. The upper tail reaches 14.
     raw = int(RNG.negative_binomial(2, 0.42)) + 1
     return int(np.clip(raw, 1, 14))
 
@@ -125,7 +122,7 @@ def _order_volume(facility_id: str, shift: str, weekday: int) -> int:
 
 
 def _pilot_effects(step_id: str, *, facility_id: str, shift: str, lines: int, low_risk: bool) -> float:
-    """Return a multiplicative dwell factor for the redesigned flow."""
+    """Multiplicative dwell factor for the pilot."""
     factor = 1.0
     if step_id == "pick":
         factor *= 0.62 if facility_id == "FNT-12" else 0.76
@@ -330,7 +327,7 @@ def simulate(seed: int = SEED) -> dict[str, pd.DataFrame]:
         [
             {
                 "assumption_id": "hourly_loaded_labor",
-                "description": "Not a network rate. Use dim_facility.labor_rate; averaging buildings mis-states loaded cost.",
+                "description": "Unused. Building rates are on dim_facility.",
                 "unit": "USD_per_hour",
             },
             {
@@ -347,13 +344,12 @@ def simulate(seed: int = SEED) -> dict[str, pd.DataFrame]:
             },
             {
                 "assumption_id": "working_days_month",
-                "description": "Network operating days used in capacity math",
+                "description": "Operating days used to scale a week to a month",
                 "unit": "days",
                 "value": 26,
             },
         ]
     )
-    # Labor rates already live on the facility dimension; keep a tidy assumptions file.
     labor.loc[labor["assumption_id"] == "hourly_loaded_labor", "value"] = np.nan
 
     return {

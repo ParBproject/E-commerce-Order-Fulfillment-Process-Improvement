@@ -60070,35 +60070,48 @@
       "hours_month": 325.8,
       "usd_month": 9255.0,
       "usd_year": 111062.0,
-      "payback_months": 7.8
+      "payback_months": 7.8,
+      "basis": "scenario"
+    },
+    {
+      "monthly_orders": 1225.2,
+      "hours_month": 498.9,
+      "usd_month": 14175.0,
+      "usd_year": 170098.0,
+      "payback_months": 5.1,
+      "basis": "observed"
     },
     {
       "monthly_orders": 1500,
       "hours_month": 610.8,
       "usd_month": 17353.0,
       "usd_year": 208241.0,
-      "payback_months": 4.1
+      "payback_months": 4.1,
+      "basis": "scenario"
     },
     {
       "monthly_orders": 2500,
       "hours_month": 1018.0,
       "usd_month": 28922.0,
       "usd_year": 347068.0,
-      "payback_months": 2.5
+      "payback_months": 2.5,
+      "basis": "scenario"
     },
     {
       "monthly_orders": 4000,
       "hours_month": 1628.8,
       "usd_month": 46276.0,
       "usd_year": 555309.0,
-      "payback_months": 1.6
+      "payback_months": 1.6,
+      "basis": "scenario"
     },
     {
       "monthly_orders": 6500,
       "hours_month": 2646.8,
       "usd_month": 75198.0,
       "usd_year": 902377.0,
-      "payback_months": 1.0
+      "payback_months": 1.0,
+      "basis": "scenario"
     }
   ],
   "facilities": [
@@ -60135,8 +60148,8 @@
   ],
   "brief": [
     "Dock-to-stage median moved from 109.7 min to 84.6 min. The bootstrap 95% interval on that drop is 23.5\u201326.5 minutes (Mann\u2013Whitney one-sided p < 0.001).",
-    "Pick was the recovered bottleneck: 47.5% of baseline dwell, 15.9 minutes faster on average after zone-pick. Fontana recovered 33.4 minutes at the median; night shift recovered 30.0.",
+    "Pick was 47.5% of baseline dwell, 15.9 minutes faster on average after zone-pick. Fontana recovered 33.4 minutes at the median; night shift recovered 30.0.",
     "Same-day miss rate fell from 34.2% to 5.4%. Fontana night, the worst bay, went from 79.9% to 15.6%. Cartons with 7 or more lines missed more often than that bay (86.3% baseline, 24.1% pilot).",
-    "Touch-labor spend in the eight-week window was $22,885 lower even with more pilot cartons (2,304 vs 2,220). The same per-carton cut is $25,729 at baseline volume and $26,609 at pilot volume. Payback on a $72,000 spend is 5.1 months at observed volume. Every building was treated; a live pilot still needs a held-out control week."
+    "Touch-labor spend in the eight-week window was $22,885 lower even with more pilot cartons (2,304 vs 2,220). The same per-carton cut is $25,729 at baseline volume and $26,609 at pilot volume. Payback on the $72,000 implementation input is 5.1 months at observed volume. Every building was treated; a live pilot still needs a held-out control week."
   ]
 }
