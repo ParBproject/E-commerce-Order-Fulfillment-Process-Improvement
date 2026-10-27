@@ -66,7 +66,7 @@ FROM fact_order_steps s
 JOIN order_enriched o USING (order_id)
 JOIN dim_step d ON d.step_id = s.step_id;
 
--- 1. Period scorecard with distribution, not just averages
+-- Period scorecard
 CREATE OR REPLACE TABLE kpi_period AS
 SELECT
     period,
@@ -87,7 +87,7 @@ FROM order_enriched
 GROUP BY period
 ORDER BY period;
 
--- 2. Step bottleneck: share of dwell and change after the pilot
+-- Step dwell and share of average dwell
 CREATE OR REPLACE TABLE step_profile AS
 WITH step_period AS (
     SELECT
@@ -125,7 +125,7 @@ JOIN totals tb ON tb.period = 'baseline'
 JOIN totals tp ON tp.period = 'pilot'
 ORDER BY b.step_seq;
 
--- 2b. Step profile by building, for the floor filter
+-- Step dwell by building
 CREATE OR REPLACE TABLE step_by_facility AS
 SELECT
     facility_id,
@@ -139,8 +139,8 @@ FROM step_enriched
 GROUP BY facility_id, period, step_id, step_name, step_seq
 ORDER BY facility_id, period, step_seq;
 
--- 2c. Step profile by shift, and by building x shift. The board's shift
--- filter has to read these. Averaging step_by_facility would mix shifts.
+-- Step dwell by shift, and by building and shift.
+-- The shift filter reads these. Averaging step_by_facility would mix shifts.
 CREATE OR REPLACE TABLE step_by_shift AS
 SELECT
     shift,
@@ -169,7 +169,7 @@ GROUP BY facility_id, shift, period, step_id, step_name, step_seq
 ORDER BY facility_id, shift, period, step_seq;
 
 
--- 3. Facility x shift: where the pain actually lived
+-- Facility and shift
 CREATE OR REPLACE TABLE facility_shift AS
 SELECT
     facility_id,
@@ -185,7 +185,7 @@ FROM order_enriched
 GROUP BY facility_id, facility_name, shift, period
 ORDER BY facility_id, shift, period;
 
--- 4. Heterogeneous effects: the redesign should not look uniform
+-- Median change by shift, building, line count, and channel
 CREATE OR REPLACE TABLE heterogeneity AS
 SELECT
     cut,
@@ -249,9 +249,9 @@ FROM (
 )
 ORDER BY cut, slice;
 
--- 5. Weekly control chart. Aggregate first, then lag, so the window cannot
--- see order-grain rows. prior_median is the previous observed week, including
--- the step from the last baseline week across the unscored cutover week.
+-- Weekly medians by building. Aggregate first, then lag, so the window
+-- cannot see order-grain rows. prior_median is the previous observed week,
+-- including the gap across the unscored cutover week.
 CREATE OR REPLACE TABLE weekly_trend AS
 SELECT
     week_start,
@@ -265,8 +265,7 @@ FROM order_enriched
 GROUP BY week_start, period, facility_id
 ORDER BY week_start, facility_id;
 
--- Shift and building-shift weeks. weekly_trend stays all-shifts so an
--- existing facility filter does not silently average three shifts together.
+-- Weeks by shift, and by building and shift. weekly_trend stays all-shifts.
 CREATE OR REPLACE TABLE weekly_shift AS
 SELECT
     week_start,
@@ -317,7 +316,7 @@ SELECT
 FROM weeks
 ORDER BY week_start, period;
 
--- 6. Within-facility rank of the worst cartons (window function interview staple)
+-- Worst eight cartons in each building and period
 CREATE OR REPLACE TABLE worst_cartons AS
 SELECT *
 FROM (
@@ -341,7 +340,7 @@ FROM (
 WHERE cycle_rank <= 8
 ORDER BY period, facility_id, cycle_rank;
 
--- 7. Exception mix
+-- Exception mix, excluding the missed-SLA rows
 CREATE OR REPLACE TABLE exception_mix AS
 SELECT
     o.period,
@@ -356,9 +355,8 @@ WHERE e.exception_code <> 'missed_sla'
 GROUP BY o.period, e.exception_code, e.exception_label
 ORDER BY o.period, events DESC;
 
--- 8. In-window touch labor by building. Totals are not volume-matched:
--- the pilot also handled more cartons. Payback math lives in analyze.py
--- and holds the observed order rate constant.
+-- Touch labor by building for the window. Totals are not volume-matched.
+-- Payback math is in analyze.py.
 CREATE OR REPLACE TABLE labor_bridge AS
 SELECT
     facility_id,
@@ -383,7 +381,7 @@ FROM order_enriched
 GROUP BY facility_id
 ORDER BY facility_id;
 
--- 9. Same-day SLA waterfall: miss rate by the Fontana night cell vs network
+-- Same-day miss for Fontana night versus the rest of the network
 CREATE OR REPLACE TABLE sla_cells AS
 SELECT
     CASE

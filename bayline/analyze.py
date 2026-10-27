@@ -112,11 +112,10 @@ def density(values: np.ndarray, bins: np.ndarray) -> list[dict]:
 
 
 def touch_unit_economics(con: duckdb.DuckDBPyConnection) -> dict:
-    """Touch-hour savings per carton, priced at each building's own rate.
+    """Touch-hour savings per carton, priced at each building's rate.
 
-    Weights are the observed carton counts, so a busier building contributes
-    more. The month scale uses the calendar the generator actually ran
-    (distinct operating dates per week) and dim_assumption.working_days_month.
+    Weights are carton counts. The month scale uses distinct operating
+    dates per week and dim_assumption.working_days_month.
     """
     working_days = _assumption(con, "working_days_month")
     days_per_week, n_weeks = con.execute(
@@ -167,9 +166,9 @@ def touch_unit_economics(con: duckdb.DuckDBPyConnection) -> dict:
 def volume_matched_touch_usd(con: duckdb.DuckDBPyConnection) -> dict[str, float]:
     """Per-carton touch-time cut, priced at each building's rate.
 
-    The in-window total subtracts raw hour sums, so a busier pilot shrinks
-    the dollar figure. These two rows hold carton counts at the baseline
-    mix and at the pilot mix instead.
+    The window total subtracts raw hour sums, so extra pilot cartons shrink
+    it. These two figures hold carton counts at the baseline mix and the
+    pilot mix.
     """
     rows = con.execute(
         """
@@ -202,21 +201,45 @@ def volume_matched_touch_usd(con: duckdb.DuckDBPyConnection) -> dict[str, float]
     }
 
 
-def sensitivity(hours_per_order: float, usd_per_order: float, implementation_cost: float) -> list[dict]:
-    rows = []
-    for monthly_orders in (800, 1500, 2500, 4000, 6500):
-        hours = hours_per_order * monthly_orders
-        usd_month = usd_per_order * monthly_orders
-        payback = implementation_cost / max(usd_month, 1)
-        rows.append(
-            {
-                "monthly_orders": monthly_orders,
-                "hours_month": round(hours, 1),
-                "usd_month": round(usd_month, 0),
-                "usd_year": round(usd_month * 12, 0),
-                "payback_months": round(payback, 1),
-            }
-        )
+def _volume_row(
+    monthly_orders: float,
+    hours_per_order: float,
+    usd_per_order: float,
+    implementation_cost: float,
+    basis: str,
+) -> dict:
+    hours = hours_per_order * monthly_orders
+    usd_month = usd_per_order * monthly_orders
+    payback = implementation_cost / max(usd_month, 1)
+    shown = round(monthly_orders, 1) if basis == "observed" else int(monthly_orders)
+    return {
+        "monthly_orders": shown,
+        "hours_month": round(hours, 1),
+        "usd_month": round(usd_month, 0),
+        "usd_year": round(usd_month * 12, 0),
+        "payback_months": round(payback, 1),
+        "basis": basis,
+    }
+
+
+def sensitivity(
+    hours_per_order: float,
+    usd_per_order: float,
+    implementation_cost: float,
+    observed_orders: float,
+) -> list[dict]:
+    """Volume scenarios, plus one row at the sample's own monthly carton count.
+
+    800, 1,500, 2,500, 4,000, and 6,500 are not observed volumes.
+    """
+    rows = [
+        _volume_row(monthly_orders, hours_per_order, usd_per_order, implementation_cost, "scenario")
+        for monthly_orders in (800, 1500, 2500, 4000, 6500)
+    ]
+    rows.append(
+        _volume_row(observed_orders, hours_per_order, usd_per_order, implementation_cost, "observed")
+    )
+    rows.sort(key=lambda row: row["monthly_orders"])
     return rows
 
 
@@ -247,7 +270,7 @@ def build_brief(payload: dict) -> list[str]:
             f"(Mann–Whitney {p_text})."
         ),
         (
-            f"Pick was the recovered bottleneck: {pick['baseline_share_pct']}% of baseline dwell, "
+            f"Pick was {pick['baseline_share_pct']}% of baseline dwell, "
             f"{pick['minutes_recovered']} minutes faster on average after zone-pick. "
             f"Fontana recovered {fontana['recovered_minutes']} minutes at the median; "
             f"night shift recovered {night['recovered_minutes']}."
@@ -265,7 +288,7 @@ def build_brief(payload: dict) -> list[str]:
             f"even with more pilot cartons ({k['pilot']['orders']:,} vs {k['baseline']['orders']:,}). "
             f"The same per-carton cut is ${money['volume_matched_baseline_usd']:,.0f} at baseline volume "
             f"and ${money['volume_matched_pilot_usd']:,.0f} at pilot volume. "
-            f"Payback on a ${payload['implementation_cost']:,.0f} spend is "
+            f"Payback on the ${payload['implementation_cost']:,.0f} implementation input is "
             f"{money['payback_months_observed']:.1f} months at observed volume. "
             f"Every building was treated; a live pilot still needs a held-out control week."
         ),
@@ -359,7 +382,12 @@ def export(con: duckdb.DuckDBPyConnection | None = None) -> dict:
             "volume_matched_pilot_usd": matched["pilot_mix"],
             "payback_months_observed": round(implementation_cost / max(monthly_usd, 1), 1),
         },
-        "sensitivity": sensitivity(econ["hours_per_order"], econ["usd_per_order"], implementation_cost),
+        "sensitivity": sensitivity(
+            econ["hours_per_order"],
+            econ["usd_per_order"],
+            implementation_cost,
+            econ["monthly_orders_observed"],
+        ),
         "facilities": json.loads(
             con.execute("SELECT * FROM dim_facility").fetchdf().to_json(orient="records")
         ),
