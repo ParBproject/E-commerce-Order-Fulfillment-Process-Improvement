@@ -15,14 +15,3 @@ Thumbs.db
 *.tmp
 *.swp
 ~$*
-
-# Agent tooling, notes, and prompt files
-.cursor/
-.cursorrules
-.claude/
-CLAUDE.md
-AGENTS.md
-AGENT.md
-prompts/
-plans/
-*.plan.md
