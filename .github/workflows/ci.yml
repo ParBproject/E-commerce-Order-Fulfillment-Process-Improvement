@@ -11,9 +11,22 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+          cache: pip
       - name: Install
         run: python -m pip install -r requirements.txt
       - name: Rebuild marts
         run: python -m bayline
       - name: Test
         run: python -m pytest -q
+      - name: Committed outputs match this rebuild
+        run: |
+          if ! git diff --exit-code --stat -- data dashboard/metrics.json; then
+            echo "::error::Committed data/ or dashboard/metrics.json does not match a fresh python -m bayline rebuild. Regenerate and commit those files."
+            exit 1
+          fi
+          untracked="$(git ls-files --others --exclude-standard -- data dashboard/metrics.json)"
+          if [ -n "$untracked" ]; then
+            echo "::error::python -m bayline wrote files under data/ or dashboard/metrics.json that are not committed."
+            printf '%s\n' "$untracked"
+            exit 1
+          fi
